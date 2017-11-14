@@ -1,5 +1,5 @@
 {
-  "name": "carbon-addons-watson-beta",
+  "name": "carbon-addons-cloud",
   "version": "0.1.0",
   "main": "lib/index.js",
   "files": [
