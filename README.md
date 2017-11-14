@@ -2,4 +2,4 @@
 
 [![Build Status](https://travis-ci.org/carbon-design-system/carbon-addons-control.svg?branch=master)](https://travis-ci.org/carbon-design-system/carbon-addons-control)
 
-> React components for consistent UX in IBM Cloud.
+> Carbon add-on for React components in IBM Cloud
