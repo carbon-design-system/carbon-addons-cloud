@@ -1,0 +1,200 @@
+//-----------------------------
+// Page Filter
+//-----------------------------
+
+@import 'carbon-components/scss/globals/scss/vars';
+@import 'carbon-components/scss/globals/scss/colors';
+@import 'carbon-components/scss/globals/scss/helper-mixins';
+@import 'carbon-components/scss/globals/scss/layer';
+@import 'carbon-components/scss/globals/scss/typography';
+@import 'carbon-components/scss/globals/scss/import-once';
+@import 'carbon-components/scss/globals/scss/css--reset';
+@import 'carbon-components/scss/globals/scss/css--typography';
+@import 'carbon-components/scss/globals/scss/layout';
+
+@include exports('page-filter') {
+  .bx--page-filter {
+    @include reset;
+    @include font-family;
+    @include typescale('zeta');
+    position: relative;
+    list-style: none;
+    display: block;
+    background-color: $ui-01;
+    border-bottom: 1px solid transparent;
+    width: auto;
+    height: rem(40px);
+    line-height: 1;
+    cursor: pointer;
+    color: $text-01;
+
+    &:focus {
+      @include focus-outline('border');
+    }
+  }
+
+  .bx--page-filter__chevron {
+    fill: $brand-01;
+    width: rem(10px);
+    height: rem(5px);
+    margin-left: 0.5rem;
+    pointer-events: none;
+    transition: transform $transition--expansion $bx--standard-easing;
+    transform-origin: 50% 45%;
+  }
+
+  .bx--page-filter__label {
+    color: $brand-01;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    padding-left: 1px;
+    padding-top: 0;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .bx--page-filter__badge {
+    $dimensions: 21px;
+    background-color: $brand-01;
+    border-radius: 25px;
+    color: $ui-01;
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 300;
+    height: $dimensions;
+    line-height: $dimensions;
+    margin-left: 0.4rem;
+    text-align: center;
+    width: $dimensions;
+  }
+
+  .bx--page-filter[data-value=''] .bx--page-filter-text {
+    color: $text-03;
+  }
+
+  .bx--page-filter-text {
+    align-items: center;
+    display: flex;
+    height: 1.675rem;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0.2rem;
+    padding: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .bx--page-filter-list {
+    @include reset;
+    @include layer('overlay');
+    width: 100%;
+    list-style: none;
+    position: absolute;
+    z-index: z('page-filter');
+    max-height: 0;
+    min-width: 13.75rem;
+    overflow: hidden;
+    transition: $transition--expansion $bx--ease-out;
+    opacity: 0;
+
+    &::-webkit-scrollbar {
+      background-color: transparent;
+      height: 0.5rem;
+      width: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $ui-03;
+      border-radius: 10px;
+
+      &:hover {
+        background-color: $ui-04;
+      }
+    }
+  }
+
+  .bx--page-filter-link {
+    display: block;
+    color: currentColor;
+    text-decoration: none;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1.5rem;
+
+    &:hover,
+    &:focus {
+      background-color: $ui-02;
+      color: $text-01;
+      outline: 1px solid transparent;
+      text-decoration: none;
+    }
+  }
+
+  .bx--page-filter--selected {
+    background-color: $field-01;
+    border-left: 0.25rem solid $brand-01;
+    display: inline-block;
+  }
+
+  .bx--page-filter--open {
+    .bx--page-filter__chevron {
+      transform: rotate(-180deg);
+    }
+
+    .bx--page-filter-list {
+      @include typescale('zeta');
+      @include font-family;
+      display: block;
+      flex-direction: column;
+      background-color: $ui-01;
+      max-height: 16rem;
+      overflow: auto;
+      transition: $transition--expansion $bx--ease-in;
+      opacity: 1;
+    }
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+
+      .bx--page-filter-list {
+        outline: 1px solid $brand-01;
+      }
+    }
+  }
+
+  .bx--page-filter--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.bx--form-item {
+  margin: 0;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: $ui-02;
+  }
+
+  .bx--checkbox-label {
+    height: 46px;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+  }
+
+  &.bx--checkbox-wrapper {
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+}
