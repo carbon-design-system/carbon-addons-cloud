@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import classNames from 'classnames';
-import ClickListener from 'carbon-components-react/es/internal/ClickListener';
-import Icon from 'carbon-components-react/es/components/Icon';
+import ClickListener from 'carbon-components-react/lib/internal/ClickListener';
+import Icon from 'carbon-components-react/lib/components/Icon';
 import './_page-filter.scss';
 
 export default class PageFilter extends PureComponent {
@@ -18,13 +18,13 @@ export default class PageFilter extends PureComponent {
     open: PropTypes.bool,
     iconDescription: PropTypes.string,
     disabled: PropTypes.bool,
-    singleSelect: PropTypes.bool.isRequired,
-    multiSelect: PropTypes.bool.isRequired,
+    type: PropTypes.string,
     label: PropTypes.string.isRequired,
     labelPlural: PropTypes.string.isRequired,
   };
 
   static defaultProps = {
+    type: 'single-select',
     tabIndex: 0,
     open: false,
     disabled: false,
@@ -42,9 +42,9 @@ export default class PageFilter extends PureComponent {
   }
 
   resetState(props) {
-    if (this.props.singleSelect) {
-      const { children, selectedText, value, defaultText, open } = props;
+    const { children, selectedText, value, defaultText, open, type } = props;
 
+    if (type === 'single-select') {
       let matchingChild;
       React.Children.forEach(children, child => {
         if (
@@ -69,9 +69,7 @@ export default class PageFilter extends PureComponent {
       };
     }
 
-    if (this.props.multiSelect) {
-      const { children, open } = props;
-
+    if (type === 'multi-select') {
       const items = [];
 
       React.Children.forEach(children, child => {
@@ -108,14 +106,14 @@ export default class PageFilter extends PureComponent {
   handleItemClick = info => {
     this.props.onChange(info);
 
-    if (this.props.singleSelect) {
+    if (this.props.type === 'single-select') {
       this.setState({
         selectedText: info.itemText,
         value: info.value,
       });
     }
 
-    if (this.props.multiSelect) {
+    if (this.props.type === 'multi-select') {
       const items = [...this.state.items];
       const index = items.findIndex(item => item.value === info.value);
       items[index].checked = !items[index].checked;
@@ -124,11 +122,11 @@ export default class PageFilter extends PureComponent {
   };
 
   selectedText = () => {
-    if (this.props.singleSelect) {
+    if (this.props.type === 'single-select') {
       return <span>{this.state.selectedText}</span>;
     }
 
-    if (this.props.multiSelect) {
+    if (this.props.type === 'multi-select') {
       let selectionCount = 0;
 
       this.state.items.forEach(item => {
@@ -172,8 +170,7 @@ export default class PageFilter extends PureComponent {
           child.props.onClick && child.props.onClick(...args);
           this.handleItemClick(...args);
         },
-        singleSelect: this.props.singleSelect,
-        multiSelect: this.props.multiSelect,
+        type: this.props.type,
       })
     );
 
@@ -187,7 +184,6 @@ export default class PageFilter extends PureComponent {
     const dropdown = (
       <ClickListener onClickOutside={this.close}>
         <ul
-          {...other}
           onClick={this.toggle}
           onKeyPress={this.toggle}
           value={this.state.value}

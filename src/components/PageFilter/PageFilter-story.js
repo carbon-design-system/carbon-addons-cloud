@@ -14,12 +14,17 @@ storiesOf('PageFilter', module)
   .addWithInfo(
     'Single Select',
     `
-          TKTK
+          Single-select page filter.
         `,
     () => (
-      <PageFilter label="Resource Groups" defaultText="None" singleSelect>
+      <PageFilter
+        label="Resource Group"
+        labelPlural="Resource Groups"
+        defaultText="None"
+        type="single-select">
         {items.map(item => (
           <PageFilterItem
+            key={item.value}
             itemText={item.itemText}
             value={item.value}
             checked={item.checked}
@@ -31,21 +36,36 @@ storiesOf('PageFilter', module)
   .addWithInfo(
     'Multi Select',
     `
-          TKTK
+          Multi-select page filter.
         `,
     () => (
       <PageFilter
         label="Cloud Foundry Org"
         labelPlural="Organizations"
         defaultText="None"
-        multiSelect>
+        type="multi-select">
         {items.map(item => (
           <PageFilterItem
+            key={item.value}
             itemText={item.itemText}
             value={item.value}
             checked={item.checked}
           />
         ))}
       </PageFilter>
+    )
+  )
+  .addWithInfo(
+    'Disabled',
+    `
+        Disabled page-filter.
+      `,
+    () => (
+      <PageFilter
+        label="Region"
+        labelPlural="Regions"
+        defaultText="None"
+        disabled
+      />
     )
   );

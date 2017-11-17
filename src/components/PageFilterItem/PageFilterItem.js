@@ -2,9 +2,16 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 
-import Checkbox from 'carbon-components-react/es/components/Checkbox';
+import Checkbox from 'carbon-components-react/lib/components/Checkbox';
 
-const PageFilterItem = ({ className, value, itemText, onClick, ...other }) => {
+const PageFilterItem = ({
+  className,
+  value,
+  itemText,
+  checked,
+  onClick,
+  type,
+}) => {
   const dropdownItemClasses = classNames({
     'bx--page-filter-item': true,
     [className]: className,
@@ -18,13 +25,9 @@ const PageFilterItem = ({ className, value, itemText, onClick, ...other }) => {
     onClick(info);
   };
 
-  if (other.singleSelect) {
+  if (type === 'single-select') {
     return (
-      <li
-        {...other}
-        value={value}
-        className={dropdownItemClasses}
-        onClick={handleClick}>
+      <li value={value} className={dropdownItemClasses} onClick={handleClick}>
         <a
           href="#"
           onClick={/* istanbul ignore next */ evt => evt.preventDefault()}
@@ -35,12 +38,13 @@ const PageFilterItem = ({ className, value, itemText, onClick, ...other }) => {
     );
   }
 
-  if (other.multiSelect) {
+  if (type === 'multi-select') {
     return (
-      <li {...other} value={value} className={dropdownItemClasses}>
+      <li value={value} className={dropdownItemClasses}>
         <Checkbox
+          id={value}
           labelText={itemText}
-          defaultChecked={other.checked}
+          defaultChecked={checked}
           onClick={handleClick}
         />
       </li>
@@ -49,6 +53,8 @@ const PageFilterItem = ({ className, value, itemText, onClick, ...other }) => {
 };
 
 PageFilterItem.propTypes = {
+  singleSelect: PropTypes.bool,
+  multiSelect: PropTypes.bool,
   value: PropTypes.string.isRequired,
   itemText: PropTypes.string.isRequired,
   className: PropTypes.string,
