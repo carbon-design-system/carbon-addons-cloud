@@ -20,7 +20,7 @@ export default class PageFilter extends PureComponent {
     disabled: PropTypes.bool,
     type: PropTypes.string,
     label: PropTypes.string.isRequired,
-    labelPlural: PropTypes.string.isRequired,
+    labelPlural: PropTypes.string,
   };
 
   static defaultProps = {
@@ -46,10 +46,13 @@ export default class PageFilter extends PureComponent {
 
     if (type === 'single-select') {
       let matchingChild;
+      let firstSelected;
+
       React.Children.forEach(children, child => {
         if (
           child.props.itemText === selectedText ||
-          child.props.value === value
+          child.props.value === value ||
+          child.props.checked
         ) {
           matchingChild = child;
         }
@@ -62,6 +65,7 @@ export default class PageFilter extends PureComponent {
           value: matchingChild.props.value,
         };
       }
+
       return {
         open,
         selectedText: defaultText,
@@ -69,6 +73,7 @@ export default class PageFilter extends PureComponent {
       };
     }
 
+    /* istanbul ignore else */
     if (type === 'multi-select') {
       const items = [];
 
@@ -98,6 +103,7 @@ export default class PageFilter extends PureComponent {
     }
 
     // Open on click, enter, or space
+    /* istanbul ignore else */
     if (evt.which === 13 || evt.which === 32 || evt.type === 'click') {
       this.setState({ open: !this.state.open });
     }
@@ -126,6 +132,7 @@ export default class PageFilter extends PureComponent {
       return <span>{this.state.selectedText}</span>;
     }
 
+    /* istanbul ignore else */
     if (this.props.type === 'multi-select') {
       let selectionCount = 0;
 

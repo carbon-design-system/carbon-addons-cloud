@@ -276,7 +276,7 @@ describe('PageFilter', () => {
             />
           </PageFilter>
         );
-        console.log(pageFilter.find('.bx--page-filter-text'));
+
         expect(
           pageFilter
             .find('.bx--page-filter-text')
@@ -285,7 +285,7 @@ describe('PageFilter', () => {
         ).toEqual('Choose something...');
       });
 
-      it('should start with the selected text if only one item is selected', () => {
+      it('should start with the item text if only one item is selected', () => {
         const pageFilter = shallow(
           <PageFilter {...props} defaultText="Choose something...">
             <PageFilterItem
@@ -331,6 +331,97 @@ describe('PageFilter', () => {
       });
     });
 
-    describe('Events', () => {});
+    describe('Events', () => {
+      const props = {
+        label: 'Organization',
+        labelPlural: 'Organizations',
+        className: 'extra-class',
+        defaultText: '--',
+        type: 'multi-select',
+      };
+
+      const onClick = jest.fn();
+
+      const wrapper = mount(
+        <PageFilter {...props} onClick={onClick}>
+          <PageFilterItem
+            className="test-child"
+            itemText="test-child"
+            value="test-child"
+            checked={false}
+          />
+        </PageFilter>
+      );
+
+      const pageFilter = wrapper.find('.bx--page-filter');
+      const child = wrapper.find('.test-child');
+
+      it('should add the open dropdown class on click', () => {
+        pageFilter.simulate('click');
+        expect(
+          wrapper.find('.bx--page-filter').hasClass('bx--page-filter--open')
+        ).toEqual(true);
+      });
+
+      it('should toggle the open dropdown class on Enter', () => {
+        wrapper.setState({ open: false });
+        pageFilter.simulate('keypress', { which: 13 });
+        expect(
+          wrapper.find('.bx--page-filter').hasClass('bx--page-filter--open')
+        ).toEqual(true);
+        pageFilter.simulate('keypress', { which: 13 });
+        expect(
+          wrapper.find('.bx--page-filter').hasClass('bx--page-filter--open')
+        ).toEqual(false);
+      });
+
+      it('should toggle the open dropdown class on Space', () => {
+        wrapper.setState({ open: false });
+        pageFilter.simulate('keypress', { which: 32 });
+        expect(
+          wrapper.find('.bx--page-filter').hasClass('bx--page-filter--open')
+        ).toEqual(true);
+        pageFilter.simulate('keypress', { which: 32 });
+        expect(
+          wrapper.find('.bx--page-filter').hasClass('bx--page-filter--open')
+        ).toEqual(false);
+      });
+
+      it('should update the state when child item is clicked', () => {
+        child
+          .last()
+          .find('.bx--checkbox')
+          .simulate('click');
+        expect(wrapper.state().items[0].checked).toBe(true);
+      });
+
+      it('should close dropdown on click outside', () => {
+        wrapper.setState({ open: true });
+        const listener = wrapper.find(ClickListener);
+        listener.props().onClickOutside();
+        expect(wrapper.state().open).toBe(false);
+      });
+
+      it('should not open when disabled', () => {
+        const wrapper = mount(
+          <PageFilter {...props} onClick={onClick} disabled>
+            <PageFilterItem
+              className="test-child"
+              itemText="test-child"
+              value="test-child"
+            />
+          </PageFilter>
+        );
+        const pageFilter = wrapper.find('.bx--page-filter--disabled');
+
+        pageFilter.simulate('click');
+        expect(pageFilter.hasClass('bx--page-filter--open')).toEqual(false);
+        pageFilter.simulate('keypress', { which: 13 });
+        expect(pageFilter.hasClass('bx--page-filter--open')).toEqual(false);
+        pageFilter.simulate('keypress', { which: 32 });
+        expect(pageFilter.hasClass('bx--page-filter--open')).toEqual(false);
+        expect(wrapper.state().open).toBe(false);
+      });
+    });
   });
 });

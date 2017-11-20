@@ -38,6 +38,7 @@ const PageFilterItem = ({
     );
   }
 
+  /* istanbul ignore else */
   if (type === 'multi-select') {
     return (
       <li value={value} className={dropdownItemClasses}>

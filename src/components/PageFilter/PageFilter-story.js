@@ -19,7 +19,6 @@ storiesOf('PageFilter', module)
     () => (
       <PageFilter
         label="Resource Group"
-        labelPlural="Resource Groups"
         defaultText="None"
         type="single-select">
         {items.map(item => (
@@ -60,12 +59,5 @@ storiesOf('PageFilter', module)
     `
         Disabled page-filter.
       `,
-    () => (
-      <PageFilter
-        label="Region"
-        labelPlural="Regions"
-        defaultText="None"
-        disabled
-      />
-    )
+    () => <PageFilter label="Region" defaultText="None" disabled />
   );
