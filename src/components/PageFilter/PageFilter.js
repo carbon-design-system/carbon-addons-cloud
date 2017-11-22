@@ -178,6 +178,7 @@ export default class PageFilter extends PureComponent {
           this.handleItemClick(...args);
         },
         type: this.props.type,
+        isSelected: child.props.value === this.state.value,
       })
     );
 

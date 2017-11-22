@@ -11,9 +11,11 @@ const PageFilterItem = ({
   checked,
   onClick,
   type,
+  isSelected,
 }) => {
   const dropdownItemClasses = classNames({
     'bx--page-filter-item': true,
+    'bx--page-filter--selected': isSelected && type === 'single-select',
     [className]: className,
   });
 

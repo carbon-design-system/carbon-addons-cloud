@@ -137,6 +137,11 @@
     background-color: $field-01;
     border-left: 0.25rem solid $brand-01;
     display: inline-block;
+    width: 100%;
+
+    .bx--page-filter-link {
+      padding-left: calc(1rem - 0.25rem);
+    }
   }
 
   .bx--page-filter--open {

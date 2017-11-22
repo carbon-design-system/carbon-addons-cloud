@@ -95,7 +95,7 @@ describe('PageFilter', () => {
       });
     });
 
-    describe('events', () => {
+    describe('Events', () => {
       const props = {
         label: 'Organization',
         labelPlural: 'Organizations',
@@ -192,7 +192,7 @@ describe('PageFilter', () => {
     });
   });
 
-  describe('multi-select', () => {
+  describe('Multi Select', () => {
     describe('Renders as expected', () => {
       const props = {
         label: 'Organization',
