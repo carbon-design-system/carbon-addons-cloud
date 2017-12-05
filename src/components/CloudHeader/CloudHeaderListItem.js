@@ -20,11 +20,11 @@ const CloudHeaderListItem = props => {
   return (
     <li style={itemStyles} class={CloudHeaderListItemClasses}>
       {isIcon ? (
-        <button className="cloud-header-list__btn" type="button">
+        <button className="cloud-header-list__btn" type="button" {...other}>
           {children}
         </button>
       ) : (
-        <a className="cloud-header-list__link" href={href}>
+        <a className="cloud-header-list__link" href={href} {...other}>
           {children}
         </a>
       )}

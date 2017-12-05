@@ -10,7 +10,11 @@ const CloudHeaderContainer = props => {
     className
   );
 
-  return <div class={cloudHeaderContainerClasses}>{children}</div>;
+  return (
+    <div class={cloudHeaderContainerClasses} {...other}>
+      {children}
+    </div>
+  );
 };
 
 CloudHeaderContainer.propTypes = {
