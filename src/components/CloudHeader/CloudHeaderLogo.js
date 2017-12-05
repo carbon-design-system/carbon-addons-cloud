@@ -15,7 +15,7 @@ const CloudHeaderLogo = props => {
   const CloudHeaderLogoClasses = classNames('cloud-header-brand', className);
 
   return (
-    <a href={href} class={CloudHeaderLogoClasses} {...other}>
+    <a href={href} className={CloudHeaderLogoClasses} {...other}>
       {children ? (
         <div className="cloud-header-brand__icon">{children}</div>
       ) : null}

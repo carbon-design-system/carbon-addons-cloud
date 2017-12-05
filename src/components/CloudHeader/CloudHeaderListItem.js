@@ -18,7 +18,7 @@ const CloudHeaderListItem = props => {
   }
 
   return (
-    <li style={itemStyles} class={CloudHeaderListItemClasses}>
+    <li style={itemStyles} className={CloudHeaderListItemClasses}>
       {isIcon ? (
         <button className="cloud-header-list__btn" type="button" {...other}>
           {children}

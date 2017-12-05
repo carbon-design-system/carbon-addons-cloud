@@ -8,7 +8,7 @@ const CloudHeaderList = props => {
   const cloudHeaderListClasses = classNames('cloud-header-list', className);
 
   return (
-    <ul class={cloudHeaderListClasses} {...other}>
+    <ul className={cloudHeaderListClasses} {...other}>
       {children}
     </ul>
   );
