@@ -1,0 +1,109 @@
+@import 'carbon-components/scss/globals/scss/colors';
+@import 'carbon-components/scss/globals/scss/helper-mixins';
+
+$cloud-header-link-color: $inverse-01 !default;
+$cloud-header-icon-color: $inverse-01 !default;
+$cloud-header-menu-color: $brand-02 !default;
+$cloud-header-background-color: $color__blue-90 !default;
+
+.cloud-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $cloud-header-background-color;
+  color: $cloud-header-link-color;
+  height: rem(48px);
+  width: 100%;
+
+  a {
+    color: $cloud-header-link-color;
+    text-decoration: none;
+    transition: color $transition--base $bx--standard-easing;
+
+    &:hover {
+      color: $cloud-header-menu-color;
+    }
+  }
+}
+
+.cloud-header__container,
+.cloud-header-brand {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.cloud-header__app-menu {
+  @include button-reset;
+  box-sizing: content-box;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 rem(24px);
+  height: 100%;
+  width: rem(16px);
+
+  svg {
+    fill: $cloud-header-menu-color;
+    width: rem(16px);
+    height: rem(16px);
+  }
+}
+
+.cloud-header-brand__icon {
+  height: rem(32px);
+  width: rem(32px);
+  margin-right: rem(10px);
+}
+
+.cloud-header-brand__text {
+  font-weight: 400;
+
+  span {
+    font-weight: 600;
+  }
+}
+
+.cloud-header-list {
+  margin-left: rem(16px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.cloud-header-list__item {
+  height: 100%;
+  padding: 0 rem(16px);
+  display: flex;
+  align-items: center;
+}
+
+.cloud-header-list__link {
+  @include typescale('zeta');
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  color: $cloud-header-link-color;
+}
+
+.cloud-header-list__btn {
+  @include button-reset;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 rem(16px);
+
+  svg {
+    fill: $cloud-header-icon-color;
+    height: rem(16px);
+    width: rem(16px);
+    transition: fill $transition--base $bx--standard-easing;
+  }
+
+  &:hover svg {
+    fill: $cloud-header-menu-color;
+  }
+}
