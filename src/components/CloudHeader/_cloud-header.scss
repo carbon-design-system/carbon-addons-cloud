@@ -20,7 +20,8 @@ $cloud-header-background-color: $color__blue-90 !default;
     text-decoration: none;
     transition: color $transition--base $bx--standard-easing;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: $cloud-header-menu-color;
     }
   }
@@ -75,13 +76,13 @@ $cloud-header-background-color: $color__blue-90 !default;
 
 .cloud-header-list__item {
   height: 100%;
-  padding: 0 rem(16px);
   display: flex;
   align-items: center;
 }
 
 .cloud-header-list__link {
   @include typescale('zeta');
+  padding: 0 rem(16px);
   height: 100%;
   display: flex;
   align-items: center;
@@ -103,7 +104,16 @@ $cloud-header-background-color: $color__blue-90 !default;
     transition: fill $transition--base $bx--standard-easing;
   }
 
-  &:hover svg {
+  &:hover svg,
+  &:focus svg {
     fill: $cloud-header-menu-color;
   }
+}
+
+.cloud-header-list
+  .cloud-header-list__item:last-of-type
+  .cloud-header-list__btn
+  svg {
+  height: rem(32px);
+  width: rem(32px);
 }
