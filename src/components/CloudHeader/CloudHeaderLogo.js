@@ -12,14 +12,17 @@ const CloudHeaderLogo = props => {
     ...other
   } = props;
 
-  const CloudHeaderLogoClasses = classNames('cloud-header-brand', className);
+  const CloudHeaderLogoClasses = classNames(
+    'bx--cloud-header-brand',
+    className
+  );
 
   return (
     <a href={href} className={CloudHeaderLogoClasses} {...other}>
       {children ? (
-        <div className="cloud-header-brand__icon">{children}</div>
+        <div className="bx--cloud-header-brand__icon">{children}</div>
       ) : null}
-      <h4 className="cloud-header-brand__text">
+      <h4 className="bx--cloud-header-brand__text">
         {companyName}&nbsp;
         <span>{productName}</span>
       </h4>

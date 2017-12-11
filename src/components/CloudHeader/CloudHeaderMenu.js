@@ -6,7 +6,7 @@ const CloudHeaderMenu = props => {
   const { className, ...other } = props;
 
   const cloudHeaderMenuClasses = classNames(
-    'cloud-header__app-menu',
+    'bx--cloud-header__app-menu',
     className
   );
 

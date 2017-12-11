@@ -6,25 +6,21 @@ const CloudHeaderListItem = props => {
   const { children, className, href, isIcon, ...other } = props;
 
   const CloudHeaderListItemClasses = classNames(
-    'cloud-header-list__item',
+    'bx--cloud-header-list__item',
+    isIcon ? 'bx--cloud-header-list__item--icon' : null,
     className
   );
 
   let itemStyles = {};
-  if (isIcon) {
-    itemStyles = {
-      padding: 0,
-    };
-  }
 
   return (
-    <li style={itemStyles} className={CloudHeaderListItemClasses}>
+    <li className={CloudHeaderListItemClasses}>
       {isIcon ? (
-        <button className="cloud-header-list__btn" type="button" {...other}>
+        <button className="bx--cloud-header-list__btn" type="button" {...other}>
           {children}
         </button>
       ) : (
-        <a className="cloud-header-list__link" href={href} {...other}>
+        <a className="bx--cloud-header-list__link" href={href} {...other}>
           {children}
         </a>
       )}

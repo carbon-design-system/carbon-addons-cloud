@@ -17,7 +17,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "carbon-components": "^8.1.2",
+    "carbon-components": "^8.1.13",
     "carbon-components-react": "^5.0.0",
     "carbon-icons": "^6.2.0",
     "classnames": "^2.2.5",

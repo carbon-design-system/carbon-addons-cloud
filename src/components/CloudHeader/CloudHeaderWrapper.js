@@ -2,24 +2,24 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 
-const CloudHeaderContainer = props => {
+const CloudHeaderWrapper = props => {
   const { children, className, ...other } = props;
 
-  const cloudHeaderContainerClasses = classNames(
-    'cloud-header__container',
+  const cloudHeaderWrapperClasses = classNames(
+    'bx--cloud-header__wrapper',
     className
   );
 
   return (
-    <div className={cloudHeaderContainerClasses} {...other}>
+    <div className={cloudHeaderWrapperClasses} {...other}>
       {children}
     </div>
   );
 };
 
-CloudHeaderContainer.propTypes = {
+CloudHeaderWrapper.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
 };
 
-export default CloudHeaderContainer;
+export default CloudHeaderWrapper;

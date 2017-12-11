@@ -6,7 +6,7 @@ $cloud-header-icon-color: $inverse-01 !default;
 $cloud-header-menu-color: $brand-02 !default;
 $cloud-header-background-color: $color__blue-90 !default;
 
-.cloud-header {
+.bx--cloud-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,27 +14,16 @@ $cloud-header-background-color: $color__blue-90 !default;
   color: $cloud-header-link-color;
   height: rem(48px);
   width: 100%;
-
-  a {
-    color: $cloud-header-link-color;
-    text-decoration: none;
-    transition: color $transition--base $bx--standard-easing;
-
-    &:hover,
-    &:focus {
-      color: $cloud-header-menu-color;
-    }
-  }
 }
 
-.cloud-header__container,
-.cloud-header-brand {
+.bx--cloud-header__wrapper,
+.bx--cloud-header-brand {
   height: 100%;
   display: flex;
   align-items: center;
 }
 
-.cloud-header__app-menu {
+.bx--cloud-header__app-menu {
   @include button-reset;
   box-sizing: content-box;
   display: inline-flex;
@@ -51,13 +40,24 @@ $cloud-header-background-color: $color__blue-90 !default;
   }
 }
 
-.cloud-header-brand__icon {
+.bx--cloud-header-brand {
+  text-decoration: none;
+  color: $cloud-header-link-color;
+  transition: color $transition--base $bx--standard-easing;
+
+  &:hover,
+  &:focus {
+    color: $cloud-header-menu-color;
+  }
+}
+
+.bx--cloud-header-brand__icon {
   height: rem(32px);
   width: rem(32px);
   margin-right: rem(10px);
 }
 
-.cloud-header-brand__text {
+.bx--cloud-header-brand__text {
   font-weight: 400;
 
   span {
@@ -65,7 +65,7 @@ $cloud-header-background-color: $color__blue-90 !default;
   }
 }
 
-.cloud-header-list {
+.bx--cloud-header-list {
   margin-left: rem(16px);
   height: 100%;
   display: flex;
@@ -74,13 +74,17 @@ $cloud-header-background-color: $color__blue-90 !default;
   padding: 0;
 }
 
-.cloud-header-list__item {
+.bx--cloud-header-list__item {
   height: 100%;
   display: flex;
   align-items: center;
 }
 
-.cloud-header-list__link {
+.bx--cloud-header-list__item--icon {
+  padding: 0;
+}
+
+.bx--cloud-header-list__link {
   @include typescale('zeta');
   padding: 0 rem(16px);
   height: 100%;
@@ -88,9 +92,16 @@ $cloud-header-background-color: $color__blue-90 !default;
   align-items: center;
   font-weight: 400;
   color: $cloud-header-link-color;
+  text-decoration: none;
+  transition: color $transition--base $bx--standard-easing;
+
+  &:hover,
+  &:focus {
+    color: $cloud-header-menu-color;
+  }
 }
 
-.cloud-header-list__btn {
+.bx--cloud-header-list__btn {
   @include button-reset;
   display: flex;
   align-items: center;
@@ -110,9 +121,9 @@ $cloud-header-background-color: $color__blue-90 !default;
   }
 }
 
-.cloud-header-list
-  .cloud-header-list__item:last-of-type
-  .cloud-header-list__btn
+.bx--cloud-header-list
+  .bx--cloud-header-list__item:last-of-type
+  .bx--cloud-header-list__btn
   svg {
   height: rem(32px);
   width: rem(32px);

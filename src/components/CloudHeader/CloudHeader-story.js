@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import CloudHeader from './CloudHeader';
-import CloudHeaderContainer from './CloudHeaderContainer';
+import CloudHeaderWrapper from './CloudHeaderWrapper';
 import CloudHeaderMenu from './CloudHeaderMenu';
 import CloudHeaderLogo from './CloudHeaderLogo';
 import CloudHeaderList from './CloudHeaderList';
@@ -14,7 +14,7 @@ storiesOf('CloudHeader', module).addWithInfo(
     `,
   () => (
     <CloudHeader>
-      <CloudHeaderContainer>
+      <CloudHeaderWrapper>
         <CloudHeaderMenu />
         <CloudHeaderLogo>
           <svg
@@ -30,11 +30,11 @@ storiesOf('CloudHeader', module).addWithInfo(
                 y2="10103.45"
                 gradientTransform="scale(-1 1) rotate(-45 -9605.065 11330.987)"
                 gradientUnits="userSpaceOnUse">
-                <stop stop-color="#fff" offset=".2" stop-opacity="0" />
-                <stop stop-color="#fff" offset=".287" stop-opacity=".03" />
-                <stop stop-color="#fff" offset=".501" stop-opacity=".2" />
-                <stop stop-color="#fff" offset=".793" stop-opacity=".742" />
-                <stop stop-color="#fff" offset="1" />
+                <stop stopColor="#fff" offset=".2" stopOpacity="0" />
+                <stop stopColor="#fff" offset=".287" stopOpacity=".03" />
+                <stop stopColor="#fff" offset=".501" stopOpacity=".2" />
+                <stop stopColor="#fff" offset=".793" stopOpacity=".742" />
+                <stop stopColor="#fff" offset="1" />
               </linearGradient>
               <linearGradient
                 id="b"
@@ -44,9 +44,9 @@ storiesOf('CloudHeader', module).addWithInfo(
                 y2="88.378"
                 gradientTransform="matrix(1 0 0 -1 -5.791 224.135)"
                 gradientUnits="userSpaceOnUse">
-                <stop stop-color="#fff" offset=".08" />
-                <stop stop-color="#fff" offset=".753" stop-opacity=".07" />
-                <stop stop-color="#fff" offset=".875" stop-opacity="0" />
+                <stop stopColor="#fff" offset=".08" />
+                <stop stopColor="#fff" offset=".753" stopOpacity=".07" />
+                <stop stopColor="#fff" offset=".875" stopOpacity="0" />
               </linearGradient>
               <linearGradient
                 id="c"
@@ -56,10 +56,10 @@ storiesOf('CloudHeader', module).addWithInfo(
                 y2="125.816"
                 gradientTransform="matrix(1 0 0 -1 -5.791 224.135)"
                 gradientUnits="userSpaceOnUse">
-                <stop stop-color="#fff" offset=".138" stop-opacity="0" />
-                <stop stop-color="#fff" offset=".32" stop-opacity=".07" />
-                <stop stop-color="#fff" offset=".847" stop-opacity=".764" />
-                <stop stop-color="#fff" offset=".947" />
+                <stop stopColor="#fff" offset=".138" stopOpacity="0" />
+                <stop stopColor="#fff" offset=".32" stopOpacity=".07" />
+                <stop stopColor="#fff" offset=".847" stopOpacity=".764" />
+                <stop stopColor="#fff" offset=".947" />
               </linearGradient>
             </defs>
             <path
@@ -89,8 +89,8 @@ storiesOf('CloudHeader', module).addWithInfo(
           <CloudHeaderListItem>Support</CloudHeaderListItem>
           <CloudHeaderListItem>Manage</CloudHeaderListItem>
         </CloudHeaderList>
-      </CloudHeaderContainer>
-      <CloudHeaderContainer>
+      </CloudHeaderWrapper>
+      <CloudHeaderWrapper>
         <CloudHeaderList>
           <CloudHeaderListItem isIcon>
             <svg viewBox="0 0 16 16" fillRule="evenodd">
@@ -126,7 +126,7 @@ storiesOf('CloudHeader', module).addWithInfo(
             </svg>
           </CloudHeaderListItem>
         </CloudHeaderList>
-      </CloudHeaderContainer>
+      </CloudHeaderWrapper>
     </CloudHeader>
   )
 );

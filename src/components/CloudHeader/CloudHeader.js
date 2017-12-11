@@ -5,7 +5,7 @@ import classNames from 'classnames';
 const CloudHeader = props => {
   const { children, className, ...other } = props;
 
-  const cloudHeaderClasses = classNames('cloud-header', className);
+  const cloudHeaderClasses = classNames('bx--cloud-header', className);
 
   return (
     <nav className={cloudHeaderClasses} {...other}>

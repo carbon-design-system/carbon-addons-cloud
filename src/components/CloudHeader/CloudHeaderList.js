@@ -5,7 +5,7 @@ import classNames from 'classnames';
 const CloudHeaderList = props => {
   const { children, className, ...other } = props;
 
-  const cloudHeaderListClasses = classNames('cloud-header-list', className);
+  const cloudHeaderListClasses = classNames('bx--cloud-header-list', className);
 
   return (
     <ul className={cloudHeaderListClasses} {...other}>
