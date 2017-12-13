@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import CloudHeader from './CloudHeader';
 import CloudHeaderWrapper from './CloudHeaderWrapper';
 import CloudHeaderMenu from './CloudHeaderMenu';
@@ -87,12 +88,11 @@ storiesOf('CloudHeader', module).addWithInfo(
         companyName="IBM"
         productName="Cloud"
         logoHref="https://www.ibm.com/cloud/"
-        showMenu
-        showSearch
-        showNotification
-        showApplications
-        showUser
         renderMenu={() => <span>Menu</span>}
+        renderSearch={() => console.log('Search Click')}
+        renderNotification={() => console.log('Notification Click')}
+        renderApplications={() => console.log('Application Click')}
+        renderUser={() => console.log('User Click')}
         renderLogo={() => logo}
         links={[
           { href: 'www.google.com', linkText: 'Catalog' },

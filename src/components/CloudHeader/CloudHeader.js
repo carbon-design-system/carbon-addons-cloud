@@ -30,17 +30,16 @@ export default class CloudHeaderV2 extends React.Component {
 
   render() {
     const {
+      className,
       companyName,
       productName,
       logoHref,
       renderMenu,
       renderLogo,
-      className,
-      showMenu,
-      showSearch,
-      showNotification,
-      showApplications,
-      showUser,
+      renderSearch,
+      renderNotification,
+      renderApplications,
+      renderUser,
       links,
       ...other
     } = this.props;
@@ -50,8 +49,9 @@ export default class CloudHeaderV2 extends React.Component {
     return (
       <nav key="nav" className={cloudHeaderClasses} {...other}>
         <CloudHeaderWrapper>
-          {showMenu && <CloudHeaderMenu onClick={this.handleMenuClick} />}
+          {renderMenu && <CloudHeaderMenu onClick={this.handleMenuClick} />}
           <CloudHeaderLogo
+            className={!renderMenu && 'bx--cloud-header-brand--no-menu'}
             companyName={companyName}
             productName={productName}
             href={logoHref}>
@@ -70,8 +70,8 @@ export default class CloudHeaderV2 extends React.Component {
         </CloudHeaderWrapper>
         <CloudHeaderWrapper>
           <CloudHeaderList>
-            {showSearch && (
-              <CloudHeaderListItem isIcon>
+            {renderSearch && (
+              <CloudHeaderListItem onClick={renderSearch} isIcon>
                 <svg viewBox="0 0 16 16" fillRule="evenodd">
                   <title>search</title>
                   <path d="M6 2c2.2 0 4 1.8 4 4s-1.8 4-4 4-4-1.8-4-4 1.8-4 4-4zm0-2C2.7 0 0 2.7 0 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm10 13.8L13.8 16l-3.6-3.6 2.2-2.2z" />
@@ -79,16 +79,16 @@ export default class CloudHeaderV2 extends React.Component {
                 </svg>
               </CloudHeaderListItem>
             )}
-            {showNotification && (
-              <CloudHeaderListItem isIcon>
+            {renderNotification && (
+              <CloudHeaderListItem onClick={renderNotification} isIcon>
                 <svg width="16" height="16">
                   <title>notifications</title>
                   <path d="M9 1.11V0H7v1.11A5.022 5.022 0 0 0 3.1 4.9L1 14h5a2 2 0 0 0 4 0h5l-2.1-9.1A5.022 5.022 0 0 0 9 1.11z" />
                 </svg>
               </CloudHeaderListItem>
             )}
-            {showApplications && (
-              <CloudHeaderListItem isIcon>
+            {renderApplications && (
+              <CloudHeaderListItem onClick={renderApplications} isIcon>
                 <svg width="16" height="16">
                   <title>applications</title>
                   <circle cx="2" cy="2" r="2" />
@@ -103,9 +103,11 @@ export default class CloudHeaderV2 extends React.Component {
                 </svg>
               </CloudHeaderListItem>
             )}
-            {showUser && (
-              <CloudHeaderListItem isIcon>
-                <svg viewBox="0 0 24 24">
+            {renderUser && (
+              <CloudHeaderListItem onClick={renderUser} isIcon>
+                <svg
+                  className="bx--cloud-header__user-icon"
+                  viewBox="0 0 24 24">
                   <title>user</title>
                   <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 4.6c2.8 0 5 2.2 5 5s-2.2 5-5 5-5-2.2-5-5 2.2-5 5-5zm7 14.5c-1.8 1.8-4.3 2.9-7 2.9s-5.2-1.1-7-2.9v-1.6c0-1.3.7-2 2-2h10c1.3 0 2 .7 2 2v1.6z" />
                 </svg>
