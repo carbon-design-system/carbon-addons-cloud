@@ -13,6 +13,7 @@
     "commitmsg": "validate-commit-msg",
     "prettier": "prettier --write \"**/*.{js,css,scss}\"",
     "precommit": "lint-staged",
+    "start": "yarn storybook",
     "storybook": "start-storybook -p 3000",
     "test": "jest"
   },
