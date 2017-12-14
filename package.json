@@ -2,14 +2,12 @@
   "name": "carbon-addons-cloud",
   "version": "0.1.0",
   "main": "lib/index.js",
-  "files": [
-    "lib"
-  ],
+  "files": ["lib"],
   "scripts": {
     "build": "yarn clean && yarn build:js && yarn build:scss",
     "build:js": "babel -q -d lib --ignore \"__tests__,__mocks__\" src",
     "build:scss": "cpx src/**/*.scss scss",
-    "build:storybook": "build-storybook",
+    "build:storybook": "build-storybook -o deploy/static",
     "ci-check": "yarn test --runInBand",
     "clean": "rimraf lib scss",
     "commitmsg": "validate-commit-msg",
@@ -61,12 +59,7 @@
     "whatwg-fetch": "^2.0.3"
   },
   "babel": {
-    "presets": [
-      "env",
-      "stage-1",
-      "react",
-      "flow"
-    ]
+    "presets": ["env", "stage-1", "react", "flow"]
   },
   "prettier": {
     "jsxBracketSameLine": true,
@@ -75,14 +68,8 @@
     "trailingComma": "es5"
   },
   "lint-staged": {
-    "*.js": [
-      "prettier",
-      "git add"
-    ],
-    "*.{css,scss}": [
-      "prettier",
-      "git add"
-    ]
+    "*.js": ["prettier", "git add"],
+    "*.{css,scss}": ["prettier", "git add"]
   },
   "config": {
     "validate-commit-msg": {
@@ -104,9 +91,7 @@
     }
   },
   "jest": {
-    "collectCoverageFrom": [
-      "components/**/*.js"
-    ],
+    "collectCoverageFrom": ["components/**/*.js"],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
       "<rootDir>/config/jest/setup.js"
@@ -121,19 +106,9 @@
       "^.+\\.s?css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "testPathIgnorePatterns": [
-      "/config/",
-      "/lib/"
-    ],
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "json"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "testPathIgnorePatterns": ["/config/", "/lib/"],
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
+    "moduleFileExtensions": ["js", "json"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   }
 }
