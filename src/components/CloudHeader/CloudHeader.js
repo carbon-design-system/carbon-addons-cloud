@@ -29,6 +29,9 @@ export default class CloudHeaderV2 extends React.Component {
     this.setState({
       [key]: !this.state[key],
     });
+
+    const propFunc = `render${type}`;
+    this.props[propFunc]();
   };
 
   componentDidMount() {
@@ -50,7 +53,7 @@ export default class CloudHeaderV2 extends React.Component {
       renderLogo,
       renderSearch,
       renderNotification,
-      renderApplications,
+      renderApplication,
       renderUser,
       links,
       ...other
@@ -136,7 +139,7 @@ export default class CloudHeaderV2 extends React.Component {
                 {notificationIcon}
               </CloudHeaderListItem>
             )}
-            {renderApplications && (
+            {renderApplication && (
               <CloudHeaderListItem
                 onClick={this.handleIconClick}
                 data-icon="Application"

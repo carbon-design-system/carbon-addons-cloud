@@ -38,16 +38,25 @@ $cloud-header-background-color: $color__blue-90 !default;
     width: rem(16px);
     height: rem(16px);
   }
+
+  &:focus {
+    @include focus-outline('border');
+  }
 }
 
 .bx--cloud-header-brand {
   text-decoration: none;
   color: $cloud-header-link-color;
   transition: color $transition--base $bx--standard-easing;
+  padding-right: rem(16px);
 
   &:hover,
   &:focus {
     color: $cloud-header-menu-color;
+  }
+
+  &:focus {
+    @include focus-outline('border');
   }
 }
 
@@ -102,6 +111,10 @@ $cloud-header-background-color: $color__blue-90 !default;
   &:focus {
     color: $cloud-header-menu-color;
   }
+
+  &:focus {
+    @include focus-outline('border');
+  }
 }
 
 .bx--cloud-header-list__btn {
@@ -121,6 +134,10 @@ $cloud-header-background-color: $color__blue-90 !default;
   &:hover svg,
   &:focus svg {
     fill: $cloud-header-menu-color;
+  }
+
+  &:focus {
+    @include focus-outline('border');
   }
 }
 

@@ -89,10 +89,10 @@ storiesOf('CloudHeader', module).addWithInfo(
         productName="Cloud"
         logoHref="https://www.ibm.com/cloud/"
         renderMenu={() => <span>Menu</span>}
-        renderSearch={() => console.log('Search Click')}
-        renderNotification={() => console.log('Notification Click')}
-        renderApplications={() => console.log('Application Click')}
-        renderUser={() => console.log('User Click')}
+        renderSearch={() => console.log('Render Search')}
+        renderNotification={() => console.log('Render Notification')}
+        renderApplication={() => console.log('Render Application')}
+        renderUser={() => console.log('Render User')}
         renderLogo={() => logo}
         links={[
           { href: 'www.google.com', linkText: 'Catalog' },

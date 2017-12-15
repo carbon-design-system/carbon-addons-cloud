@@ -1,5 +1,7 @@
 ---
 applications:
-- name: carbon-addons-cloud-tj
+- name: carbon-addon-cloud-storybook-test
   memory: 64M
   buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
+  routes:
+  - route: carbon-addon-cloud-storybook-test.mybluemix.net

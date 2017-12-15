@@ -7,7 +7,7 @@
     "build": "yarn clean && yarn build:js && yarn build:scss",
     "build:js": "babel -q -d lib --ignore \"__tests__,__mocks__\" src",
     "build:scss": "cpx src/**/*.scss scss",
-    "build:storybook": "build-storybook -o deploy/static",
+    "build:storybook": "build-storybook",
     "ci-check": "yarn test --runInBand",
     "clean": "rimraf lib scss",
     "commitmsg": "validate-commit-msg",
