@@ -7,6 +7,7 @@ import CloudHeaderMenu from './CloudHeaderMenu';
 import CloudHeaderLogo from './CloudHeaderLogo';
 import CloudHeaderList from './CloudHeaderList';
 import CloudHeaderListItem from './CloudHeaderListItem';
+import { Search } from 'carbon-components-react';
 
 storiesOf('CloudHeader', module).addWithInfo(
   'default',
@@ -89,10 +90,42 @@ storiesOf('CloudHeader', module).addWithInfo(
         productName="Cloud"
         logoHref="https://www.ibm.com/cloud/"
         renderMenu={() => <span>Menu</span>}
-        renderSearch={() => console.log('Render Search')}
-        renderNotification={() => console.log('Render Notification')}
-        renderApplication={() => console.log('Render Application')}
-        renderUser={() => console.log('Render User')}
+        renderSearch={() => (
+          <Search
+            className="some-class"
+            small
+            id="search-2"
+            labelText="Search"
+            placeHolderText="Search"
+          />
+        )}
+        renderNotification={() => (
+          <ul className="list">
+            <li>Notification 1</li>
+            <li>Notification 2</li>
+            <li>Notification 3</li>
+            <li>Notification 4</li>
+            <li>Notification 5</li>
+          </ul>
+        )}
+        renderApplication={() => (
+          <ul className="list">
+            <li>Application 1</li>
+            <li>Application 2</li>
+            <li>Application 3</li>
+            <li>Application 4</li>
+            <li>Application 5</li>
+          </ul>
+        )}
+        renderUser={() => (
+          <ul className="list">
+            <li>User 1</li>
+            <li>User 2</li>
+            <li>User 3</li>
+            <li>User 4</li>
+            <li>User 5</li>
+          </ul>
+        )}
         renderLogo={() => logo}
         links={[
           { href: 'www.google.com', linkText: 'Catalog' },

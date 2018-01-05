@@ -7,3 +7,18 @@ $css--reset: true;
 .storybook-container > div {
   width: 100%;
 }
+
+.list {
+  background-color: #fff;
+  width: rem(200px);
+  position: absolute;
+  right: 0;
+  top: 100%;
+  min-height: 200px;
+  font-size: rem(18px);
+
+  li {
+    padding: 0.5rem;
+    text-align: left;
+  }
+}

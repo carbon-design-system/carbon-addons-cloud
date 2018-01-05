@@ -90,6 +90,7 @@ $cloud-header-background-color: $color__blue-90 !default;
   height: 100%;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .bx--cloud-header-list__item--icon {

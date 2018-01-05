@@ -45,7 +45,7 @@ const userIcon = (
   </svg>
 );
 
-export default class CloudHeaderV2 extends React.Component {
+export default class CloudHeader extends React.Component {
   state = {
     isMenuActive: false,
     isSearchActive: false,
@@ -55,13 +55,21 @@ export default class CloudHeaderV2 extends React.Component {
   };
 
   handleIconClick = type => evt => {
-    const key = `is${type}Active`;
-    this.setState({
-      [key]: !this.state[key],
-    });
+    Object.keys(this.state).forEach(key => {
+      const clickType = `is${type}Active`;
+      if (key === clickType) {
+        this.setState({
+          [clickType]: !this.state[clickType],
+        });
 
-    const propFunc = `render${type}`;
-    this.props[propFunc]();
+        const propFunc = `render${type}`;
+        this.props[propFunc]();
+      } else {
+        this.setState({
+          [key]: false,
+        });
+      }
+    });
   };
 
   componentDidMount() {
@@ -89,7 +97,14 @@ export default class CloudHeaderV2 extends React.Component {
       ...other
     } = this.props;
 
-    const { isMenuActive } = this.state;
+    const {
+      isMenuActive,
+      isSearchActive,
+      isNotificationActive,
+      isApplicationActive,
+      isUserActive,
+    } = this.state;
+
     const cloudHeaderClasses = classNames('bx--cloud-header', className);
 
     return (
@@ -117,6 +132,7 @@ export default class CloudHeaderV2 extends React.Component {
           </CloudHeaderList>
         </CloudHeaderWrapper>
         <CloudHeaderWrapper>
+          {isSearchActive && renderSearch && renderSearch()}
           <CloudHeaderList>
             {renderSearch && (
               <CloudHeaderListItem
@@ -130,6 +146,7 @@ export default class CloudHeaderV2 extends React.Component {
                 onClick={this.handleIconClick('Notification')}
                 isIcon>
                 {notificationIcon}
+                {isNotificationActive && renderNotification()}
               </CloudHeaderListItem>
             )}
             {renderApplication && (
@@ -137,6 +154,7 @@ export default class CloudHeaderV2 extends React.Component {
                 onClick={this.handleIconClick('Application')}
                 isIcon>
                 {applicationIcon}
+                {isApplicationActive && renderApplication()}
               </CloudHeaderListItem>
             )}
             {renderUser && (
@@ -144,6 +162,7 @@ export default class CloudHeaderV2 extends React.Component {
                 onClick={this.handleIconClick('User')}
                 isIcon>
                 {userIcon}
+                {isUserActive && renderUser()}
               </CloudHeaderListItem>
             )}
           </CloudHeaderList>
