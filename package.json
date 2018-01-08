@@ -2,10 +2,14 @@
   "name": "carbon-addons-cloud",
   "version": "0.1.0",
   "main": "lib/index.js",
-  "files": ["lib"],
+  "license": "Apache-2",
+  "files": [
+    "lib",
+    "scss"
+  ],
   "scripts": {
     "build": "yarn clean && yarn build:js && yarn build:scss",
-    "build:js": "babel -q -d lib --ignore \"__tests__,__mocks__\" src",
+    "build:js": "babel -q -d lib --ignore \"__tests__,__mocks__,*-story.js\" src",
     "build:scss": "cpx src/**/*.scss scss",
     "build:storybook": "build-storybook",
     "ci-check": "yarn test --runInBand",
@@ -13,6 +17,8 @@
     "commitmsg": "validate-commit-msg",
     "prettier": "prettier --write \"**/*.{js,css,scss}\"",
     "precommit": "lint-staged",
+    "prepublish": "yarn build",
+    "semantic-release": "semantic-release",
     "start": "yarn storybook",
     "storybook": "start-storybook -p 3000",
     "test": "jest"
@@ -56,13 +62,22 @@
     "promise": "^8.0.1",
     "rimraf": "^2.6.2",
     "sass-loader": "^6.0.6",
+    "semantic-release": "^11.0.2",
     "storybook-addon-a11y": "^3.1.9",
     "style-loader": "^0.19.0",
     "validate-commit-msg": "^2.14.0",
     "whatwg-fetch": "^2.0.3"
   },
+  "release": {
+    "branch": "master"
+  },
   "babel": {
-    "presets": ["env", "stage-1", "react", "flow"]
+    "presets": [
+      "env",
+      "stage-1",
+      "react",
+      "flow"
+    ]
   },
   "prettier": {
     "jsxBracketSameLine": true,
@@ -71,8 +86,14 @@
     "trailingComma": "es5"
   },
   "lint-staged": {
-    "*.js": ["prettier", "git add"],
-    "*.{css,scss}": ["prettier", "git add"]
+    "*.js": [
+      "prettier",
+      "git add"
+    ],
+    "*.{css,scss}": [
+      "prettier",
+      "git add"
+    ]
   },
   "config": {
     "validate-commit-msg": {
@@ -94,7 +115,9 @@
     }
   },
   "jest": {
-    "collectCoverageFrom": ["components/**/*.js"],
+    "collectCoverageFrom": [
+      "components/**/*.js"
+    ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
       "<rootDir>/config/jest/setup.js"
@@ -109,9 +132,19 @@
       "^.+\\.s?css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "testPathIgnorePatterns": ["/config/", "/lib/"],
-    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
-    "moduleFileExtensions": ["js", "json"],
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "testPathIgnorePatterns": [
+      "/config/",
+      "/lib/"
+    ],
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }

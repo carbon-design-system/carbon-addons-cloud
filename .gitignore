@@ -3,6 +3,7 @@ node_modules
 lib
 scss
 static
+storybook-static
 
 # Logs
 *.log
