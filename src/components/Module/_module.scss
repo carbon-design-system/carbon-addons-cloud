@@ -1,0 +1,71 @@
+@import '../../../node_modules/carbon-components/scss/globals/scss/colors';
+@import '../../../node_modules/carbon-components/scss/globals/scss/helper-mixins';
+@import '../../../node_modules/carbon-components/scss/globals/scss/layout';
+@import '../../../node_modules/carbon-components/scss/globals/scss/typography';
+@import '../../../node_modules/carbon-components/scss/globals/scss/import-once';
+@import '../../../node_modules/carbon-components/scss/globals/scss/css--reset';
+@import '../../../node_modules/carbon-components/scss/globals/scss/css--typography';
+
+@include exports('modules') {
+  .bx--module {
+    @include reset;
+    @include font-family;
+    display: flex;
+    flex-direction: column;
+    padding: rem(10px);
+    flex: 1 0 auto;
+    margin: 0;
+
+    .bx--module__inner {
+      @include layer('raised');
+      background-color: $ui-01;
+      border: 1px solid transparent;
+    }
+
+    .bx--module__header {
+      display: flex;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid $ui-04;
+    }
+
+    .bx--module__title {
+      @include typescale('zeta');
+      @include font-smoothing;
+      letter-spacing: 0;
+      font-weight: 600;
+      color: $text-01;
+    }
+
+    .bx--module__content {
+      display: flex;
+      flex-direction: column;
+      flex: 3;
+      padding: 1.5rem;
+
+      p {
+        @include typescale('zeta');
+      }
+    }
+
+    .bx--module__content--centered {
+      align-items: center;
+      justify-content: center;
+      padding: 5rem;
+    }
+
+    .bx--module__content--scrollable {
+      max-height: rem(300px);
+      overflow-y: scroll;
+      margin-bottom: 2rem;
+    }
+
+    &.bx--module--single {
+      max-width: rem(500px);
+    }
+
+    &.bx--module--double {
+      max-width: rem(1000px);
+    }
+  }
+}
