@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "yarn clean && yarn build:js && yarn build:scss",
-    "build:js": "babel -q -d lib --ignore \"__tests__,__mocks__,*-story.js\" src",
+    "build:js": "babel -q -d lib --ignore \"__tests__,__mocks__,*-story.js,*-test.js\" src",
     "build:scss": "cpx src/**/*.scss scss",
     "build:storybook": "build-storybook",
     "ci-check": "yarn test --runInBand",
@@ -30,7 +30,8 @@
     "classnames": "^2.2.5",
     "prop-types": "^15.6.0",
     "react": "^16.1.0",
-    "react-dom": "^16.1.0"
+    "react-dom": "^16.1.0",
+    "window-or-global": "^1.0.1"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.15",
