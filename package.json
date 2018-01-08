@@ -1,5 +1,6 @@
 {
   "name": "carbon-addons-cloud",
+  "version": "0.1.0",
   "main": "lib/index.js",
   "license": "Apache-2",
   "files": [
@@ -17,7 +18,7 @@
     "prettier": "prettier --write \"**/*.{js,css,scss}\"",
     "precommit": "lint-staged",
     "prepublish": "yarn build",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "semantic-release": "semantic-release",
     "start": "yarn storybook",
     "storybook": "start-storybook -p 3000",
     "test": "jest"
@@ -66,6 +67,9 @@
     "style-loader": "^0.19.0",
     "validate-commit-msg": "^2.14.0",
     "whatwg-fetch": "^2.0.3"
+  },
+  "release": {
+    "branch": "master"
   },
   "babel": {
     "presets": [
