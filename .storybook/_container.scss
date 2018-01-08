@@ -1,7 +1,16 @@
-$css--font-face: true;
-$css--reset: true;
+$css--font-face: false !default;
+$css--helpers: true !default;
+$css--body: true !default;
+$css--use-layer: true !default;
+$css--reset: true !default;
+$css--typography: true !default;
+$css--plex: true !default;
 
-@import '~carbon-components/scss/globals/scss/styles';
+@import '~carbon-components/scss/globals/scss/css--reset';
+@import '~carbon-components/scss/globals/scss/css--font-face';
+@import '~carbon-components/scss/globals/scss/css--helpers';
+@import '~carbon-components/scss/globals/scss/css--body';
+@import '~carbon-components/scss/globals/scss/css--typography';
 @import '../src/index';
 
 .storybook-container > div {
