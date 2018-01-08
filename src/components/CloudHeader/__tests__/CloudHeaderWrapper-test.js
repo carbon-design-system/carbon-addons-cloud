@@ -1,6 +1,6 @@
 import React from 'react';
-import CloudHeaderWrapper from './CloudHeaderWrapper';
-import CloudHeaderMenu from './CloudHeaderMenu';
+import CloudHeaderWrapper from '../CloudHeaderWrapper';
+import CloudHeaderMenu from '../CloudHeaderMenu';
 import { shallow, mount } from 'enzyme';
 
 describe('CloudHeaderWrapper', () => {

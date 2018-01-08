@@ -1,5 +1,5 @@
 import React from 'react';
-import CloudHeaderListItem from './CloudHeaderListItem';
+import CloudHeaderListItem from '../CloudHeaderListItem';
 import { shallow, mount } from 'enzyme';
 
 describe('CloudHeaderListItem', () => {

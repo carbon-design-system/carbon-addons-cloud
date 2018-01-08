@@ -1,5 +1,5 @@
 import React from 'react';
-import CloudHeaderLogo from './CloudHeaderLogo';
+import CloudHeaderLogo from '../CloudHeaderLogo';
 import { shallow, mount } from 'enzyme';
 
 describe('CloudHeaderLogo', () => {
