@@ -18,6 +18,9 @@ before_install:
 script:
   - yarn ci-check
 
+after_success:
+  - yarn semantic-release
+
 before_deploy:
   - yarn build-storybook
 

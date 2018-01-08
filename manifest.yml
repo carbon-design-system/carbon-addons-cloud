@@ -4,4 +4,5 @@ applications:
   memory: 64M
   buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
   routes:
-  - route: carbon-addon-cloud-storybook-test.mybluemix.net
+  - route: carbon-addon-cloud-storybook.mybluemix.net
+  - route: cloud-addon.carbondesignsystem.com
