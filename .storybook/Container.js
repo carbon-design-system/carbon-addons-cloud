@@ -7,6 +7,7 @@ export default class Container extends Component {
 
     return (
       <div
+        className="storybook-container"
         style={{
           padding: '3em',
           display: 'flex',
