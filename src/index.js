@@ -1,8 +1,2 @@
-export {
-  CloudHeader,
-  CloudHeaderContainer,
-  CloudHeaderList,
-  CloudHeaderListItem,
-  CloudHeaderLogo,
-  CloudHeaderMenu,
-} from './components/CloudHeader';
+export * from './components/CloudHeader';
+export { default as CloudHeader } from './components/CloudHeader';
