@@ -1,5 +1,5 @@
 import React from 'react';
-import CloudHeaderMenu from '../CloudHeaderMenu';
+import { CloudHeaderMenu } from '../../CloudHeader';
 import { shallow, mount } from 'enzyme';
 
 describe('CloudHeaderMenu', () => {
