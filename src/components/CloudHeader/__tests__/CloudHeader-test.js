@@ -1,5 +1,5 @@
 import React from 'react';
-import CloudHeader from '../CloudHeader';
+import CloudHeader from '../../CloudHeader';
 import { shallow, mount } from 'enzyme';
 
 describe('CloudHeader', () => {

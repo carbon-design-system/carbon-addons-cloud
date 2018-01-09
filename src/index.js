@@ -5,14 +5,8 @@ export CardContent from './components/CardContent';
 export CardFooter from './components/CardFooter';
 export CardStatus from './components/CardStatus';
 
-export {
-  CloudHeader,
-  CloudHeaderContainer,
-  CloudHeaderList,
-  CloudHeaderListItem,
-  CloudHeaderLogo,
-  CloudHeaderMenu,
-} from './components/CloudHeader';
+export * from './components/CloudHeader';
+export { default as CloudHeader } from './components/CloudHeader';
 
 export DetailPageHeader from './components/DetailPageHeader';
 
