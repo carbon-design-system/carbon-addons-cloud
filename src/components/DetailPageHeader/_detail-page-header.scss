@@ -1,15 +1,15 @@
-@import '../../../node_modules/carbon-components/scss/globals/scss/colors';
-@import '../../../node_modules/carbon-components/scss/globals/scss/vars';
-@import '../../../node_modules/carbon-components/scss/globals/scss/helper-mixins';
-@import '../../../node_modules/carbon-components/scss/globals/scss/layout';
-@import '../../../node_modules/carbon-components/scss/globals/scss/layer';
-@import '../../../node_modules/carbon-components/scss/globals/scss/typography';
-@import '../../../node_modules/carbon-components/scss/globals/scss/import-once';
-@import '../../../node_modules/carbon-components/scss/globals/scss/css--reset';
-@import '../../../node_modules/carbon-components/scss/globals/scss/css--typography';
-@import '../../../node_modules/carbon-components/scss/components/breadcrumb/breadcrumb';
-@import '../../../node_modules/carbon-components/scss/components/overflow-menu/overflow-menu';
-@import '../../../node_modules/carbon-components/scss/components/tabs/tabs';
+@import 'carbon-components/scss/globals/scss/colors';
+@import 'carbon-components/scss/globals/scss/vars';
+@import 'carbon-components/scss/globals/scss/helper-mixins';
+@import 'carbon-components/scss/globals/scss/layout';
+@import 'carbon-components/scss/globals/scss/layer';
+@import 'carbon-components/scss/globals/scss/typography';
+@import 'carbon-components/scss/globals/scss/import-once';
+@import 'carbon-components/scss/globals/scss/css--reset';
+@import 'carbon-components/scss/globals/scss/css--typography';
+@import 'carbon-components/scss/components/breadcrumb/breadcrumb';
+@import 'carbon-components/scss/components/overflow-menu/overflow-menu';
+@import 'carbon-components/scss/components/tabs/tabs';
 @import 'mixins';
 
 @include exports('detail-page-header') {
