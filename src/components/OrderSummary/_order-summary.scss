@@ -1,6 +1,6 @@
-@import '../../../node_modules/carbon-components/scss/globals/scss/colors';
-@import '../../../node_modules/carbon-components/scss/globals/scss/mixins';
-@import '../../../node_modules/carbon-components/scss/components/dropdown/dropdown';
+@import 'carbon-components/scss/globals/scss/colors';
+@import 'carbon-components/scss/globals/scss/mixins';
+@import 'carbon-components/scss/components/dropdown/dropdown';
 
 @include exports('order-summary') {
   .bx--order-summary {

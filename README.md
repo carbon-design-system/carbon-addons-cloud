@@ -29,10 +29,12 @@ The package also ships with the components Sass files as well. To use these, all
 
 ```scss
 // Default import path relative to `node_modules`
-@import 'node_modules/carbon-addons-cloud/scss/index.scss'
+@import 'carbon-addons-cloud/scss/index.scss'
 
 // If you're using webpack, you can use `~` to alias a node module
 @import '~/carbon-addons-cloud/scss/index.scss'
 ```
+
+In addition, make sure to include `node_modules` in your `node-sass` config. This will guarantee that all imports work as expected. You can find more about this option [here](https://github.com/sass/node-sass#includepaths).
 
 Component-specific Sass files are also included and can be imported in a similar fashion.
