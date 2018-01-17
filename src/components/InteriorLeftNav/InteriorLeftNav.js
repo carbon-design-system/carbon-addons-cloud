@@ -99,8 +99,10 @@ export default class InteriorLeftNav extends Component {
       let newChild;
       if (child.type === InteriorLeftNavList) {
         newChild = this.buildNewListChild(child, index);
-      } else {
+      } else if (child.type === InteriorLeftNavItem) {
         newChild = this.buildNewItemChild(child, index);
+      } else {
+        newChild = child;
       }
 
       return newChild;
