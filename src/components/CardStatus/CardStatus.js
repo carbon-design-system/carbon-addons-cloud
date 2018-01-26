@@ -12,9 +12,7 @@ function createCardStatusContent(status, labels) {
   const cardStatusArray = ['running', 'not-running', 'stopped'];
   const statusText = cardStatusArray[status];
   if (statusText) {
-    const cardStatusClassName = `bx--card-footer__app-status--${
-      statusText
-    } active`;
+    const cardStatusClassName = `bx--card-footer__app-status--${statusText} active`;
     const cardStatusTextClassName = `bx--${statusText}__text`;
     return (
       <div className={cardStatusClassName}>
