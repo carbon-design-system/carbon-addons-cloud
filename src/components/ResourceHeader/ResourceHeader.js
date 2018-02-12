@@ -10,8 +10,32 @@ export class ResourceHeader extends Component {
     subtitle: PropTypes.array,
   };
 
+  renderStatus() {
+    const { className, status } = this.props;
+
+    return status.map((item, i) => {
+      const statusClasses = classNames(
+        {
+          'bx--resource-header__status-item--active': item.isTrue,
+        },
+        'bx--resource-header__status-item',
+        className
+      );
+
+      return <div className={statusClasses}>{item.text}</div>;
+    });
+  }
+
   render() {
-    const { className, renderBreadcrumbs, subtitle, title, icon } = this.props;
+    const {
+      className,
+      icon,
+      renderActions,
+      renderBreadcrumbs,
+      status,
+      subtitle,
+      title,
+    } = this.props;
 
     const resourceHeaderClasses = classNames('bx--resource-header', className);
 
@@ -34,8 +58,12 @@ export class ResourceHeader extends Component {
             </div>
           </div>
           <div className="bx--resource-header__container--right">
-            <div className="bx--resource-header__status" />
-            <div className="bx--resource-header__actions" />
+            <div className="bx--resource-header__status">
+              {status && this.renderStatus()}
+            </div>
+            <div className="bx--resource-header__actions">
+              {renderActions && renderActions()}
+            </div>
           </div>
         </section>
       </header>

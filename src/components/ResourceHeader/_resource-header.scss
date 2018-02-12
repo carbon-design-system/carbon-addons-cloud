@@ -42,3 +42,24 @@
   @include typescale('caption');
   color: $text-02;
 }
+
+.bx--resource-header__status-item {
+  @include typescale('zeta');
+  color: $text-02;
+  font-weight: 600;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    margin-right: rem(8px);
+    height: rem(10px);
+    width: rem(10px);
+    border-radius: 100%;
+    background-color: $support-01;
+  }
+}
+
+.bx--resource-header__status-item--active::before {
+  background-color: $support-02;
+}

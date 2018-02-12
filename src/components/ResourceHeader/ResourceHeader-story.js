@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { ResourceHeader } from './ResourceHeader';
 import { Breadcrumb, BreadcrumbItem } from 'carbon-components-react';
+import { DropdownV2 } from 'carbon-components-react';
 
 storiesOf('ResourceHeader', module).addWithInfo(
   'Default',
@@ -27,7 +28,10 @@ storiesOf('ResourceHeader', module).addWithInfo(
         'Private IP: 10.142.128.147',
       ],
       icon: svg,
-      status: [['Powered On', true], ['Connected', true]],
+      status: [
+        { text: 'Powered On', isTrue: true },
+        { text: 'Connected', isTrue: false },
+      ],
     };
 
     return (
@@ -37,6 +41,12 @@ storiesOf('ResourceHeader', module).addWithInfo(
             <BreadcrumbItem href="#">Breadcrumb 1</BreadcrumbItem>
             <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
           </Breadcrumb>
+        )}
+        renderActions={() => (
+          <DropdownV2
+            type="inline"
+            items={[{ id: 'option-1', text: 'Option 1' }]}
+          />
         )}
         {...resourceHeaderProps}
       />
