@@ -11,23 +11,26 @@ export class ResourceHeader extends Component {
   };
 
   render() {
-    const { className, renderBreadcrumbs, subtitle, title } = this.props;
+    const { className, renderBreadcrumbs, subtitle, title, icon } = this.props;
 
     const resourceHeaderClasses = classNames('bx--resource-header', className);
 
     return (
       <header className={resourceHeaderClasses}>
-        {renderBreadcrumbs && renderBreadcrumbs()}
         <section className="bx--resource-header__container">
           <div className="bx--resource-header__container--left">
+            {renderBreadcrumbs && renderBreadcrumbs()}
             <div className="bx--resource-header__title-container">
-              {title && <h3 className="bx--resource-header__title">{title}</h3>}
-              {subtitle &&
-                subtitle.map(item => (
-                  <span className="bx--resource-header__subtitle">
-                    {item} &nbsp;
-                  </span>
-                ))}
+              {icon && <div className="bx--resource-header__icon">{icon}</div>}
+              <div className="bx--resource-header__title">
+                {title && <h3>{title}</h3>}
+                <div className="bx--resource-header__subtitle">
+                  {subtitle &&
+                    subtitle.map((item, key) => (
+                      <span key={key}>{item} &nbsp;</span>
+                    ))}
+                </div>
+              </div>
             </div>
           </div>
           <div className="bx--resource-header__container--right">
