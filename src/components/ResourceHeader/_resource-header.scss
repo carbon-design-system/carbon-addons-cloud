@@ -8,9 +8,9 @@
 .bx--resource-header__container {
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
   height: 100%;
   border-bottom: 3px solid $ui-04;
-  padding-bottom: rem(10px);
 }
 
 .bx--resource-header__container--left {
@@ -18,6 +18,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-bottom: rem(10px);
 }
 
 .bx--resource-header__title-container {
@@ -43,6 +44,53 @@
   color: $text-02;
 }
 
+.bx--resource-header__container--right {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  .bx--form-item {
+    flex: initial;
+  }
+}
+
+.bx--resource-header__status {
+  display: flex;
+  margin-bottom: rem(8px);
+}
+
+.bx--resource-header__status-item {
+  margin-right: rem(8px);
+}
+
+.bx--resource-header__actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  .bx--list-box__menu {
+    left: initial;
+  }
+}
+
+.bx--btn.bx--resource-header__button {
+  display: inline-flex;
+  align-items: center;
+  margin-right: rem(10px);
+}
+
+.bx--resource-header__button--icon {
+  max-width: rem(18px);
+  margin-left: rem(8px);
+  fill: $brand-01;
+}
+
+.bx--btn.bx--resource-header__button:hover .bx--resource-header__button--icon {
+  fill: $ui-01;
+}
+
 .bx--resource-header__status-item {
   @include typescale('zeta');
   color: $text-02;
@@ -52,7 +100,7 @@
   &:before {
     content: '';
     display: inline-block;
-    margin-right: rem(8px);
+    margin-right: rem(4px);
     height: rem(10px);
     width: rem(10px);
     border-radius: 100%;
