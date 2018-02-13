@@ -25,20 +25,10 @@ export class ResourceHeader extends Component {
     );
 
     const maintenance = (
-      <svg className="bx--resource-header__button--icon" width="18" height="17">
-        <g fill="none" fillRule="evenodd">
-          <path
-            stroke="#3D70B2"
-            strokeWidth="1.5"
-            d="M.75.86179387h16.4577635v15.3882061H.75z"
-          />
-          <path fill="#3D70B2" d="M0 .11179387h17.9577635V3.6101567H0z" />
-          <path
-            fill="#3D70B2"
-            fillRule="nonzero"
-            d="M11.800003 8.099998c-.276.276-.724.276-1 0s-.276-.724 0-1l1.2535-1.2535c-.303-.1525-.641-.2465-1.0035-.2465-1.2425 0-2.25 1.0075-2.25 2.25 0 .2255.0435.4395.105.645l-3.295 3.2945c-.4145.4155-.413 1.089.0035 1.5025.415.412 1.085.411 1.4985-.0025l3.301-3.292c.203.06.414.1025.637.1025 1.2425 0 2.25-1.0075 2.25-2.25 0-.3625-.094-.7005-.2465-1.0035l-1.2535 1.2535z"
-          />
-        </g>
+      <svg className="bx--resource-header__button--icon" width="16" height="16">
+        <path d="M0 0h16v2H0z" />
+        <path d="M10.5 7.5c-.3.3-.7.3-1 0-.3-.3-.3-.7 0-1l1.3-1.3c-.4-.1-.7-.2-1.1-.2-1.2 0-2.2 1-2.2 2.3 0 .2 0 .4.1.6l-3.3 3.3c-.4.4-.4 1.1 0 1.5.4.4 1.1.4 1.5 0l3.3-3.3c.2.1.4.1.6.1 1.2 0 2.3-1 2.3-2.3 0-.4-.1-.7-.2-1l-1.3 1.3z" />
+        <path d="M14 4v10H2V4h12m2-2H0v14h16V2z" />
       </svg>
     );
 
@@ -50,7 +40,7 @@ export class ResourceHeader extends Component {
           className="bx--resource-header__button"
           onClick={renderStop}
           small
-          icon="stop"
+          icon="stop--glyph"
           kind="ghost">
           {type}
         </Button>
@@ -61,7 +51,7 @@ export class ResourceHeader extends Component {
         <Button
           className="bx--resource-header__button"
           onClick={renderReboot}
-          icon="power"
+          icon="power--glyph"
           small
           kind="ghost">
           {type}
@@ -82,7 +72,15 @@ export class ResourceHeader extends Component {
     }
   }
 
-  renderStatus() {
+  renderTitleStatus() {
+    return (
+      <div className="bx--resource-header__status-item bx--resource-header__status-item--active">
+        Active
+      </div>
+    );
+  }
+
+  renderStatus(isTitleStatus) {
     const { className, status } = this.props;
 
     return status.map((item, i) => {
@@ -106,6 +104,7 @@ export class ResourceHeader extends Component {
     const {
       className,
       icon,
+      isActive,
       renderActions,
       renderBreadcrumbs,
       renderMaintenance,
@@ -123,10 +122,19 @@ export class ResourceHeader extends Component {
         <section className="bx--resource-header__container">
           <div className="bx--resource-header__container--left">
             {renderBreadcrumbs && renderBreadcrumbs()}
-            <div className="bx--resource-header__title-container">
+            <div className="bx--resource-header__content-container">
               {icon && <div className="bx--resource-header__icon">{icon}</div>}
-              <div className="bx--resource-header__title">
-                {title && <h3>{title}</h3>}
+              <div className="bx--resource-header__content">
+                {title && (
+                  <div className="bx--resource-header__title">
+                    <h3>{title}</h3>
+                    {isActive && (
+                      <div className="bx--resource-header__status-item bx--resource-header__status-item--active">
+                        Active
+                      </div>
+                    )}
+                  </div>
+                )}
                 <div className="bx--resource-header__subtitle">
                   {subtitle &&
                     subtitle.map((item, key) => (
