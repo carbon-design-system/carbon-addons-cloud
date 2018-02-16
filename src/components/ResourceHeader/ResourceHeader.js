@@ -150,8 +150,16 @@ const ResourceHeader = ({
 
 ResourceHeader.propTypes = {
   className: PropTypes.string,
-  title: PropTypes.string,
+  icon: PropTypes.node,
+  isActive: PropTypes.bool,
+  renderActions: PropTypes.func,
+  renderBreadcrumbs: PropTypes.func,
+  renderMaintenance: PropTypes.func,
+  renderReboot: PropTypes.func,
+  renderStop: PropTypes.func,
+  status: PropTypes.array,
   subtitle: PropTypes.array,
+  title: PropTypes.string,
 };
 
 export default ResourceHeader;
