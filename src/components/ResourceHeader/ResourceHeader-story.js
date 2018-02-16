@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { ResourceHeader } from './ResourceHeader';
+import ResourceHeader from './ResourceHeader';
 import { Breadcrumb, BreadcrumbItem } from 'carbon-components-react';
 import { DropdownV2 } from 'carbon-components-react';
 
