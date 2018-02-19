@@ -149,16 +149,49 @@ const ResourceHeader = ({
 };
 
 ResourceHeader.propTypes = {
+  /**
+   * The CSS class names of the resource header
+   */
   className: PropTypes.string,
+  /**
+   * The icon to be rendered in the header.
+   */
   icon: PropTypes.node,
+  /**
+   * `true` to show the status text next to the resource header title.
+   */
   isActive: PropTypes.bool,
+  /**
+   * The function used to create and show an action dropdown.
+   */
   renderActions: PropTypes.func,
+  /**
+   * The function used to create and show breadcrumbs.
+   */
   renderBreadcrumbs: PropTypes.func,
+  /**
+   * The function used to show and attach actions to the maintenance icon
+   */
   renderMaintenance: PropTypes.func,
+  /**
+   * The function used to show and attach actions to the reboot icon
+   */
   renderReboot: PropTypes.func,
+  /**
+   * The function used to show and attach actions to the stop icon
+   */
   renderStop: PropTypes.func,
+  /**
+   * The array used to show status text above the action icons
+   */
   status: PropTypes.array,
+  /**
+   * The array used to show subtitle text below the resource header title
+   */
   subtitle: PropTypes.array,
+  /**
+   * The title of the resource header
+   */
   title: PropTypes.string,
 };
 
