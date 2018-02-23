@@ -7,7 +7,7 @@ import CloudHeaderMenu from './CloudHeaderMenu';
 import CloudHeaderLogo from './CloudHeaderLogo';
 import CloudHeaderList from './CloudHeaderList';
 import CloudHeaderListItem from './CloudHeaderListItem';
-import { Search } from 'carbon-components-react';
+import { Search, Link } from 'carbon-components-react';
 
 storiesOf('CloudHeader', module).addWithInfo(
   'default',
@@ -101,29 +101,59 @@ storiesOf('CloudHeader', module).addWithInfo(
         )}
         renderNotification={() => (
           <ul className="list">
-            <li>Notification 1</li>
-            <li>Notification 2</li>
-            <li>Notification 3</li>
-            <li>Notification 4</li>
-            <li>Notification 5</li>
+            <li>
+              <Link href="www.google.com">Notification 1</Link>
+            </li>
+            <li>
+              <Link href="www.google.com">Notification 2</Link>
+            </li>
+            <li>
+              <Link href="www.google.com">Notification 3</Link>
+            </li>
+            <li>
+              <Link href="www.google.com">Notification 4</Link>
+            </li>
+            <li>
+              <Link href="www.google.com">Notification 5</Link>
+            </li>
           </ul>
         )}
         renderApplication={() => (
           <ul className="list">
-            <li>Application 1</li>
-            <li>Application 2</li>
-            <li>Application 3</li>
-            <li>Application 4</li>
-            <li>Application 5</li>
+            <li>
+              <Link href="www.google.com">Application 1</Link>
+            </li>
+            <li>
+              <Link href="www.google.com">Application 2</Link>
+            </li>
+            <li>
+              <Link href="www.google.com">Application 3</Link>
+            </li>
+            <li>
+              <Link href="www.google.com">Application 4</Link>
+            </li>
+            <li>
+              <Link href="www.google.com">Application 5</Link>
+            </li>
           </ul>
         )}
         renderUser={() => (
           <ul className="list">
-            <li>User 1</li>
-            <li>User 2</li>
-            <li>User 3</li>
-            <li>User 4</li>
-            <li>User 5</li>
+            <li>
+              <Link href="www.google.com">User 1</Link>
+            </li>
+            <li>
+              <Link href="www.google.com">User 2</Link>
+            </li>
+            <li>
+              <Link href="www.google.com">User 3</Link>
+            </li>
+            <li>
+              <Link href="www.google.com">User 4</Link>
+            </li>
+            <li>
+              <Link href="www.google.com">User 5</Link>
+            </li>
           </ul>
         )}
         renderLogo={() => logo}

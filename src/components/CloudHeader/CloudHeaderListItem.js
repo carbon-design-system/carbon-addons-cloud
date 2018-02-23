@@ -3,7 +3,7 @@ import React from 'react';
 import classNames from 'classnames';
 
 const CloudHeaderListItem = props => {
-  const { children, className, href, isIcon, ...other } = props;
+  const { children, className, href, isIcon, ariaExpanded, ...other } = props;
 
   const CloudHeaderListItemClasses = classNames(
     'bx--cloud-header-list__item',
@@ -16,9 +16,15 @@ const CloudHeaderListItem = props => {
   return (
     <li className={CloudHeaderListItemClasses}>
       {isIcon ? (
-        <button className="bx--cloud-header-list__btn" type="button" {...other}>
+        <div
+          aria-expanded={ariaExpanded}
+          aria-haspopup="true"
+          role="button"
+          tabIndex="0"
+          className="bx--cloud-header-list__btn"
+          {...other}>
           {children}
-        </button>
+        </div>
       ) : (
         <a className="bx--cloud-header-list__link" href={href} {...other}>
           {children}

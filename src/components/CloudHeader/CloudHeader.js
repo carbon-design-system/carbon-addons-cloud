@@ -54,6 +54,14 @@ export default class CloudHeader extends React.Component {
     isUserActive: false,
   };
 
+  handleIconKeypress = type => evt => {
+    if (evt.which === 13 || evt.which === 32) {
+      if (evt.target.classList.contains('bx--cloud-header-list__btn')) {
+        this.handleIconClick(type, evt)();
+      }
+    }
+  };
+
   handleIconClick = type => evt => {
     Object.keys(this.state).forEach(key => {
       const clickType = `is${type}Active`;
@@ -137,6 +145,8 @@ export default class CloudHeader extends React.Component {
             {renderSearch && (
               <CloudHeaderListItem
                 onClick={this.handleIconClick('Search')}
+                onKeyDown={this.handleIconKeypress('Search')}
+                ariaExpanded={this.state.isSearchActive}
                 isIcon>
                 {searchIcon}
               </CloudHeaderListItem>
@@ -144,6 +154,8 @@ export default class CloudHeader extends React.Component {
             {renderNotification && (
               <CloudHeaderListItem
                 onClick={this.handleIconClick('Notification')}
+                onKeyDown={this.handleIconKeypress('Notification')}
+                ariaExpanded={this.state.isNotificationActive}
                 isIcon>
                 {notificationIcon}
                 {isNotificationActive && renderNotification()}
@@ -152,6 +164,8 @@ export default class CloudHeader extends React.Component {
             {renderApplication && (
               <CloudHeaderListItem
                 onClick={this.handleIconClick('Application')}
+                onKeyDown={this.handleIconKeypress('Application')}
+                ariaExpanded={this.state.isApplicationActive}
                 isIcon>
                 {applicationIcon}
                 {isApplicationActive && renderApplication()}
@@ -160,6 +174,8 @@ export default class CloudHeader extends React.Component {
             {renderUser && (
               <CloudHeaderListItem
                 onClick={this.handleIconClick('User')}
+                onKeyDown={this.handleIconKeypress('User')}
+                ariaExpanded={this.state.isUserActive}
                 isIcon>
                 {userIcon}
                 {isUserActive && renderUser()}

@@ -40,7 +40,7 @@ CloudHeaderLogo.propTypes = {
 
 CloudHeaderLogo.defaultProps = {
   companyName: 'IBM',
-  productName: 'Cloud'
+  productName: 'Cloud',
 };
 
 export default CloudHeaderLogo;
