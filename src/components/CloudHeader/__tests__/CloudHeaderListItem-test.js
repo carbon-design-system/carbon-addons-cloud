@@ -21,13 +21,13 @@ describe('CloudHeaderListItem', () => {
       const a = list.find('a');
       expect(a.length).toEqual(1);
     });
-    it('should render a button if it is an icon', () => {
+    it('should render a div with role of button if it is an icon', () => {
       const buttonListItem = mount(
         <CloudHeaderListItem isIcon className="some-class">
           Catalog
         </CloudHeaderListItem>
       );
-      const button = buttonListItem.find('button');
+      const button = buttonListItem.find('div[role="button"]');
       expect(button.length).toEqual(1);
     });
   });
