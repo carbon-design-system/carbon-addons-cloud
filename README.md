@@ -1,5 +1,7 @@
 # carbon-addons-cloud
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/carbon-design-system/carbon-addons-cloud.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/carbon-design-system/carbon-addons-cloud.svg?branch=master)](https://travis-ci.org/carbon-design-system/carbon-addons-cloud)
 
 > Carbon add-on for IBM Cloud
