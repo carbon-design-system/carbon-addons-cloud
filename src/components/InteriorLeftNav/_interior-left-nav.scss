@@ -7,7 +7,7 @@
 @import 'carbon-components/scss/globals/scss/css--reset';
 @import 'carbon-components/scss/globals/scss/css--typography';
 
-@include exports('interior-left-nav') {
+@include exports('cloud-interior-left-nav') {
   .bx--interior-left-nav {
     @include reset;
     @include font-family;
@@ -171,6 +171,21 @@
             color: $color__blue-51;
           }
         }
+      }
+    }
+
+    &__header {
+      padding: 0 0 1rem 1rem;
+      margin-bottom: 1rem;
+      border-bottom: solid $ui-04 1px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      &__icon {
+        width: 1.125rem;
+        height: 1.125rem;
+        margin-right: 0.75em;
       }
     }
   }
@@ -362,6 +377,14 @@
     .bx--interior-left-nav-collapse__arrow {
       transform: rotate(0deg);
       transition: transform 300ms $bx--standard-easing;
+    }
+  }
+
+  .bx--interior-left-nav--collapsing,
+  .bx--interior-left-nav--collapsed,
+  .bx--interior-left-nav--expanding {
+    .bx--interior-left-nav__header__title {
+      display: none;
     }
   }
 }

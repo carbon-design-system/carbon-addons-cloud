@@ -6,7 +6,7 @@
 @import 'carbon-components/scss/globals/scss/import-once';
 @import 'carbon-components/scss/globals/scss/css--typography';
 
-@include exports('resource-header') {
+@include exports('cloud-resource-header') {
   .#{$prefix}--resource-header {
     width: 100%;
     background-color: $ui-01;

@@ -6,7 +6,7 @@
 @import 'carbon-components/scss/globals/scss/css--reset';
 @import 'carbon-components/scss/globals/scss/css--typography';
 
-@include exports('modules') {
+@include exports('cloud-modules') {
   .bx--module {
     @include reset;
     @include font-family;
