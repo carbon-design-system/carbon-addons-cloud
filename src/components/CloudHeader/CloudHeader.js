@@ -51,6 +51,7 @@ export default class CloudHeader extends React.Component {
     isSearchActive: false,
     isNotificationActive: false,
     isApplicationActive: false,
+    isCustomActive: false,
     isUserActive: false,
   };
 
@@ -101,6 +102,8 @@ export default class CloudHeader extends React.Component {
       renderNotification,
       renderApplication,
       renderUser,
+      customMenuIcon,
+      renderCustomMenu,
       links,
       ...other
     } = this.props;
@@ -110,6 +113,7 @@ export default class CloudHeader extends React.Component {
       isSearchActive,
       isNotificationActive,
       isApplicationActive,
+      isCustomActive,
       isUserActive,
     } = this.state;
 
@@ -169,6 +173,16 @@ export default class CloudHeader extends React.Component {
                 isIcon>
                 {applicationIcon}
                 {isApplicationActive && renderApplication()}
+              </CloudHeaderListItem>
+            )}
+            {customMenuIcon && renderCustomMenu && (
+              <CloudHeaderListItem
+                onClick={this.handleIconClick('Custom')}
+                onKeyDown={this.handleIconKeypress('Custom')}
+                ariaExpanded={isCustomActive}
+                isIcon>
+                {customMenuIcon}
+                {isCustomActive && renderCustomMenu()}
               </CloudHeaderListItem>
             )}
             {renderUser && (
