@@ -2,7 +2,7 @@
 @import 'carbon-components/scss/globals/scss/mixins';
 @import 'carbon-components/scss/components/dropdown/dropdown';
 
-@include exports('order-summary') {
+@include exports('cloud-order-summary') {
   .bx--order-summary {
     @include typescale('zeta');
     background-color: $ui-01;

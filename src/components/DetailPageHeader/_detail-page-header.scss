@@ -12,7 +12,7 @@
 @import 'carbon-components/scss/components/tabs/tabs';
 @import 'mixins';
 
-@include exports('detail-page-header') {
+@include exports('cloud-detail-page-header') {
   .bx--detail-page-header--no-tabs {
     @include detail-page-header;
     max-height: rem(66px);
