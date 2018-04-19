@@ -80,6 +80,17 @@ export default class CloudHeader extends React.Component {
     });
   };
 
+  handleBlur = cb => evt => {
+    // if relatedTarget is null just return
+    if (evt.relatedTarget === null) {
+      return;
+    }
+    // if relatedTarget is not contained by parent then close
+    else if (!evt.currentTarget.contains(evt.relatedTarget) && evt.currentTarget.childNodes.length === 2) {
+      cb();
+    }
+  }
+
   componentDidMount() {
     this.portalNode = document.createElement('div');
     document.body.appendChild(this.portalNode);
@@ -142,6 +153,7 @@ export default class CloudHeader extends React.Component {
         <CloudHeaderWrapper>
           {isSearchActive && renderSearch && renderSearch()}
           <CloudHeaderList>
+
             {renderSearch && (
               <CloudHeaderListItem
                 onClick={this.handleIconClick('Search')}
@@ -153,6 +165,7 @@ export default class CloudHeader extends React.Component {
             )}
             {renderNotification && (
               <CloudHeaderListItem
+                onBlur={this.handleBlur(this.handleIconClick('Notification'))}
                 onClick={this.handleIconClick('Notification')}
                 onKeyDown={this.handleIconKeypress('Notification')}
                 ariaExpanded={this.state.isNotificationActive}
@@ -163,6 +176,7 @@ export default class CloudHeader extends React.Component {
             )}
             {renderApplication && (
               <CloudHeaderListItem
+                onBlur={this.handleBlur(this.handleIconClick('Application'))}
                 onClick={this.handleIconClick('Application')}
                 onKeyDown={this.handleIconKeypress('Application')}
                 ariaExpanded={this.state.isApplicationActive}
@@ -173,6 +187,7 @@ export default class CloudHeader extends React.Component {
             )}
             {renderUser && (
               <CloudHeaderListItem
+                onBlur={this.handleBlur(this.handleIconClick('User'))}
                 onClick={this.handleIconClick('User')}
                 onKeyDown={this.handleIconKeypress('User')}
                 ariaExpanded={this.state.isUserActive}
