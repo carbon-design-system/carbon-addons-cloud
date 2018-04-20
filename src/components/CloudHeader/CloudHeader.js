@@ -82,7 +82,10 @@ export default class CloudHeader extends React.Component {
 
   handleBlur = cb => evt => {
     // if relatedTarget is null just return
-    if (evt.relatedTarget === null) {
+    if (
+      evt.relatedTarget === null
+      && evt.currentTarget.childNodes.length === 2
+    ) {
       cb();
     }
     // if relatedTarget is not contained by parent then close
