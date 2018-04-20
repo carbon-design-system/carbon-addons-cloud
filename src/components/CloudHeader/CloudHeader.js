@@ -84,9 +84,10 @@ export default class CloudHeader extends React.Component {
     if (
       evt.relatedTarget === null
       && evt.currentTarget.childNodes.length === 2
+      ||
+      !evt.currentTarget.contains(evt.relatedTarget)
+      && evt.currentTarget.childNodes.length === 2
     ) {
-      cb();
-    } else if (!evt.currentTarget.contains(evt.relatedTarget) && evt.currentTarget.childNodes.length === 2) {
       cb();
     }
   }
