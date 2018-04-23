@@ -81,14 +81,22 @@ export default class CloudHeader extends React.Component {
   };
 
   handleBlur = cb => evt => {
+    evt.stopPropagation();
+    const rel = evt.relatedTarget;
+    const currentDMTattr = evt.currentTarget.getAttribute('data-menu-type');
+    const parentOpen = [...document.querySelectorAll(`[data-menu-type="${currentDMTattr}"]`)]
+      .filter(i => i.hasAttribute('aria-expanded'))[0]
+      .getAttribute('aria-expanded');
+    const related = rel ? rel.closest(`[data-menu-type="${currentDMTattr}"]`) : null;
+    const directSib = rel ? evt.currentTarget.parentNode === evt.relatedTarget.parentNode : false;
+
+
     if (
-      evt.relatedTarget === null
-      && evt.currentTarget.childNodes.length === 2
+      (rel === null && parentOpen === 'true')
       ||
-      !evt.currentTarget.contains(evt.relatedTarget)
-      && evt.currentTarget.childNodes.length === 2
+      (rel !== null && !related && !directSib && parentOpen === 'true')
     ) {
-      cb();
+      cb()
     }
   }
 
@@ -127,11 +135,30 @@ export default class CloudHeader extends React.Component {
 
     const cloudHeaderClasses = classNames('bx--cloud-header', className);
 
+    const cloudHeadSearch = () => React.cloneElement(renderSearch(), {
+      onBlur: this.handleBlur(this.handleIconClick('Search')),
+      "data-menu-type": 'Search',
+    });
+    const cloudHeadNotification = () => React.cloneElement(renderNotification(), {
+      onBlur: this.handleBlur(this.handleIconClick('Notification')),
+      "data-menu-type": 'Notification',
+    });
+    const cloudHeadApplication = () => React.cloneElement(renderApplication(), {
+      onBlur: this.handleBlur(this.handleIconClick('Application')),
+      "data-menu-type": 'Application',
+    });
+    const cloudHeadUser = () => React.cloneElement(renderUser(), {
+      onBlur: this.handleBlur(this.handleIconClick('User')),
+      "data-menu-type": 'User',
+    });
+
     return (
       <nav key="nav" className={cloudHeaderClasses} {...other}>
         <CloudHeaderWrapper>
           {renderMenu && (
-            <CloudHeaderMenu onClick={this.handleIconClick('Menu')} />
+            <CloudHeaderMenu
+            onClick={this.handleIconClick('Menu')}
+            />
           )}
           <CloudHeaderLogo
             className={!renderMenu ? 'bx--cloud-header-brand--no-menu' : null}
@@ -152,11 +179,13 @@ export default class CloudHeader extends React.Component {
           </CloudHeaderList>
         </CloudHeaderWrapper>
         <CloudHeaderWrapper>
-          {isSearchActive && renderSearch && renderSearch()}
+          {isSearchActive && cloudHeadSearch && cloudHeadSearch()}
           <CloudHeaderList>
 
-            {renderSearch && (
+            {cloudHeadSearch && (
               <CloudHeaderListItem
+                data-menu-type="Search"
+                onBlur={this.handleBlur(this.handleIconClick('Search'))}
                 onClick={this.handleIconClick('Search')}
                 onKeyDown={this.handleIconKeypress('Search')}
                 ariaExpanded={this.state.isSearchActive}
@@ -164,37 +193,40 @@ export default class CloudHeader extends React.Component {
                 {searchIcon}
               </CloudHeaderListItem>
             )}
-            {renderNotification && (
+            {cloudHeadNotification && (
               <CloudHeaderListItem
+                data-menu-type="Notification"
                 onBlur={this.handleBlur(this.handleIconClick('Notification'))}
                 onClick={this.handleIconClick('Notification')}
                 onKeyDown={this.handleIconKeypress('Notification')}
                 ariaExpanded={this.state.isNotificationActive}
                 isIcon>
                 {notificationIcon}
-                {isNotificationActive && renderNotification()}
+                {isNotificationActive && cloudHeadNotification()}
               </CloudHeaderListItem>
             )}
-            {renderApplication && (
+            {cloudHeadApplication && (
               <CloudHeaderListItem
+                data-menu-type="Application"
                 onBlur={this.handleBlur(this.handleIconClick('Application'))}
                 onClick={this.handleIconClick('Application')}
                 onKeyDown={this.handleIconKeypress('Application')}
                 ariaExpanded={this.state.isApplicationActive}
                 isIcon>
                 {applicationIcon}
-                {isApplicationActive && renderApplication()}
+                {isApplicationActive && cloudHeadApplication()}
               </CloudHeaderListItem>
             )}
-            {renderUser && (
+            {cloudHeadUser && (
               <CloudHeaderListItem
+                data-menu-type="User"
                 onBlur={this.handleBlur(this.handleIconClick('User'))}
                 onClick={this.handleIconClick('User')}
                 onKeyDown={this.handleIconKeypress('User')}
                 ariaExpanded={this.state.isUserActive}
                 isIcon>
                 {userIcon}
-                {isUserActive && renderUser()}
+                {isUserActive && cloudHeadUser()}
               </CloudHeaderListItem>
             )}
           </CloudHeaderList>
