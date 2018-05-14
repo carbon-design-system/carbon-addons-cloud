@@ -90,7 +90,7 @@ export class OrderSummaryCategory extends Component {
 export class OrderSummaryListItem extends Component {
   static propTypes = {
     className: PropTypes.string,
-    text: PropTypes.string,
+    text: PropTypes.node,
     price: PropTypes.string,
   };
 
