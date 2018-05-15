@@ -9,17 +9,25 @@ import CloudHeaderList from './CloudHeaderList';
 import CloudHeaderListItem from './CloudHeaderListItem';
 
 const searchIcon = (
-  <svg viewBox="0 0 16 16" fillRule="evenodd">
+  <svg width="20" height="20">
     <title>search</title>
-    <path d="M6 2c2.2 0 4 1.8 4 4s-1.8 4-4 4-4-1.8-4-4 1.8-4 4-4zm0-2C2.7 0 0 2.7 0 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm10 13.8L13.8 16l-3.6-3.6 2.2-2.2z" />
-    <path d="M16 13.8L13.8 16l-3.6-3.6 2.2-2.2z" />
+    <path d="M8.5 14a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm4.936-1.27l4.418 4.416-.708.708-4.417-4.418a6.5 6.5 0 1 1 .707-.707z" />
   </svg>
 );
 
 const notificationIcon = (
-  <svg viewBox="0 0 16 16">
-    <title>notifications</title>
-    <path d="M9 1.11V0H7v1.11A5.022 5.022 0 0 0 3.1 4.9L1 14h5a2 2 0 0 0 4 0h5l-2.1-9.1A5.022 5.022 0 0 0 9 1.11z" />
+  <svg width="20" height="20">
+    <title>notification</title>
+    <path d="M7.17 17H2.5a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .146-.354L4 12.293V9a6 6 0 0 1 5.5-5.98V1h1v2.02A6 6 0 0 1 16 9v3.293l1.854 1.853A.5.5 0 0 1 18 14.5v2a.5.5 0 0 1-.5.5h-4.67a3.001 3.001 0 0 1-5.66 0zm1.098 0a2 2 0 0 0 3.464 0H8.268zM13 16h4v-1.293l-1.854-1.853A.5.5 0 0 1 15 12.5V9A5 5 0 0 0 5 9v3.5a.5.5 0 0 1-.146.354L3 14.707V16h10z" />
+  </svg>
+);
+
+const helpIcon = (
+  <svg width="20" height="20">
+    <title>help</title>
+    <path d="M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm0 1a8 8 0 1 1 0-16 8 8 0 0 1 0 16z" fillRule="nonzero" />
+    <circle cx="10" cy="14" r="1" />
+    <path d="M10.5 10.5V12h-1V9.5h1a1.5 1.5 0 0 0 0-3h-1A1.5 1.5 0 0 0 8 8H7a2.5 2.5 0 0 1 2.5-2.5h1a2.5 2.5 0 1 1 0 5z" />
   </svg>
 );
 
@@ -39,9 +47,9 @@ const applicationIcon = (
 );
 
 const userIcon = (
-  <svg className="bx--cloud-header__user-icon" viewBox="0 0 24 24">
+  <svg width="20" height="20">
     <title>user</title>
-    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 4.6c2.8 0 5 2.2 5 5s-2.2 5-5 5-5-2.2-5-5 2.2-5 5-5zm7 14.5c-1.8 1.8-4.3 2.9-7 2.9s-5.2-1.1-7-2.9v-1.6c0-1.3.7-2 2-2h10c1.3 0 2 .7 2 2v1.6z" />
+    <path d="M6 15.745A6.968 6.968 0 0 0 10 17a6.968 6.968 0 0 0 4-1.255V15.5a2.5 2.5 0 0 0-2.5-2.5h-3A2.5 2.5 0 0 0 6 15.5v.245zm-.956-.802A3.5 3.5 0 0 1 8.5 12h3a3.5 3.5 0 0 1 3.456 2.943 7 7 0 1 0-9.912 0zM10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z" /><path d="M10 9.841a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 1a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
   </svg>
 );
 
@@ -50,6 +58,7 @@ export default class CloudHeader extends React.Component {
     isMenuActive: false,
     isSearchActive: false,
     isNotificationActive: false,
+    isHelpActive: false,
     isApplicationActive: false,
     isUserActive: false,
   };
@@ -99,6 +108,7 @@ export default class CloudHeader extends React.Component {
       renderLogo,
       renderSearch,
       renderNotification,
+      renderHelp,
       renderApplication,
       renderUser,
       links,
@@ -109,6 +119,7 @@ export default class CloudHeader extends React.Component {
       isMenuActive,
       isSearchActive,
       isNotificationActive,
+      isHelpActive,
       isApplicationActive,
       isUserActive,
     } = this.state;
@@ -118,17 +129,19 @@ export default class CloudHeader extends React.Component {
     return (
       <nav key="nav" className={cloudHeaderClasses} {...other}>
         <CloudHeaderWrapper>
-          {renderMenu && (
-            <CloudHeaderMenu onClick={this.handleIconClick('Menu')} />
-          )}
-          <CloudHeaderLogo
-            className={!renderMenu ? 'bx--cloud-header-brand--no-menu' : null}
-            companyName={companyName}
-            productName={productName}
-            href={logoHref}>
-            {renderLogo && renderLogo()}
-          </CloudHeaderLogo>
-          <CloudHeaderList>
+          <div className="bx--cloud-header-brand-container">
+            {renderMenu && (
+              <CloudHeaderMenu onClick={this.handleIconClick('Menu')} />
+            )}
+            <CloudHeaderLogo
+              className={!renderMenu ? 'bx--cloud-header-brand--no-menu' : null}
+              companyName={companyName}
+              productName={productName}
+              href={logoHref}>
+              {renderLogo && renderLogo()}
+            </CloudHeaderLogo>
+          </div>
+          <CloudHeaderList className="bx--cloud-header-list--link">
             {links &&
               links.map((link, i) => {
                 return (
@@ -138,10 +151,10 @@ export default class CloudHeader extends React.Component {
                 );
               })}
           </CloudHeaderList>
-        </CloudHeaderWrapper>
+        </CloudHeaderWrapper >
         <CloudHeaderWrapper>
           {isSearchActive && renderSearch && renderSearch()}
-          <CloudHeaderList>
+          <CloudHeaderList className="bx--cloud-header-list--icon">
             {renderSearch && (
               <CloudHeaderListItem
                 onClick={this.handleIconClick('Search')}
@@ -161,6 +174,16 @@ export default class CloudHeader extends React.Component {
                 {isNotificationActive && renderNotification()}
               </CloudHeaderListItem>
             )}
+            {renderHelp && (
+              <CloudHeaderListItem
+                onClick={this.handleIconClick('Help')}
+                onKeyDown={this.handleIconKeypress('Help')}
+                ariaExpanded={this.state.isHelpActive}
+                isIcon>
+                {helpIcon}
+                {isHelpActive && renderHelp()}
+              </CloudHeaderListItem>
+            )}
             {renderApplication && (
               <CloudHeaderListItem
                 onClick={this.handleIconClick('Application')}
@@ -173,6 +196,7 @@ export default class CloudHeader extends React.Component {
             )}
             {renderUser && (
               <CloudHeaderListItem
+                className="bx--cloud-header-list__item--icon"
                 onClick={this.handleIconClick('User')}
                 onKeyDown={this.handleIconKeypress('User')}
                 ariaExpanded={this.state.isUserActive}
@@ -184,7 +208,7 @@ export default class CloudHeader extends React.Component {
           </CloudHeaderList>
         </CloudHeaderWrapper>
         {isMenuActive && ReactDOM.createPortal(renderMenu(), this.portalNode)}
-      </nav>
+      </nav >
     );
   }
 }
