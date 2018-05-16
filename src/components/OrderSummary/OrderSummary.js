@@ -90,7 +90,7 @@ export class OrderSummaryCategory extends Component {
 export class OrderSummaryListItem extends Component {
   static propTypes = {
     className: PropTypes.string,
-    text: PropTypes.string,
+    text: PropTypes.node,
     price: PropTypes.string,
   };
 
@@ -105,7 +105,7 @@ export class OrderSummaryListItem extends Component {
 
     return (
       <li className={classes} {...other}>
-        <p className="bx--order-detail">{text}</p>
+        <div className="bx--order-detail">{text}</div>
         <p className="bx--order-price">{price}</p>
       </li>
     );
