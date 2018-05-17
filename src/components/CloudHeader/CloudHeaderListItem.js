@@ -7,7 +7,6 @@ const CloudHeaderListItem = props => {
 
   const CloudHeaderListItemClasses = classNames(
     'bx--cloud-header-list__item',
-    isIcon ? 'bx--cloud-header-list__item--icon' : null,
     className
   );
 
@@ -26,10 +25,10 @@ const CloudHeaderListItem = props => {
           {children}
         </div>
       ) : (
-        <a className="bx--cloud-header-list__link" href={href} {...other}>
-          {children}
-        </a>
-      )}
+          <a className="bx--cloud-header-list__link" href={href} {...other}>
+            {children}
+          </a>
+        )}
     </li>
   );
 };
@@ -38,11 +37,9 @@ CloudHeaderListItem.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   href: PropTypes.string,
-  isIcon: PropTypes.bool,
 };
 
 CloudHeaderListItem.defaultProps = {
-  isIcon: false,
   href: '',
 };
 

@@ -12,9 +12,9 @@ const CloudHeaderMenu = props => {
 
   return (
     <button className={cloudHeaderMenuClasses} type="button" {...other}>
-      <svg fillRule="evenodd">
+      <svg width="20" height="20">
         <title>cloud header menu</title>
-        <path d="M0 0h20v2H0zm0 6h20v2H0zm0 6h20v2H0z" />
+        <path d="M3 4h14v1H3zM3 10h14v1H3zM3 16h14v1H3z" />
       </svg>
     </button>
   );
