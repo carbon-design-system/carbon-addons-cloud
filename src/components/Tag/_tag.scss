@@ -7,7 +7,7 @@
 @import 'mixins';
 
 @include exports('cloud-tag') {
-  .bx--tag {
+  .#{$prefix}--tag {
     @include font-family;
     @include typescale('omega');
     display: inline-flex;
@@ -25,13 +25,13 @@
     }
   }
 
-  .bx--tag--functional {
+  .#{$prefix}--tag--functional {
     @include tag-theme($color__navy-gray-10, $color__navy-gray-11);
     cursor: default;
     white-space: nowrap;
   }
 
-  .bx--tag-close {
+  .#{$prefix}--tag-close {
     fill: $color__navy-gray-12;
     margin-left: rem(8px);
     width: rem(8px);

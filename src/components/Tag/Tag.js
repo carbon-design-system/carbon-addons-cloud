@@ -8,12 +8,10 @@ const TYPES = {
 };
 
 export default class Tag extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      removed: false,
-    };
-  }
+  state = {
+    removed: false,
+  };
+
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -48,26 +46,19 @@ export default class Tag extends Component {
       onRemove, // eslint-disable-line no-unused-vars
       ...other
     } = this.props;
-    let tagClass = `bx--tag--${type}`;
-    let tagClasses = classNames(
-      'bx--tag',
-      tagClass,
-      {
-        'bx--tag__removed': this.state.removed,
-      },
-      className
-    );
+    const tagClasses = classNames({
+      'bx--tag': true,
+      [`bx--tag--${type}`]: true,
+      'bx--tag__removed': this.state.removed,
+      [className]: className,
+    });
 
     let tagProps = {
       className: tagClasses,
       ...other,
     };
     if (TYPES[type] === 'Functional') {
-      tagProps = {
-        ...tagProps,
-        className: tagClasses,
-        tabIndex: 0,
-      };
+      tagProps.tabIndex = 0;
     }
 
     const closeIcon = (
@@ -84,7 +75,7 @@ export default class Tag extends Component {
     );
 
     return (
-      <span {...tagProps} style={{ cursor: 'default' }}>
+      <span {...tagProps}>
         {children || TYPES[type]}
         {isRemovable && closeIcon}
       </span>
