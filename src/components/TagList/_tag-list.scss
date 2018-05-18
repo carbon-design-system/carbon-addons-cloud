@@ -1,0 +1,44 @@
+@import 'carbon-components/scss/globals/scss/vars';
+@import 'carbon-components/scss/globals/scss/colors';
+@import 'carbon-components/scss/globals/scss/mixins';
+@import 'carbon-components/scss/globals/scss/typography';
+@import 'carbon-components/scss/globals/scss/spacing';
+@import 'carbon-components/scss/globals/scss/import-once';
+@import 'carbon-components/scss/globals/scss/css--typography';
+
+@include exports('cloud-tag-list') {
+  .#{$prefix}--tag-list {
+    display: flex;
+    align-items: center;
+  }
+
+  .#{$prefix}--tag-list--tag {
+    margin-right: rem(4px);
+  }
+
+  .#{$prefix}--tag-list--tag-counter {
+    border-radius: 0.375rem;
+    margin-right: rem(7px);
+
+    .#{$prefix}--tag-list--tag-counter--icon {
+      margin: 0 rem(1px) 0 0;
+      width: rem(6px);
+      height: rem(6px);
+      background-color: none;
+      fill: #2c3d53; //$color__navy-gray-11;
+    }
+  }
+
+  .#{$prefix}--tag-list--edit--icon  {
+      margin: 0 rem(4px);
+      width: rem(12px);
+      height: rem(10px);
+      background-color: none;
+      cursor: pointer;
+      fill: $ui-05;
+
+    &:hover {
+      fill: $brand_01;
+    }
+  }
+}
