@@ -54,8 +54,8 @@ export default class Tag extends Component {
     });
 
     let tagProps = {
-      className: tagClasses,
       ...other,
+      className: tagClasses,
     };
     if (TYPES[type] === 'Functional') {
       tagProps.tabIndex = 0;
