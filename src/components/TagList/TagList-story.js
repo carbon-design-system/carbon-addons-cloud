@@ -5,7 +5,7 @@ import TagList from '../TagList';
 
 const tagListEvents = {
   className: 'some-class',
-  tags: [{ name: "test:test", type: 'beta'}, { name: 'acb:efg', type: "beta" }, { name: "hello:goodbye", type: 'beta' }],
+  tags: [{ name: "test:tag", type: 'functional'}, { name: 'test:tag', type: "functional" }, { name: "test:tag", type: 'functional' }],
 }
 storiesOf('TagList', module)
 .addWithInfo(
@@ -18,15 +18,6 @@ storiesOf('TagList', module)
   )
 )
 .addWithInfo(
-  'Condense All Editable',
-  `
-    TagList.
-  `,
-  () => (
-    <TagList {...tagListEvents} isEditable/>
-  )
-)
-.addWithInfo(
   'Display All Editable',
   `
     TagList.
@@ -36,29 +27,20 @@ storiesOf('TagList', module)
   )
 )
 .addWithInfo(
-  'condense 2',
+  'Condense 1 Editable',
   `
     TagList.
   `,
   () => (
-    <TagList {...tagListEvents} condense={2} />
+    <TagList {...tagListEvents} condense={1} isEditable/>
   )
 )
-  .addWithInfo(
-    'condense 3',
-    `
-      TagList.
-    `,
-    () => (
-      <TagList {...tagListEvents} condense={3} isEditable/>
-    )
+.addWithInfo(
+  'Condense All Not Editable',
+  `
+    TagList.
+  `,
+  () => (
+    <TagList {...tagListEvents} condense={3} isEditable/>
   )
-  .addWithInfo(
-    'Overflow',
-    `
-      TagList.
-    `,
-    () => (
-      <TagList {...tagListEvents} condense={4} />
-    )
-  )
+)

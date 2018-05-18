@@ -1,10 +1,12 @@
 @import 'carbon-components/scss/globals/scss/colors';
 @import 'carbon-components/scss/globals/scss/helper-mixins';
 
-$cloud-header-link-color: $inverse-01 !default;
-$cloud-header-icon-color: $inverse-01 !default;
-$cloud-header-menu-color: $brand-02 !default;
+$cloud-header-link-color: #F2F4F8 !default;
+$cloud-header-icon-color: #F2F4F8 !default;
+$cloud-header-menu-color: #F2F4F8 !default;
 $cloud-header-background-color: $color__blue-90 !default;
+$cloud-header-hover-background-color: #2C3F48 !default;
+$cloud-header-hover-link-color: #76AAEA !default;
 
 .bx--cloud-header {
   display: flex;
@@ -13,14 +15,20 @@ $cloud-header-background-color: $color__blue-90 !default;
   background-color: $cloud-header-background-color;
   color: $cloud-header-link-color;
   height: rem(48px);
+  padding: 0 rem(2px);
   width: 100%;
 }
 
 .bx--cloud-header__wrapper,
-.bx--cloud-header-brand {
+.bx--cloud-header-brand,
+.bx--cloud-header-brand-container {
   height: 100%;
   display: flex;
   align-items: center;
+}
+
+.bx--cloud-header-brand-container {
+  width: rem(272px);
 }
 
 .bx--cloud-header__app-menu {
@@ -29,18 +37,22 @@ $cloud-header-background-color: $color__blue-90 !default;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 0 rem(24px);
-  height: 100%;
-  width: rem(16px);
+  padding: rem(14px);
+  margin-right: rem(10px);
+  width: auto;
+  transition: background-color $transition--base $bx--standard-easing;
 
   svg {
     fill: $cloud-header-menu-color;
-    width: rem(16px);
-    height: rem(16px);
   }
 
   &:focus {
     @include focus-outline('border');
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $cloud-header-hover-background-color;
   }
 }
 
@@ -48,11 +60,10 @@ $cloud-header-background-color: $color__blue-90 !default;
   text-decoration: none;
   color: $cloud-header-link-color;
   transition: color $transition--base $bx--standard-easing;
-  padding-right: rem(16px);
 
   &:hover,
   &:focus {
-    color: $cloud-header-menu-color;
+    color: $cloud-header-hover-link-color;
   }
 
   &:focus {
@@ -71,6 +82,7 @@ $cloud-header-background-color: $color__blue-90 !default;
 }
 
 .bx--cloud-header-brand__text {
+  @include typescale('epsilon');
   font-weight: 400;
 
   span {
@@ -86,6 +98,22 @@ $cloud-header-background-color: $color__blue-90 !default;
   padding: 0;
 }
 
+.bx--cloud-header-list--link {
+  display: none;
+
+  @include breakpoint('672px') {
+    display: flex;
+  }
+}
+
+.bx--cloud-header-list--icon .bx--cloud-header-list__item:not(.bx--cloud-header-list__item--icon) {
+  display: none;
+
+  @include breakpoint('320px') {
+    display: flex;
+  }
+}
+
 .bx--cloud-header-list__item {
   height: 100%;
   display: flex;
@@ -93,13 +121,8 @@ $cloud-header-background-color: $color__blue-90 !default;
   position: relative;
 }
 
-.bx--cloud-header-list__item--icon {
-  padding: 0;
-}
-
 .bx--cloud-header-list__link {
-  @include typescale('zeta');
-  padding: 0 rem(16px);
+  @include typescale('epsilon');
   height: 100%;
   display: flex;
   align-items: center;
@@ -107,10 +130,11 @@ $cloud-header-background-color: $color__blue-90 !default;
   color: $cloud-header-link-color;
   text-decoration: none;
   transition: color $transition--base $bx--standard-easing;
+  margin-right: rem(32px);
 
   &:hover,
   &:focus {
-    color: $cloud-header-menu-color;
+    color: $cloud-header-hover-link-color;
   }
 
   &:focus {
@@ -123,18 +147,16 @@ $cloud-header-background-color: $color__blue-90 !default;
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 0 rem(16px);
+  padding: rem(14px);
+  transition: background-color $transition--base $bx--standard-easing;
 
   svg {
     fill: $cloud-header-icon-color;
-    height: rem(16px);
-    width: rem(16px);
-    transition: fill $transition--base $bx--standard-easing;
   }
 
-  &:hover svg,
-  &:focus svg {
-    fill: $cloud-header-menu-color;
+  &:hover,
+  &:focus {
+    background-color: $cloud-header-hover-background-color;
   }
 
   &:focus {

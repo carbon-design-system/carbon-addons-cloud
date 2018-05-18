@@ -1,12 +1,13 @@
 import React from 'react';
 import TagList from '../TagList';
 import { shallow } from 'enzyme';
-import { Icon, Tag } from 'carbon-components-react';
+import { Icon } from 'carbon-components-react';
+import Tag from '../Tag';
 
 const onIconClickMock = jest.fn();
 
 const defaultProps = {
-  tags: [{name: 'test1', type: 'beta'}, {name: 'test2', type: 'beta'}],
+  tags: [{name: 'test1', type: 'functional'}, {name: 'test2', type: 'functional'}],
   className: "some-class"
 };
 
@@ -19,7 +20,7 @@ describe('TagList', () => {
       expect(wrapper.find(Tag)).toHaveLength(2);
     });
 
-    it('condenses all', () => {
+    it('displays all', () => {
 
       const condenseProps = {
         ...defaultProps,
@@ -27,7 +28,19 @@ describe('TagList', () => {
       };
       
       const wrapper = shallow(<TagList {...condenseProps} />);
+      expect(wrapper.find(Tag)).toHaveLength(2);
+    });
+
+    it('condenses all', () => {
+      
+      const condenseProps = {
+        ...defaultProps,
+        condense: 2,
+      };
+      
+      const wrapper = shallow(<TagList {...condenseProps} />);
       expect(wrapper).toHaveLength(1);
+      expect(wrapper.find('bx--tag-list--tag-counter'));
     });
 
     it('condenses 1', () => {
@@ -38,8 +51,7 @@ describe('TagList', () => {
       };
 
       const wrapper = shallow(<TagList {...condenseProps} />);
-      console.log(wrapper.debug());
-      expect(wrapper.find('bx--tag-list--tag-counter')).toHaveLength(1);
+      expect(wrapper.find('bx--tag-list--tag-counter'));
       expect(wrapper.find(Icon));
     });
 
