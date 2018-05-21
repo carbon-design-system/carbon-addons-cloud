@@ -41,6 +41,6 @@ storiesOf('TagList', module)
     TagList.
   `,
   () => (
-    <TagList {...tagListEvents} condense={3} isEditable/>
+    <TagList {...tagListEvents} condense={3} />
   )
 )

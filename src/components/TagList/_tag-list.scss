@@ -14,16 +14,14 @@
   }
 
   .#{$prefix}--tag-list--tag {
-    margin-right: rem(4px);
-  }
-
-  .#{$prefix}--tag-list--tag:last-of-type {
     margin-right: rem(6px);
+    padding: 0 rem(7px);
   }
 
   .#{$prefix}--tag-list--tag-counter {
     border-radius: 0.375rem;
-    margin-right: rem(7px);
+    margin-right: rem(4px);
+    padding: 0 rem(7px);
   }
 
   .#{$prefix}--tag-list--tag-counter--icon {
