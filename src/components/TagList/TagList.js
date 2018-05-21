@@ -7,12 +7,12 @@ import Tag from '../Tag';
 
 export default class TagList extends Component {
   static propTypes = {
-    tags: PropTypes.array.isRequired,
     condense: PropTypes.number.isRequired,
-    sort: PropTypes.func,
+    tags: PropTypes.array.isRequired,
+    className: PropTypes.string,
     isEditable: PropTypes.bool,
     onIconClick: PropTypes.func,
-    className: PropTypes.string,
+    sort: PropTypes.func,
   };
 
   static defaultProps = {
@@ -36,21 +36,20 @@ export default class TagList extends Component {
  
     const limit = condense > sortedTags.length ? sortedTags.length : condense;
   
-    let displayList = [];
-    for (let i = 0; i < (sortedTags.length - limit); i++) {
-      displayList.push(sortedTags[i]);
-    } 
+    const displayList = sortedTags.slice(0, sortedTags.length - limit);
 
     const tagListClassNames = classNames('bx--tag-list', className);
 
     return ( 
       <div className={tagListClassNames} {...rest}>
-        {displayList.map(tag => <Tag key={Math.random()} className="bx--tag-list--tag" type={tag.type}>{tag.name}</Tag>)}
+        {displayList.map(tag => <Tag key={tag.name} className="bx--tag-list--tag" type={tag.type}>{tag.name}</Tag>)}
         {condense > 0 && condense < sortedTags.length && (
           <Tag type="functional" className="bx--tag-list--tag-counter"> 
             <Icon
               name="add"
               className="bx--tag-list--tag-counter--icon"
+              title="add icon"
+              description="add icon used to indicate additional condensed tags"
             />  
             {condense}
           </Tag>
@@ -60,15 +59,15 @@ export default class TagList extends Component {
             {tags.length}
           </Tag>
         )}
-        {isEditable && 
-          <Icon
-            name="edit--glyph"
-            onClick={onIconClick}
-            onKeyDown={onIconClick}
-            className="bx--tag-list--edit--icon"
-            role="button"
-            tabIndex='0'
-          />}
+        {isEditable &&
+          <button className="bx--tag-list--edit--button" onClick={onIconClick}>
+            <Icon
+              name="edit--glyph"
+              className="bx--tag-list--edit--icon"
+              title="edit icon"
+              description="edit icon that can trigger an editable state for the tags in list"
+            />
+          </button>}
       </div>
     );
   }

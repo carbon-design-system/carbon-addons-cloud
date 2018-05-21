@@ -6,67 +6,63 @@ import Tag from '../Tag';
 
 const onIconClickMock = jest.fn();
 
-const defaultProps = {
-  tags: [{name: 'test1', type: 'functional'}, {name: 'test2', type: 'functional'}],
-  className: "some-class"
-};
-
 describe('TagList', () => {
+  let mockProps;
 
-    it('renders as expected', () => {
+  beforeEach(() => {
+    mockProps = {
+      tags: [{name: 'test1', type: 'functional'}, {name: 'test2', type: 'functional'}],
+      className: "some-class",
+    }
+  });
+  it('should render as expected', () => {
+    const wrapper = shallow(<TagList {...mockProps} />);
+    expect(wrapper.length).toEqual(1);
+    expect(wrapper.find(Tag)).toHaveLength(2);;
+  });
 
-      const wrapper = shallow(<TagList {...defaultProps} />);
-      expect(wrapper.length).toEqual(1);
-      expect(wrapper.find(Tag)).toHaveLength(2);
-    });
+  it('should display all tags by default', () => {
+    mockProps = {
+      ...mockProps,
+      condense: 0,
+    }
+    const wrapper = shallow(<TagList {...mockProps} />);
+    expect(wrapper.find(Tag)).toHaveLength(2);;
+  });
 
-    it('displays all', () => {
+  it('should display condensed state', () => {
+    mockProps = {
+      ...mockProps,
+      condense: 2,
+    }
+    const wrapper = shallow(<TagList {...mockProps} />);
+    expect(wrapper).toHaveLength(1);
+    expect(wrapper.find('.bx--tag-list--tag-counter'));
+  });
 
-      const condenseProps = {
-        ...defaultProps,
-        condense: 0,
-      };
-      
-      const wrapper = shallow(<TagList {...condenseProps} />);
-      expect(wrapper.find(Tag)).toHaveLength(2);
-    });
+  it('should display 1 tag and 1 condensed tag', () => {
+    mockProps = {
+      ...mockProps,
+      condense: 1,
+    }
 
-    it('condenses all', () => {
-      
-      const condenseProps = {
-        ...defaultProps,
-        condense: 2,
-      };
-      
-      const wrapper = shallow(<TagList {...condenseProps} />);
-      expect(wrapper).toHaveLength(1);
-      expect(wrapper.find('bx--tag-list--tag-counter'));
-    });
+    const wrapper = shallow(<TagList {...mockProps} />);
+    console.log(wrapper.debug());
+    expect(wrapper.find(Tag)).toHaveLength(2);
+    expect(wrapper.find('.bx--tag-list--tag-counter')).toHaveLength(1);
+    expect(wrapper.find(Icon)).toHaveLength(1);
+  });
 
-    it('condenses 1', () => {
+  it('should display edit state when isEditable is true', () => {
+    mockProps = {
+      ...mockProps,
+      isEditable: true,
+      onIconClick: onIconClickMock,
+    }
 
-      const condenseProps = {
-        ...defaultProps,
-        condense: 1,
-      };
-
-      const wrapper = shallow(<TagList {...condenseProps} />);
-      expect(wrapper.find('bx--tag-list--tag-counter'));
-      expect(wrapper.find(Icon));
-    });
-
-    it('displays edit state', () => {
-
-      const condenseProps = {
-        ...defaultProps,
-        isEditable: true,
-        onIconClick: onIconClickMock,
-      };
-
-      const wrapper = shallow(<TagList {...condenseProps} />);
-
-      expect(wrapper.find(Icon)).toHaveLength(1);
-      wrapper.find(Icon).simulate('click');
-      expect(onIconClickMock).toHaveBeenCalled;
-    });
+    const wrapper = shallow(<TagList {...mockProps} />);
+    expect(wrapper.find(Icon)).toHaveLength(1);
+    wrapper.find(Icon).simulate('click');
+    expect(onIconClickMock).toHaveBeenCalled;
+  });
 });

@@ -5,13 +5,13 @@ import TagList from '../TagList';
 
 const tagListEvents = {
   className: 'some-class',
-  tags: [{ name: "test:tag", type: 'functional'}, { name: 'test:tag', type: "functional" }, { name: "test:tag", type: 'functional' }],
+  tags: [{ name: "test:tag", type: 'functional'}, { name: 'tag:test', type: "functional" }, { name: "tag", type: 'functional' }],
 }
 storiesOf('TagList', module)
 .addWithInfo(
   'Default',
   `
-    TagList.
+    A TagList is used to manage multiple tags at once. The example below shows how the TagList component is displayed in a default state.
   `,
   () => (
     <TagList {...tagListEvents} />
@@ -20,7 +20,7 @@ storiesOf('TagList', module)
 .addWithInfo(
   'Display All Editable',
   `
-    TagList.
+    A TagList is used to manage multiple tags at once. The example below shows how the TagList component can be used in an editable state.
   `,
   () => (
     <TagList {...tagListEvents} condense={0} isEditable/>
@@ -29,16 +29,16 @@ storiesOf('TagList', module)
 .addWithInfo(
   'Condense 1 Editable',
   `
-    TagList.
+    A TagList is used to manage multiple tags at once. The example below shows how the TagList component can be used to condense a list.
   `,
   () => (
     <TagList {...tagListEvents} condense={1} isEditable/>
   )
 )
 .addWithInfo(
-  'Condense All Not Editable',
+  'Fully Condensed',
   `
-    TagList.
+    A TagList is used to manage multiple tags at once. The example below shows how the TagList component can be used in a fully condensed state.
   `,
   () => (
     <TagList {...tagListEvents} condense={3} />
