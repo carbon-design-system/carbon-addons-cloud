@@ -1,0 +1,52 @@
+@import 'carbon-components/scss/globals/scss/vars';
+@import 'carbon-components/scss/globals/scss/colors';
+@import 'carbon-components/scss/globals/scss/mixins';
+@import 'carbon-components/scss/globals/scss/typography';
+@import 'carbon-components/scss/globals/scss/spacing';
+@import 'carbon-components/scss/globals/scss/import-once';
+@import 'carbon-components/scss/globals/scss/css--typography';
+@import '../Tag/tag';
+
+@include exports('cloud-tag-list') {
+  .#{$prefix}--tag-list {
+    display: flex;
+    align-items: center;
+  }
+
+  .#{$prefix}--tag-list--tag {
+    margin-right: $spacing-2xs;
+
+    &:last-of-type {
+      margin-right: $spacing-xs;
+    }
+  }
+
+  .#{$prefix}--tag-list--tag-counter {
+    border-radius: 0.375rem;
+    margin-right: $spacing-xs;
+  }
+
+  .#{$prefix}--tag-list--tag-counter--icon {
+    width: rem(6px);
+    height: rem(6px);
+    background-color: none;
+    fill: $color__navy-gray-11;
+    margin: 0 $spacing-3xs 0 0;
+  }
+
+  .#{$prefix}--tag-list--edit--button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .#{$prefix}--tag-list--edit--icon  {
+      width: rem(14px);
+      height: rem(14px); 
+      fill: $ui-05;
+
+    &:hover {
+      fill: $brand_01;
+    }
+  }
+}

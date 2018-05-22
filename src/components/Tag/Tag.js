@@ -57,9 +57,6 @@ export default class Tag extends Component {
       ...other,
       className: tagClasses,
     };
-    if (TYPES[type] === 'Functional') {
-      tagProps.tabIndex = 0;
-    }
 
     const closeIcon = (
       <Icon

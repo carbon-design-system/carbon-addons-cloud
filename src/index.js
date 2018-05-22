@@ -26,4 +26,5 @@ export {
   OrderSummaryFooter,
 } from './components/OrderSummary';
 
+export TagList from './components/TagList';
 export Tag from './components/Tag';
