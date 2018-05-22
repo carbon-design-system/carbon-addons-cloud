@@ -11,7 +11,7 @@ export default class TagList extends Component {
     tags: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string.isRequired,
-        type: PropTypes.oneOf(['functional']).isRequired,
+        type: PropTypes.oneOf(['functional', '...']).isRequired,
       })
     ).isRequired,
     className: PropTypes.string,
