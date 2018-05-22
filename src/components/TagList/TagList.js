@@ -8,7 +8,12 @@ import Tag from '../Tag';
 export default class TagList extends Component {
   static propTypes = {
     condense: PropTypes.number.isRequired,
-    tags: PropTypes.array.isRequired,
+    tags: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        type: PropTypes.oneOf(['functional']).isRequired,
+      })
+    ).isRequired,
     className: PropTypes.string,
     isEditable: PropTypes.bool,
     onIconClick: PropTypes.func,
