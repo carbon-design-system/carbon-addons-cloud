@@ -13,6 +13,7 @@ export DetailPageHeader from './components/DetailPageHeader';
 export InteriorLeftNav from './components/InteriorLeftNav';
 export InteriorLeftNavItem from './components/InteriorLeftNavItem';
 export InteriorLeftNavList from './components/InteriorLeftNavList';
+export InteriorLeftNavHeader from './components/InteriorLeftNavHeader';
 
 export { Module, ModuleBody, ModuleHeader } from './components/Module';
 
