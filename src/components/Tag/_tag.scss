@@ -29,7 +29,13 @@
     @include tag-theme($color__navy-gray-10, $color__navy-gray-11);
     cursor: default;
     white-space: nowrap;
+
+    &__hovered {
+      @include tag-theme($color__navy-gray-13, $color__navy-gray-11);
+    }
   }
+
+
 
   .#{$prefix}--tag-close {
     fill: $color__navy-gray-12;
