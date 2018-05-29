@@ -28,7 +28,7 @@
       flex-direction: column;
       background-color: $color__white;
       padding-top: 1.5rem;
-      overflow: visible;
+      overflow: auto;
 
       &__item {
         cursor: pointer;
