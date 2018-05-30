@@ -16,6 +16,7 @@ export default class TagList extends Component {
       PropTypes.shape({
         name: PropTypes.string.isRequired,
         type: PropTypes.oneOf(['functional', '...']).isRequired,
+        className: PropTypes.string.isRequired,
       })
     ).isRequired,
     tagClassName: PropTypes.string,
@@ -51,7 +52,7 @@ export default class TagList extends Component {
 
     return ( 
       <div className={tagListClassNames} {...rest}>
-        {displayList.map(tag => <Tag key={tag.name} className={tagClassNames} type={tag.type}>{tag.name}</Tag>)}
+        {displayList.map(tag => <Tag key={tag.name} className={`${tag.className} ${tagClassNames}`} type={tag.type}>{tag.name}</Tag>)}
         {condense > 0 && condense < sortedTags.length && (
           <Tag type="functional" className={tagCounterClassNames}> 
             <Icon
