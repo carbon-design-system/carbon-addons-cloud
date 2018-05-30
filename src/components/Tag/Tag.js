@@ -59,7 +59,9 @@ export default class Tag extends Component {
       if (children.indexOf(':') !== -1) {
         // grab trimmed first and last half
         let beginning = children.substring(0, maxCharacters / 2).trim();
-        let end = children.substring(children.length - maxCharacters / 2).trim();
+        let end = children
+          .substring(children.length - maxCharacters / 2)
+          .trim();
 
         shortenedName = beginning + '...' + end;
       } else {
@@ -67,7 +69,6 @@ export default class Tag extends Component {
         let shorten = children.substring(0, maxCharacters).trim();
         shortenedName = shorten + '...';
       }
-
     }
     const tagClasses = classNames({
       'bx--tag': true,
@@ -87,6 +88,7 @@ export default class Tag extends Component {
         name="close"
         tabIndex="0"
         role="button"
+        description="detach the tag"
         onClick={this.handleRemove}
         onKeyDown={evt => {
           if (evt.which === 13 || evt.which === 32) this.handleRemove(evt);
