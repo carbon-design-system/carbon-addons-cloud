@@ -5,6 +5,7 @@ import TagList from '../TagList';
 
 const tagListEvents = {
   className: 'some-class',
+  tagClassName: 'some-other-class',
   tags: [{ name: "test:tag", type: 'functional'}, { name: 'tag:test', type: "functional" }, { name: "tag", type: 'functional' }],
 }
 storiesOf('TagList', module)

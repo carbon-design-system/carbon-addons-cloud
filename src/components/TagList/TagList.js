@@ -8,16 +8,17 @@ import Tag from '../Tag';
 export default class TagList extends Component {
   static propTypes = {
     condense: PropTypes.number.isRequired,
+    className: PropTypes.string,
+    isEditable: PropTypes.bool,
+    onIconClick: PropTypes.func,
+    sort: PropTypes.func,
     tags: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string.isRequired,
         type: PropTypes.oneOf(['functional', '...']).isRequired,
       })
     ).isRequired,
-    className: PropTypes.string,
-    isEditable: PropTypes.bool,
-    onIconClick: PropTypes.func,
-    sort: PropTypes.func,
+    tagClassName: PropTypes.string,
   };
 
   static defaultProps = {
@@ -28,7 +29,8 @@ export default class TagList extends Component {
 
   render() {
     const { 
-      className, 
+      className,
+      tagClassName,
       condense,
       isEditable, 
       onIconClick,
@@ -44,12 +46,14 @@ export default class TagList extends Component {
     const displayList = sortedTags.slice(0, sortedTags.length - limit);
 
     const tagListClassNames = classNames('bx--tag-list', className);
+    const tagClassNames = classNames('bx--tag-list--tag', tagClassName);
+    const tagCounterClassNames = classNames('bx--tag-list--tag-counter', tagClassNames);
 
     return ( 
       <div className={tagListClassNames} {...rest}>
-        {displayList.map(tag => <Tag key={tag.name} className="bx--tag-list--tag" type={tag.type}>{tag.name}</Tag>)}
+        {displayList.map(tag => <Tag key={tag.name} className={tagClassNames} type={tag.type}>{tag.name}</Tag>)}
         {condense > 0 && condense < sortedTags.length && (
-          <Tag type="functional" className="bx--tag-list--tag-counter"> 
+          <Tag type="functional" className={tagCounterClassNames}> 
             <Icon
               name="add"
               className="bx--tag-list--tag-counter--icon"
@@ -60,7 +64,7 @@ export default class TagList extends Component {
           </Tag>
         )}
         {condense >= tags.length && (
-          <Tag type="functional" className="bx--tag-list--tag-counter" > 
+          <Tag type="functional" className={tagCounterClassNames} > 
             {tags.length}
           </Tag>
         )}
