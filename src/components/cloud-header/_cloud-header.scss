@@ -1,12 +1,12 @@
 @import 'carbon-components/scss/globals/scss/colors';
 @import 'carbon-components/scss/globals/scss/helper-mixins';
 
-$cloud-header-link-color: #F2F4F8 !default;
-$cloud-header-icon-color: #F2F4F8 !default;
-$cloud-header-menu-color: #F2F4F8 !default;
+$cloud-header-link-color: #f2f4f8 !default;
+$cloud-header-icon-color: #f2f4f8 !default;
+$cloud-header-menu-color: #f2f4f8 !default;
 $cloud-header-background-color: $color__blue-90 !default;
-$cloud-header-hover-background-color: #2C3F48 !default;
-$cloud-header-hover-link-color: #76AAEA !default;
+$cloud-header-hover-background-color: #2c3f48 !default;
+$cloud-header-hover-link-color: #76aaea !default;
 
 .bx--cloud-header {
   display: flex;
@@ -106,7 +106,8 @@ $cloud-header-hover-link-color: #76AAEA !default;
   }
 }
 
-.bx--cloud-header-list--icon .bx--cloud-header-list__item:not(.bx--cloud-header-list__item--icon) {
+.bx--cloud-header-list--icon
+  .bx--cloud-header-list__item:not(.bx--cloud-header-list__item--icon) {
   display: none;
 
   @include breakpoint('320px') {

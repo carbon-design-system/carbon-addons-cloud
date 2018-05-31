@@ -4,6 +4,7 @@
 
 @include exports('cloud-order-summary') {
   .bx--order-summary {
+    @include font-family;
     @include typescale('zeta');
     background-color: $ui-01;
     padding-bottom: 1.25rem;

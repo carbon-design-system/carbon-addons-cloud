@@ -40,10 +40,10 @@
     padding: 0;
   }
 
-  .#{$prefix}--tag-list--edit--icon  {
-      width: rem(14px);
-      height: rem(14px); 
-      fill: $ui-05;
+  .#{$prefix}--tag-list--edit--icon {
+    width: rem(14px);
+    height: rem(14px);
+    fill: $ui-05;
 
     &:hover {
       fill: $brand_01;
