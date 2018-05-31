@@ -13,6 +13,7 @@
     "format": "prettier --write \"**/*.{scss,css,js,md,ts}\"",
     "format:diff": "prettier --list-different \"**/*.{scss,css,js,md,ts}\"",
     "precommit": "lint-staged",
+    "prepare": "yarn build",
     "semantic-release": "semantic-release",
     "test": "jest"
   },
