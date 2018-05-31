@@ -5,7 +5,8 @@ import TagList from '../TagList';
 
 const tagListEvents = {
   className: 'some-class',
-  tags: [{ name: "test:tag", type: 'functional'}, { name: 'tag:test', type: "functional" }, { name: "tag", type: 'functional' }],
+  tagClassName: 'some-other-class',
+  tags: [{ name: 'test:tag', type: 'functional', className: 'tag-one'}, { name: 'tag:test', type: 'functional', className: 'tag-two'}, { name: 'tag', type: 'functional', className: 'tag-three'}],
 }
 storiesOf('TagList', module)
 .addWithInfo(
