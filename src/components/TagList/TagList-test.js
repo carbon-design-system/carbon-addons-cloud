@@ -47,7 +47,7 @@ describe('TagList', () => {
     }
 
     const wrapper = shallow(<TagList {...mockProps} />);
-    console.log(wrapper.debug());
+    
     expect(wrapper.find(Tag)).toHaveLength(2);
     expect(wrapper.find('.bx--tag-list--tag-counter')).toHaveLength(1);
     expect(wrapper.find(Icon)).toHaveLength(1);
