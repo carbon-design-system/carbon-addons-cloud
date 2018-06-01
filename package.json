@@ -52,7 +52,7 @@
     "babel-runtime": "^6.26.0",
     "carbon-components": "^8.11.1",
     "carbon-components-react": "^5.19.0",
-    "carbon-icons": "^6.2.0",
+    "carbon-icons": "^7.0.1",
     "cpx": "^1.5.0",
     "css-loader": "^0.28.7",
     "enzyme": "^3.1.1",
