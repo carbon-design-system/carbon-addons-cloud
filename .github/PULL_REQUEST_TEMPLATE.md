@@ -1,4 +1,4 @@
-Closes carbon-design-system/carbon-addons-control#
+Closes #
 
 {{short description}}
 

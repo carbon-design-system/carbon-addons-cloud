@@ -1,40 +1,33 @@
 # carbon-addons-cloud
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/carbon-design-system/carbon-addons-cloud.svg)](https://greenkeeper.io/)
-
 [![Build Status](https://travis-ci.org/carbon-design-system/carbon-addons-cloud.svg?branch=master)](https://travis-ci.org/carbon-design-system/carbon-addons-cloud)
+[![Greenkeeper badge](https://badges.greenkeeper.io/carbon-design-system/carbon-addons-cloud.svg)](https://greenkeeper.io/)
 
 > Carbon add-on for IBM Cloud
 
 ## Usage
 
-You can install the `carbon-addons-cloud` package through NPM by doing either of the following:
+## Getting Started
+
+Run the following command using [npm](https://www.npmjs.com/):
 
 ```bash
-npm install carbon-addons-cloud --save
-
-# Or, with yarn
-yarn add carbon-addons-cloud
+npm install -S carbon-components carbon-addons-cloud
 ```
 
-After the package is installed, you can access components inside of the package by importing them in one of the following ways:
+If you prefer [Yarn](https://yarnpkg.com/en/), use the following command instead:
 
-```js
-// With ES2015 modules
-import { CloudHeader } from 'carbon-addons-cloud';
-
-// With CommonJS modules
-const { CloudHeader } = require('carbon-addons-cloud');
+```bash
+yarn add carbon-components carbon-addons-cloud
 ```
 
-The package also ships with the components Sass files as well. To use these, all you have to do is import the files in one of the following ways:
+This package so ships with the Sass and CSS files for each component in the Cloud Add-on. To use these, all you have to do is import the files in one of the following ways:
 
 ```scss
 // Default import path relative to `node_modules`
-@import 'carbon-addons-cloud/scss/index.scss'
-
-// If you're using webpack, you can use `~` to alias a node module
-@import '~/carbon-addons-cloud/scss/index.scss'
+@import 'carbon-addons-cloud/scss/index.scss';
+/* If you're using webpack, you can use `~` to alias a node module */
+@import '~/carbon-addons-cloud/scss/index.scss';
 ```
 
 In addition, make sure to include `node_modules` in your `node-sass` config. This will guarantee that all imports work as expected. You can find more about this option [here](https://github.com/sass/node-sass#includepaths).

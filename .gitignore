@@ -1,9 +1,10 @@
 # Ignore generated folders
 node_modules
 lib
+css
 scss
 static
-storybook-static
+build
 
 # Logs
 *.log

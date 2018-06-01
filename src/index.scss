@@ -1,9 +1,11 @@
-@import 'components/Card/card';
-@import 'components/CloudHeader/cloud-header';
-@import 'components/DetailPageHeader/detail-page-header';
-@import 'components/InteriorLeftNav/interior-left-nav';
-@import 'components/Module/module';
-@import 'components/OrderSummary/order-summary';
-@import 'components/ResourceHeader/resource-header';
-@import 'components/TagList/tag-list';
-@import 'components/Tag/tag';
+$css--plex: true !default;
+
+@import 'components/card/card';
+@import 'components/cloud-header/cloud-header';
+@import 'components/detail-page-header/detail-page-header';
+@import 'components/interior-left-nav/interior-left-nav';
+@import 'components/module/module';
+@import 'components/order-summary/order-summary';
+@import 'components/resource-header/resource-header';
+@import 'components/tag-list/tag-list';
+@import 'components/tag/tag';

@@ -1,8 +1,8 @@
 ---
 applications:
-- name: carbon-addons-cloud
+- name: carbon-addons-cloud-styles
   memory: 64M
   buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
   routes:
-  - route: carbon-addons-cloud-storybook.mybluemix.net
-  - route: cloud.carbondesignsystem.com
+  - route: carbon-addons-cloud-styles.mybluemix.net
+  - route: cloud-styles.carbondesignsystem.com
