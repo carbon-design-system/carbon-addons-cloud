@@ -76,7 +76,7 @@ gulp.task('styles:copy', ['clean'], () => {
 
 gulp.task('styles:build', ['clean', 'styles:copy'], () => {
   const config = {
-    includePaths: ['node_modules'],
+    includePaths: [path.resolve(__dirname, './node_modules')],
   };
   return Promise.all([
     gulp
