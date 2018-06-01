@@ -5,7 +5,7 @@
 @import 'carbon-components/scss/globals/scss/spacing';
 @import 'carbon-components/scss/globals/scss/import-once';
 @import 'carbon-components/scss/globals/scss/css--typography';
-@import '../Tag/tag';
+@import '../tag/tag';
 
 @include exports('cloud-tag-list') {
   .#{$prefix}--tag-list {
