@@ -1,4 +1,4 @@
-$css--plex: true;
+$css--plex: true !default;
 
 @import 'components/card/card';
 @import 'components/cloud-header/cloud-header';
