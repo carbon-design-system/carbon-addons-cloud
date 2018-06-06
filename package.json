@@ -26,7 +26,7 @@
     "@frctl/fractal": "^1.1.7",
     "autoprefixer": "^8.5.2",
     "carbon-components": "^8.23.0",
-    "carbon-icons": "^6.3.2 || ^7.x",
+    "carbon-icons": "^7.0.6",
     "cssnano": "^3.10.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
