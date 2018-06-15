@@ -25,7 +25,7 @@
     "@commitlint/config-conventional": "^7.0.0",
     "@frctl/fractal": "^1.1.7",
     "autoprefixer": "^8.5.2",
-    "carbon-components": "^8.23.0",
+    "carbon-components": "^9.0.3",
     "carbon-icons": "^7.0.6",
     "cssnano": "^3.10.0",
     "del": "^3.0.0",
