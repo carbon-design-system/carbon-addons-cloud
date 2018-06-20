@@ -1,0 +1,78 @@
+@import 'carbon-components/scss/globals/scss/vars';
+@import 'carbon-components/scss/globals/scss/helper-mixins';
+@import 'carbon-components/scss/globals/scss/typography';
+@import 'carbon-components/scss/globals/scss/import-once';
+@import 'vars';
+@import 'keyframes';
+
+@include exports('cloud-loader') {
+  .#{$prefix}--cloud-loading {
+    width: $size;
+    fill: $svgColor;
+    color: $svgColor;
+  }
+
+  .#{$prefix}--cloud-loading svg {
+    animation-name: bounce;
+    animation-iteration-count: infinite;
+    animation-duration: $cloudDuration;
+    animation-direction: alternate-reverse;
+    animation-timing-function: $timingFunction;
+  }
+
+  /* Think Lines */
+  .#{$prefix}--cloud-loading__think {
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-duration: $thinkDuration;
+    animation-timing-function: $timingFunction;
+  }
+
+  .#{$prefix}--cloud-loading__think--left {
+    animation-name: thinkLeft;
+    transform: translate(($thinkDistance * 1.732), $thinkDistance);
+  }
+
+  .#{$prefix}--cloud-loading__think--left-center {
+    animation-name: thinkLeftCenter;
+    animation-delay: $delay;
+    transform: translate($thinkDistance, ($thinkDistance * 2));
+  }
+
+  .#{$prefix}--cloud-loading__think--center {
+    animation-name: thinkCenter;
+    animation-delay: $delay * 2;
+    transform: translate(0, $thinkDistance * 2);
+  }
+
+  .#{$prefix}--cloud-loading__think--right-center {
+    animation-name: thinkRightCenter;
+    animation-delay: $delay * 3;
+    transform: translate(-$thinkDistance, ($thinkDistance * 2));
+  }
+
+  .#{$prefix}--cloud-loading__think--right {
+    animation-name: thinkRight;
+    animation-delay: $delay * 4;
+    transform: translate(-($thinkDistance * 1.732), $thinkDistance);
+  }
+
+  /* SVG Gradients */
+  .#{$prefix}--cloud-loading__gradient--1 {
+    fill: url(#bx--cloud-loading__linear-gradient);
+  }
+  .#{$prefix}--cloud-loading__gradient--2 {
+    fill: url(#bx--cloud-loading__linear-gradient-2);
+  }
+  .#{$prefix}--cloud-loading__gradient--3 {
+    fill: url(#bx--cloud-loading__linear-gradient-3);
+  }
+
+  /* Text */
+  .#{$prefix}--cloud-loading__text {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 1rem;
+  }
+}
