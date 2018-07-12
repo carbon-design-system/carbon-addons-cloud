@@ -25,9 +25,9 @@ This package so ships with the Sass and CSS files for each component in the Clou
 
 ```scss
 // Default import path relative to `node_modules`
-@import 'carbon-addons-cloud/scss/index.scss';
+@import 'carbon-addons-cloud/scss/styles.scss';
 /* If you're using webpack, you can use `~` to alias a node module */
-@import '~/carbon-addons-cloud/scss/index.scss';
+@import '~/carbon-addons-cloud/scss/styles.scss';
 ```
 
 In addition, make sure to include `node_modules` in your `node-sass` config. This will guarantee that all imports work as expected. You can find more about this option [here](https://github.com/sass/node-sass#includepaths).
