@@ -27,7 +27,7 @@
     "autoprefixer": "^8.5.2",
     "carbon-components": "^8.23.0",
     "carbon-icons": "^7.0.6",
-    "cssnano": "^3.10.0",
+    "cssnano": "^4.1.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-postcss": "^7.0.1",
