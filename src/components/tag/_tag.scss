@@ -33,6 +33,10 @@
     &__hovered {
       @include tag-theme($color__navy-gray-13, $color__navy-gray-11);
     }
+
+    &__not-filtered {
+      opacity: 0.4;
+    }
   }
 
   .#{$prefix}--tag-close {
