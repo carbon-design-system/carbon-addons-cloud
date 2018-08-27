@@ -1,0 +1,10 @@
+// Play around with the below variables to adjust speed, animation, size, or color.
+$thinkDistance: 3px; // Distance the lines move
+$thinkDuration: 1s; // How long the line's animation lasts
+$cloudDistance: 2px; // Distance the cloud moves
+$cloudDuration: 1s; // How long the clouds animation lasts
+$delay: 0.2s; // Delay before the next line starts
+$svgColor: $text-02; // Color of the whole animation
+$size: 80px; // Size of the whole animation
+$showText: false; // Set to true to see text, set to false to hide text
+$timingFunction: linear; // Carbon Standard: cubic-bezier(0.5, 0, 0.1, 1), other options: linear, ease-in-out, custom cubic-bezier
