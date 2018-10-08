@@ -18,14 +18,14 @@
     "test": "jest"
   },
   "peerDependencies": {
-    "carbon-components": "^8.23.0 || ^9.x"
+    "carbon-components": "^9.0.0 || ^9.x"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-conventional": "^7.0.0",
     "@frctl/fractal": "^1.1.7",
     "autoprefixer": "^8.5.2",
-    "carbon-components": "^8.23.0",
+    "carbon-components": "^9.0.0",
     "carbon-icons": "^7.0.6",
     "cssnano": "^3.10.0",
     "del": "^3.0.0",
