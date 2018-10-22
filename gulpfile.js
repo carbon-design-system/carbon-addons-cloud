@@ -7,6 +7,7 @@ const path = require('path');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
+const tildeImporter = require('node-sass-tilde-importer');
 
 fractal.set('project.title', 'carbon-addons-cloud');
 
@@ -77,6 +78,7 @@ gulp.task('styles:copy', ['clean'], () => {
 gulp.task('styles:build', ['clean', 'styles:copy'], () => {
   const config = {
     includePaths: [path.resolve(__dirname, './node_modules')],
+    importer: tildeImporter,
   };
   return Promise.all([
     gulp

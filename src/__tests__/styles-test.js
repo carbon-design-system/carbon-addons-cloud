@@ -6,9 +6,11 @@
 
 const path = require('path');
 const sass = require('node-sass');
+const tildeImporter = require('node-sass-tilde-importer');
 
 const defaultOptions = {
   includePaths: ['node_modules'],
+  importer: tildeImporter,
 };
 
 describe('carbon-addons-cloud', () => {
