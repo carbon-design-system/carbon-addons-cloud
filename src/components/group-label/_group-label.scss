@@ -1,0 +1,13 @@
+$group-label-color: #8897a2 !default;
+$font-family-sans-serif: 'ibm-plex-sans' !default;
+
+@include exports('group-label') {
+  .bx--group-label {
+    color: $group-label-color;
+    font-family: $font-family-sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    margin: 15px !important;
+  }
+}

@@ -1,0 +1,8 @@
+@include exports('filterable') {
+  .bx--group-wrapper {
+    padding-left: 35px;
+  }
+  .bx--filterable-main-wrapper {
+    max-height: 424px;
+  }
+}
