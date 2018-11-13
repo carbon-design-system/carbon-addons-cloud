@@ -39,6 +39,11 @@
     background-color: transparent;
     border: none;
     padding: 0;
+
+    &:hover {
+      cursor: pointer;
+      fill: $brand_01;
+    }
   }
 
   .#{$prefix}--tag-list--edit--icon {
