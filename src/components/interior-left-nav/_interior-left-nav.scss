@@ -196,7 +196,6 @@
     display: flex;
     flex-direction: column;
     width: rem(200px);
-    padding-top: rem(20px);
     transition: background-color 300ms $bx--standard-easing,
       width 300ms $bx--standard-easing;
 
@@ -227,8 +226,6 @@
     }
 
     .left-nav-list {
-      padding-top: 0;
-
       @include light-ui {
         background-color: inherit;
       }
