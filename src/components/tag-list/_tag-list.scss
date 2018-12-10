@@ -24,7 +24,7 @@
 
   .#{$prefix}--tag-list--tag-counter {
     border-radius: 0.375rem;
-    margin-right: $spacing-xs;
+    margin-right: rem(6px);
   }
 
   .#{$prefix}--tag-list--tag-counter--icon {

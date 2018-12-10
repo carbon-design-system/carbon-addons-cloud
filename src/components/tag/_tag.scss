@@ -13,7 +13,7 @@
     @include typescale('omega');
     display: inline-flex;
     align-items: center;
-    padding: 0 $spacing-xs;
+    padding: 0 rem(7px);
     height: 1.25rem;
     margin: $spacing-3xs;
     border-radius: rem(15px);
