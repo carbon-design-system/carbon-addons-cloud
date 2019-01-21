@@ -15,7 +15,7 @@
     align-items: center;
     padding: 0 rem(7px);
     height: 1.25rem;
-    margin: $spacing-3xs;
+    margin: $spacing-3xs $spacing-3xs $spacing-3xs 0;
     border-radius: rem(15px);
 
     &:not(:first-child) {
