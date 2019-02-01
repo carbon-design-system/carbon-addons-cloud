@@ -38,6 +38,10 @@
   .#{$prefix}--tag-list--tag-counter {
     border-radius: 0.375rem;
     margin-right: rem(6px);
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .#{$prefix}--tag-list--tag-counter--icon {
