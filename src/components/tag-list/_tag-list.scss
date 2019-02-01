@@ -12,6 +12,14 @@
   .#{$prefix}--tag-list {
     display: flex;
     align-items: center;
+
+    .#{$prefix}--tag--functional:hover {
+      cursor: pointer;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .#{$prefix}--tag-list--tag {
