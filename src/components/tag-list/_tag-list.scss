@@ -12,12 +12,16 @@
   .#{$prefix}--tag-list {
     display: flex;
     align-items: center;
+  }
 
-    .#{$prefix}--tag--functional:hover {
+  .#{$prefix}--tag-list-editable {
+    // between space
+    &:hover {
       cursor: pointer;
     }
 
-    &:hover {
+    .#{$prefix}--tag-list--tag:hover {
+      //over the tag
       cursor: pointer;
     }
   }
