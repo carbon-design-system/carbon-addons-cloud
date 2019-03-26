@@ -32,6 +32,18 @@
     }
   }
 
+  .#{$prefix}--tag-list-editable {
+    // between space
+    &:hover {
+      cursor: pointer;
+    }
+
+    .#{$prefix}--tag-list--tag:hover {
+      //over the tag
+      cursor: pointer;
+    }
+  }
+
   .#{$prefix}--tag-list--tag {
     margin-right: $spacing-2xs;
 
@@ -44,6 +56,11 @@
       .#{$prefix}--tag-list--edit--icon {
       fill: $ui-05;
     }
+  }
+
+  .#{$prefix}--tag-list--tag-tooltip {
+    padding: 2px;
+    font-size: 0.75rem;
   }
 
   .#{$prefix}--tag-list--tag-counter {
