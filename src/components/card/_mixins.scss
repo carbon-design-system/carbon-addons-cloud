@@ -20,5 +20,13 @@
     &::before {
       background-color: $support-01;
     }
+  } @else if ($status == 'stopped') {
+    &::before {
+      background-color: $disabled-03;
+    }
+  } @else if ($status == 'limited') {
+    &::before {
+      background-color: $support-03;
+    }
   }
 }
