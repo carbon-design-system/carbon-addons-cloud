@@ -5,7 +5,7 @@
 @import '~carbon-components/scss/globals/scss/typography';
 @import '~carbon-components/scss/globals/scss/spacing';
 @import '~carbon-components/scss/globals/scss/import-once';
-@import '~carbon-components/scss/globals/scss/css--typography';
+@import '~carbon-components/scss/globals/scss/typography';
 
 @include exports('cloud-resource-header') {
   .#{$prefix}--resource-header {
@@ -60,7 +60,7 @@
   }
 
   .#{$prefix}--resource-header__subtitle span {
-    @include typescale('caption');
+    @include type-style('caption-01');
     color: $text-02;
   }
 
@@ -114,7 +114,7 @@
   }
 
   .#{$prefix}--resource-header__status-item {
-    @include typescale('zeta');
+    @include type-style('productive-heading-01');
     color: $text-02;
     font-weight: 600;
     position: relative;
