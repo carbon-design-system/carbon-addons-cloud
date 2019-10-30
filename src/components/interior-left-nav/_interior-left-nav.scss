@@ -1,23 +1,23 @@
-@import '~carbon-components/scss/globals/scss/colors';
-@import '~carbon-components/scss/globals/scss/theme';
-@import '~carbon-components/scss/globals/scss/vars';
-@import '~carbon-components/scss/globals/scss/mixins';
-@import '~carbon-components/scss/globals/scss/layer';
-@import '~carbon-components/scss/globals/scss/typography';
-@import '~carbon-components/scss/globals/scss/import-once';
-@import '~carbon-components/scss/globals/scss/css--reset';
-@import '~carbon-components/scss/globals/scss/css--typography';
+@import 'carbon-components/scss/globals/scss/colors';
+@import 'carbon-components/scss/globals/scss/theme';
+@import 'carbon-components/scss/globals/scss/vars';
+@import 'carbon-components/scss/globals/scss/mixins';
+@import 'carbon-components/scss/globals/scss/layer';
+@import 'carbon-components/scss/globals/scss/typography';
+@import 'carbon-components/scss/globals/scss/import-once';
+@import 'carbon-components/scss/globals/scss/css--reset';
+@import 'carbon-components/scss/globals/scss/typography';
 
 @include exports('cloud-interior-left-nav') {
   .bx--interior-left-nav {
     @include reset;
-    @include font-family;
+    @include carbon--font-family(sans);
     width: rem(250px);
     position: fixed;
     top: rem(90px);
     height: 100%;
-    background-color: $color__white;
-    border-right: 1px solid $color__gray-1;
+    background-color: #fff;
+    border-right: 1px solid #0f212e;
 
     &--v6 {
       top: rem(50px);
@@ -27,7 +27,7 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      background-color: $color__white;
+      background-color: #fff;
       padding-top: 1.5rem;
       overflow: auto;
 
@@ -40,12 +40,12 @@
           outline: 1px solid transparent;
 
           .left-nav-list__item-link {
-            color: $color__blue-51;
+            color: #3d70b2;
             text-decoration: underline;
           }
 
           .left-nav-list--nested .left-nav-list__item-link {
-            color: $color__blue-90;
+            color: #152935;
             text-decoration: none;
           }
         }
@@ -58,8 +58,8 @@
         }
 
         &-link {
-          @include typescale('zeta');
-          color: $color__blue-90;
+          @include type-style('productive-heading-01');
+          color: #152935;
           font-weight: 400;
           position: relative;
           display: flex;
@@ -74,7 +74,7 @@
           display: flex;
 
           .bx--interior-left-nav__icon {
-            fill: $color__blue-51;
+            fill: #3d70b2;
             width: rem(8px);
             height: rem(8px);
             transition: $transition--base;
@@ -94,7 +94,7 @@
           }
 
           & > .left-nav-list__item-link {
-            color: $color__blue-51;
+            color: #3d70b2;
           }
 
           .left-nav-list__item-icon .bx--interior-left-nav__icon {
@@ -110,7 +110,7 @@
 
         &:hover {
           > .left-nav-list__item-link {
-            color: $color__blue-51;
+            color: #3d70b2;
           }
         }
       }
@@ -131,8 +131,8 @@
         opacity: 0;
 
         &-link {
-          @include typescale('zeta');
-          color: $color__blue-90;
+          @include type-style('productive-heading-01');
+          color: #152935;
           padding: 0.75rem 1.35rem 0.75rem 4.5rem;
           font-weight: 400;
           display: flex;
@@ -152,9 +152,10 @@
         &--active {
           color: $color__blue-51;
 
+
           & > .left-nav-list__item-link {
             font-weight: 600;
-            color: $color__blue-51;
+            color: #3d70b2;
           }
         }
       }
@@ -202,18 +203,12 @@
     }
 
     .left-nav-list__item--expanded > .left-nav-list__item-link {
-      color: $color__blue-90;
+      color: #152935;
     }
 
     .left-nav-line {
       margin: rem(24px) rem(20px);
-      border: 1px solid $color__gray-1;
-    }
-
-    .left-nav-list {
-      @include light-ui {
-        background-color: inherit;
-      }
+      border: 1px solid #0f212e;
     }
 
     .left-nav-list__item--active > .left-nav-list__item-link {
@@ -223,7 +218,7 @@
       &:before {
         top: 0;
         position: absolute;
-        background-color: $color__blue-51;
+        background-color: #3d70b2;
         height: 100%;
         left: 0;
         width: 4px;
@@ -241,13 +236,13 @@
     }
 
     .left-nav-list--nested .left-nav-list__item-link {
-      @include typescale('omega');
+      @include type-style('productive-heading-01');
       padding-left: rem(40px);
     }
 
     .bx--interior-left-nav-collapse {
       cursor: pointer;
-      background-color: rgba($color__blue-51, 0.1);
+      background-color: rgba(#3d70b2, 0.1);
       display: flex;
       justify-content: flex-end;
       align-items: center;
@@ -261,7 +256,7 @@
 
       &:hover,
       &:focus {
-        background-color: rgba($color__blue-51, 0.3);
+        background-color: rgba(#3d70b2, 0.3);
       }
     }
 
@@ -271,7 +266,7 @@
     }
 
     .bx--interior-left-nav-collapse__link {
-      @include typescale('zeta');
+      @include type-style('productive-heading-01');
       display: flex;
       align-items: center;
       text-decoration: none;
@@ -284,7 +279,7 @@
 
     .bx--interior-left-nav-collapse__arrow {
       transform: rotate(0);
-      fill: $color__blue-51;
+      fill: #3d70b2;
       height: 12px;
       width: 12px;
     }
@@ -296,11 +291,11 @@
     transition: background-color 300ms $carbon--standard-easing,
       width 300ms $carbon--standard-easing;
     cursor: pointer;
-    background-color: rgba($color__blue-51, 0.1);
+    background-color: rgba(#3d70b2, 0.1);
 
     &:hover,
     &:focus {
-      background-color: rgba($color__blue-51, 0.3);
+      background-color: rgba(#3d70b2, 0.3);
     }
 
     ul,
