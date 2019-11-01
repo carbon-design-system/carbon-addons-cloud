@@ -1,21 +1,20 @@
-@import '~carbon-components/scss/globals/scss/colors';
-@import '~carbon-components/scss/globals/scss/theme';
-@import '~carbon-components/scss/globals/scss/helper-mixins';
-@import '~carbon-components/scss/globals/scss/layout';
-@import '~carbon-components/scss/globals/scss/layer';
-@import '~carbon-components/scss/globals/scss/typography';
-@import '~carbon-components/scss/globals/scss/import-once';
-@import '~carbon-components/scss/globals/scss/css--reset';
-@import '~carbon-components/scss/globals/scss/css--typography';
-@import '~carbon-components/scss/components/overflow-menu/overflow-menu';
-@import '~carbon-components/scss/components/button/button';
-@import '~carbon-components/scss/components/link/link';
+@import 'carbon-components/scss/globals/scss/colors';
+@import 'carbon-components/scss/globals/scss/theme';
+@import 'carbon-components/scss/globals/scss/helper-mixins';
+@import 'carbon-components/scss/globals/scss/layout';
+@import 'carbon-components/scss/globals/scss/layer';
+@import 'carbon-components/scss/globals/scss/typography';
+@import 'carbon-components/scss/globals/scss/import-once';
+@import 'carbon-components/scss/globals/scss/css--reset';
+@import 'carbon-components/scss/globals/scss/typography';
+@import 'carbon-components/scss/components/overflow-menu/overflow-menu';
+@import 'carbon-components/scss/components/button/button';
+@import 'carbon-components/scss/components/link/link';
 @import 'mixins';
 
 @include exports('cloud-card') {
   .bx--card {
     @include reset;
-    @include font-family;
     @include layer('raised');
     display: flex;
     flex-direction: column;
@@ -33,8 +32,7 @@
     @include reset;
     position: relative;
     display: flex;
-    justify-content: $card-flex-align;
-    text-align: $card-text-align;
+    justify-content: center;
     padding-left: 1rem;
     padding-top: 1rem;
     padding-right: 1rem;
@@ -60,7 +58,7 @@
   }
 
   .bx--card-footer__link {
-    @include typescale('zeta');
+    @include type-style('productive-heading-01');
 
     &:focus {
       @include focus-outline('border');
@@ -72,7 +70,7 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    align-items: $card-flex-align;
+    align-items: center;
     padding-top: 1rem;
   }
 
@@ -82,7 +80,7 @@
   }
 
   .bx--about__title--name {
-    @include typescale('delta');
+    @include type-style('productive-heading-03');
     @include text-overflow(rem(180px));
     font-weight: 400;
     margin: 0;
@@ -90,7 +88,7 @@
   }
 
   .bx--about__title--link {
-    @include typescale('omega');
+    @include type-style('productive-heading-02');
     @include text-overflow(rem(180px));
     display: inline;
     font-weight: 400;
@@ -98,7 +96,7 @@
   }
 
   .bx--about__title--additional-info {
-    @include typescale('omega');
+    @include type-style('productive-heading-02');
     @include text-overflow(rem(180px));
     display: inline;
     font-weight: 400;
@@ -159,7 +157,7 @@
   }
 
   .bx--app-actions__button {
-    @include typescale('epsilon');
+    @include type-style('productive-heading-02');
     display: inline-block;
     padding: 0.125rem 0 0;
     margin: 0 0.175rem;

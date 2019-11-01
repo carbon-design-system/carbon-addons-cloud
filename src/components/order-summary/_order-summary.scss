@@ -1,12 +1,12 @@
-@import '~carbon-components/scss/globals/scss/colors';
-@import '~carbon-components/scss/globals/scss/theme';
-@import '~carbon-components/scss/globals/scss/mixins';
-@import '~carbon-components/scss/components/dropdown/dropdown';
+@import 'carbon-components/scss/globals/scss/colors';
+@import 'carbon-components/scss/globals/scss/theme';
+@import 'carbon-components/scss/globals/scss/mixins';
+@import 'carbon-components/scss/components/dropdown/dropdown';
 
 @include exports('cloud-order-summary') {
   .bx--order-summary {
-    @include font-family;
-    @include typescale('zeta');
+    @include carbon--font-family(sans);
+    @include type-style('productive-heading-01');
     background-color: $ui-01;
     padding-bottom: 1.25rem;
     width: 18rem;
@@ -44,7 +44,7 @@
   }
 
   .bx--order-header-title {
-    @include typescale('zeta');
+    @include type-style('productive-heading-01');
     font-weight: 600;
     flex: 2;
   }
@@ -66,14 +66,14 @@
   }
 
   .bx--order-detail {
-    @include typescale('zeta');
+    @include type-style('productive-heading-01');
     color: $text-02;
     padding-right: 1.25rem;
     line-height: 1.25;
   }
 
   .bx--order-price {
-    @include typescale('omega');
+    @include type-style('productive-heading-01');
     font-weight: 600;
     white-space: nowrap;
   }
@@ -112,14 +112,14 @@
     font-weight: 600;
 
     span {
-      @include typescale('omega');
+      @include type-style('productive-heading-01');
       color: $text-02;
       font-weight: 400;
     }
   }
 
   .bx--order-total-subtitle {
-    @include typescale('legal');
+    @include type-style('caption-01');
     color: $text-02;
     font-style: italic;
   }
@@ -133,7 +133,7 @@
   }
 
   .bx--order-footer-text {
-    @include typescale('zeta');
+    @include type-style('productive-heading-01');
     color: $text-02;
     line-height: 1;
   }
@@ -147,7 +147,7 @@
   }
 
   .bx--order-category-title {
-    @include typescale('omega');
+    @include type-style('productive-heading-01');
     font-weight: 600;
     margin-bottom: rem(4px);
     text-transform: uppercase;

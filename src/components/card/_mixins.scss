@@ -1,6 +1,6 @@
 @mixin app-status($status) {
   @include reset;
-  @include typescale('omega');
+  @include type-style('productive-heading-01');
   display: none;
   align-items: center;
 

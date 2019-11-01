@@ -1,16 +1,16 @@
-@import '~carbon-components/scss/globals/scss/colors';
-@import '~carbon-components/scss/globals/scss/theme';
-@import '~carbon-components/scss/globals/scss/vars';
-@import '~carbon-components/scss/globals/scss/helper-mixins';
-@import '~carbon-components/scss/globals/scss/layout';
-@import '~carbon-components/scss/globals/scss/layer';
-@import '~carbon-components/scss/globals/scss/typography';
-@import '~carbon-components/scss/globals/scss/import-once';
-@import '~carbon-components/scss/globals/scss/css--reset';
-@import '~carbon-components/scss/globals/scss/css--typography';
-@import '~carbon-components/scss/components/breadcrumb/breadcrumb';
-@import '~carbon-components/scss/components/overflow-menu/overflow-menu';
-@import '~carbon-components/scss/components/tabs/tabs';
+@import 'carbon-components/scss/globals/scss/colors';
+@import 'carbon-components/scss/globals/scss/theme';
+@import 'carbon-components/scss/globals/scss/vars';
+@import 'carbon-components/scss/globals/scss/helper-mixins';
+@import 'carbon-components/scss/globals/scss/layout';
+@import 'carbon-components/scss/globals/scss/layer';
+@import 'carbon-components/scss/globals/scss/typography';
+@import 'carbon-components/scss/globals/scss/import-once';
+@import 'carbon-components/scss/globals/scss/css--reset';
+@import 'carbon-components/scss/globals/scss/typography';
+@import 'carbon-components/scss/components/breadcrumb/breadcrumb';
+@import 'carbon-components/scss/components/overflow-menu/overflow-menu';
+@import 'carbon-components/scss/components/tabs/tabs';
 @import 'mixins';
 
 @include exports('cloud-detail-page-header') {
@@ -23,7 +23,7 @@
     width: calc(100% - 200px);
     padding: 0.875rem 3%;
 
-    @include breakpoint(bp--sm--major) {
+    @include carbon--breakpoint(sm) {
       padding: 0.75rem 5%;
       height: rem(88px);
       max-height: rem(88px);
@@ -38,7 +38,7 @@
     left: 0;
     width: 100%;
 
-    @include breakpoint(bp--sm--major) {
+    @include carbon--breakpoint(sm) {
       padding: 0.75rem 5% 0;
       height: rem(124px);
     }
@@ -46,13 +46,13 @@
 
   .bx--detail-page-header .bx--breadcrumb {
     display: none;
-    transition: opacity $transition--base $bx--standard-easing $transition-time /
-        2,
-      visibility $transition--base $bx--standard-easing $transition-time / 2,
-      transform $transition--base $bx--standard-easing 0s;
+    transition: opacity $transition--base $carbon--standard-easing
+        $transition-time / 2,
+      visibility $transition--base $carbon--standard-easing $transition-time / 2,
+      transform $transition--base $carbon--standard-easing 0s;
     will-change: opacity, visibility, transform;
 
-    @include breakpoint(bp--sm--major) {
+    @include carbon--breakpoint(sm) {
       display: flex;
       flex-wrap: nowrap;
     }
@@ -68,9 +68,9 @@
     align-items: center;
     min-height: rem(36px);
     height: rem(36px);
-    transition: transform $transition-time $bx--standard-easing 0s;
+    transition: transform $transition-time $carbon--standard-easing 0s;
 
-    @include breakpoint(bp--sm--major) {
+    @include carbon--breakpoint(sm) {
       padding-bottom: 0;
     }
   }
@@ -78,7 +78,7 @@
   .bx--detail-page-header--with-tabs .bx--detail-page-header-title-container {
     margin-top: rem(3px);
 
-    @include breakpoint(bp--sm--major) {
+    @include carbon--breakpoint(sm) {
       margin-top: 0.5rem;
     }
   }
@@ -92,7 +92,7 @@
     display: flex;
     flex-direction: column;
 
-    @include breakpoint(bp--sm--major) {
+    @include carbon--breakpoint(sm) {
       justify-content: space-between;
     }
   }
@@ -110,12 +110,12 @@
   }
 
   .bx--detail-page-header-title {
-    @include typescale('gamma');
+    @include type-style('productive-heading-03');
     font-weight: 300;
     color: $text-02;
 
-    @include breakpoint(bp--sm--major) {
-      @include typescale('beta');
+    @include carbon--breakpoint(sm) {
+      @include type-style('productive-heading-04');
     }
   }
 
@@ -123,7 +123,7 @@
     display: none;
     margin-top: rem(8px);
 
-    @include breakpoint(bp--sm--major) {
+    @include carbon--breakpoint(sm) {
       display: inline-block;
     }
   }
@@ -142,11 +142,11 @@
     right: 0.75rem;
     display: flex;
     align-items: flex-start;
-    transition: top $transition--base $bx--standard-easing 0s,
-      transform $transition--base $bx--standard-easing 0s;
+    transition: top $transition--base $carbon--standard-easing 0s,
+      transform $transition--base $carbon--standard-easing 0s;
     will-change: transform, top;
 
-    @include breakpoint(bp--sm--major) {
+    @include carbon--breakpoint(sm) {
       align-items: center;
       top: 50%;
       transform: translate3d(0, -50%, 0);
@@ -154,9 +154,9 @@
   }
 
   .bx--detail-page-header .bx--tabs {
-    transition: opacity $transition--base $bx--standard-easing $transition-time /
-        2,
-      visibility $transition--base $bx--standard-easing $transition-time / 2;
+    transition: opacity $transition--base $carbon--standard-easing
+        $transition-time / 2,
+      visibility $transition--base $carbon--standard-easing $transition-time / 2;
     will-change: opacity, visibility, transform;
   }
 
@@ -164,7 +164,7 @@
     padding: 0.75rem 0;
     display: none;
 
-    @include breakpoint(bp--sm--major) {
+    @include carbon--breakpoint(sm) {
       display: block;
       padding: 0;
       min-height: rem(46px);
@@ -185,7 +185,7 @@
     .bx--tabs {
       transition-delay: 0s;
 
-      @include breakpoint(bp--sm--major) {
+      @include carbon--breakpoint(sm) {
         opacity: 0;
         visibility: hidden;
       }
@@ -197,7 +197,7 @@
     padding: 0.75rem 3% 0;
     transition-delay: $transition-time / 2;
 
-    @include breakpoint(bp--sm--major) {
+    @include carbon--breakpoint(sm) {
       padding: 0.75rem 5% 0;
       transform: translate3d(0, -50%, 0);
     }
@@ -209,14 +209,14 @@
     .bx--detail-page-header-menu {
       transition-delay: $transition-time / 2;
 
-      @include breakpoint(bp--sm--major) {
+      @include carbon--breakpoint(sm) {
         top: 75%;
       }
     }
 
     .bx--detail-page-header-title-container {
       transition-delay: $transition-time / 2;
-      @include breakpoint(bp--sm--major) {
+      @include carbon--breakpoint(sm) {
         transform: translate3d(0, 100%, 0);
       }
     }
@@ -224,7 +224,7 @@
 
   // Scroll -- No Tabs
   .bx--detail-page-header--scroll.bx--detail-page-header--no-tabs {
-    @include breakpoint(bp--sm--major) {
+    @include carbon--breakpoint(sm) {
       transform: translate3d(0, rem(-22px), 0);
     }
 
@@ -237,13 +237,13 @@
     .bx--detail-page-header-title-container {
       padding: 0;
 
-      @include breakpoint(bp--sm--major) {
+      @include carbon--breakpoint(sm) {
         margin-bottom: rem(3px);
       }
     }
 
     .bx--detail-page-header-menu {
-      @include breakpoint(bp--sm--major) {
+      @include carbon--breakpoint(sm) {
         transform: translate3d(0, rem(-8px), 0);
       }
     }

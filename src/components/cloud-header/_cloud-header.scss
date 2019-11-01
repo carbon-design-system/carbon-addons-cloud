@@ -1,11 +1,11 @@
-@import '~carbon-components/scss/globals/scss/colors';
-@import '~carbon-components/scss/globals/scss/theme';
-@import '~carbon-components/scss/globals/scss/helper-mixins';
+@import 'carbon-components/scss/globals/scss/colors';
+@import 'carbon-components/scss/globals/scss/theme';
+@import 'carbon-components/scss/globals/scss/helper-mixins';
 
 $cloud-header-link-color: #f2f4f8 !default;
 $cloud-header-icon-color: #f2f4f8 !default;
 $cloud-header-menu-color: #f2f4f8 !default;
-$cloud-header-background-color: $color__blue-90 !default;
+$cloud-header-background-color: #152935 !default;
 $cloud-header-hover-background-color: #2c3f48 !default;
 $cloud-header-hover-link-color: #76aaea !default;
 
@@ -41,7 +41,7 @@ $cloud-header-hover-link-color: #76aaea !default;
   padding: rem(14px);
   margin-right: rem(10px);
   width: auto;
-  transition: background-color $transition--base $bx--standard-easing;
+  transition: background-color $transition--base $carbon--standard-easing;
 
   svg {
     fill: $cloud-header-menu-color;
@@ -60,7 +60,7 @@ $cloud-header-hover-link-color: #76aaea !default;
 .bx--cloud-header-brand {
   text-decoration: none;
   color: $cloud-header-link-color;
-  transition: color $transition--base $bx--standard-easing;
+  transition: color $transition--base $carbon--standard-easing;
 
   &:hover,
   &:focus {
@@ -83,7 +83,7 @@ $cloud-header-hover-link-color: #76aaea !default;
 }
 
 .bx--cloud-header-brand__text {
-  @include typescale('epsilon');
+  @include type-style('productive-heading-02');
   font-weight: 400;
 
   span {
@@ -102,7 +102,7 @@ $cloud-header-hover-link-color: #76aaea !default;
 .bx--cloud-header-list--link {
   display: none;
 
-  @include breakpoint('672px') {
+  @include carbon--breakpoint(md) {
     display: flex;
   }
 }
@@ -111,7 +111,7 @@ $cloud-header-hover-link-color: #76aaea !default;
   .bx--cloud-header-list__item:not(.bx--cloud-header-list__item--icon) {
   display: none;
 
-  @include breakpoint('320px') {
+  @include carbon--breakpoint(sm) {
     display: flex;
   }
 }
@@ -124,14 +124,14 @@ $cloud-header-hover-link-color: #76aaea !default;
 }
 
 .bx--cloud-header-list__link {
-  @include typescale('epsilon');
+  @include type-style('productive-heading-02');
   height: 100%;
   display: flex;
   align-items: center;
   font-weight: 400;
   color: $cloud-header-link-color;
   text-decoration: none;
-  transition: color $transition--base $bx--standard-easing;
+  transition: color $transition--base $carbon--standard-easing;
   margin-right: rem(32px);
 
   &:hover,
@@ -150,7 +150,7 @@ $cloud-header-hover-link-color: #76aaea !default;
   align-items: center;
   height: 100%;
   padding: rem(14px);
-  transition: background-color $transition--base $bx--standard-easing;
+  transition: background-color $transition--base $carbon--standard-easing;
 
   svg {
     fill: $cloud-header-icon-color;

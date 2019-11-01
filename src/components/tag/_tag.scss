@@ -1,16 +1,16 @@
-@import '~carbon-components/scss/globals/scss/vars';
+@import 'carbon-components/scss/globals/scss/vars';
 @import 'colors';
-@import '~carbon-components/scss/globals/scss/theme';
-@import '~carbon-components/scss/globals/scss/spacing';
-@import '~carbon-components/scss/globals/scss/helper-mixins';
-@import '~carbon-components/scss/globals/scss/typography';
-@import '~carbon-components/scss/globals/scss/import-once';
+@import 'carbon-components/scss/globals/scss/theme';
+@import 'carbon-components/scss/globals/scss/spacing';
+@import 'carbon-components/scss/globals/scss/helper-mixins';
+@import 'carbon-components/scss/globals/scss/typography';
+@import 'carbon-components/scss/globals/scss/import-once';
 @import 'mixins';
 
 @include exports('cloud-tag') {
   .#{$prefix}--tag {
-    @include font-family;
-    @include typescale('omega');
+    @include carbon--font-family(sans);
+    @include type-style('productive-heading-01');
     display: inline-flex;
     align-items: center;
     padding: 0 rem(7px);
@@ -27,12 +27,12 @@
   }
 
   .#{$prefix}--tag--functional {
-    @include tag-theme($color__navy-gray-10, $color__navy-gray-11);
+    @include tag-theme($ibm-color__navy-gray-10, $ibm-color__navy-gray-11);
     cursor: default;
     white-space: nowrap;
 
     &__hovered {
-      @include tag-theme($color__navy-gray-13, $color__navy-gray-11);
+      @include tag-theme($ibm-color__navy-gray-13, $ibm-color__navy-gray-11);
     }
 
     &__not-filtered {
@@ -41,7 +41,7 @@
   }
 
   .#{$prefix}--tag-close {
-    fill: $color__navy-gray-12;
+    fill: $ibm-color__navy-gray-12;
     margin-left: rem(8px);
     width: rem(8px);
     height: rem(8px);

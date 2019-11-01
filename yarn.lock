@@ -20,10 +20,6 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-"@carbon/colors@^0.0.1-alpha.0":
-  version "0.0.1-alpha.2"
-  resolved "https://registry.yarnpkg.com/@carbon/colors/-/colors-0.0.1-alpha.2.tgz#bfe50a0f8b1ba6cb916b4c96145896f1b72209ea"
-
 "@commitlint/cli@^7.0.0":
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-7.2.0.tgz#04fb5ba1d28bba100a7f71d51d35aa9a8fd5faba"
@@ -1248,13 +1244,13 @@ capture-stack-trace@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/capture-stack-trace/-/capture-stack-trace-1.0.0.tgz#4a6fa07399c26bba47f0b2496b4d0fb408c5550d"
 
-carbon-components@^9.0.0:
-  version "9.26.1"
-  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-9.26.1.tgz#2bf25d4452a140aad78f4f5f231b6e628e1c748c"
+carbon-components@^10.6.4:
+  version "10.6.4"
+  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.6.4.tgz#46b03ab9dc91b0b9e95dcd5c13c824326c8316ba"
+  integrity sha512-bCaGoDMYFuMPUHCzR91qHPW0ufXt1Gso0GJSpat7WN8ayZngktuRWLfpV49hu2qz+zbyXHuaJvkCJPUHNk52Mw==
   dependencies:
-    "@carbon/colors" "^0.0.1-alpha.0"
     carbon-icons "^7.0.7"
-    flatpickr "2.6.3"
+    flatpickr "4.6.1"
     lodash.debounce "^4.0.8"
     warning "^3.0.0"
 
@@ -2685,9 +2681,10 @@ flagged-respawn@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/flagged-respawn/-/flagged-respawn-1.0.0.tgz#4e79ae9b2eb38bf86b3bb56bf3e0a56aa5fcabd7"
 
-flatpickr@2.6.3:
-  version "2.6.3"
-  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-2.6.3.tgz#457357532deb135f3da64b425bf4435737961564"
+flatpickr@4.6.1:
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.6.1.tgz#9eb498ab805dd27f5ae02e1ac6ac6c099ce45e94"
+  integrity sha512-3ULSxbXmcMIRzer/2jLNweoqHpwDvsjEawO2FUd9UFR8uPwLM+LruZcPDpuZStcEgbQKhuFOfXo4nYdGladSNw==
 
 flatten@^1.0.2:
   version "1.0.2"

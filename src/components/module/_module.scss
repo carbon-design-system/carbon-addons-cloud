@@ -1,17 +1,17 @@
-@import '~carbon-components/scss/globals/scss/colors';
-@import '~carbon-components/scss/globals/scss/theme';
-@import '~carbon-components/scss/globals/scss/helper-mixins';
-@import '~carbon-components/scss/globals/scss/layout';
-@import '~carbon-components/scss/globals/scss/layer';
-@import '~carbon-components/scss/globals/scss/typography';
-@import '~carbon-components/scss/globals/scss/import-once';
-@import '~carbon-components/scss/globals/scss/css--reset';
-@import '~carbon-components/scss/globals/scss/css--typography';
+@import 'carbon-components/scss/globals/scss/colors';
+@import 'carbon-components/scss/globals/scss/theme';
+@import 'carbon-components/scss/globals/scss/helper-mixins';
+@import 'carbon-components/scss/globals/scss/layout';
+@import 'carbon-components/scss/globals/scss/layer';
+@import 'carbon-components/scss/globals/scss/typography';
+@import 'carbon-components/scss/globals/scss/import-once';
+@import 'carbon-components/scss/globals/scss/css--reset';
+@import 'carbon-components/scss/globals/scss/typography';
 
 @include exports('cloud-modules') {
   .bx--module {
     @include reset;
-    @include font-family;
+    @include carbon--font-family(sans);
     display: flex;
     flex-direction: column;
     padding: rem(10px);
@@ -32,8 +32,7 @@
     }
 
     .bx--module__title {
-      @include typescale('zeta');
-      @include font-smoothing;
+      @include type-style('productive-heading-01');
       letter-spacing: 0;
       font-weight: 600;
       color: $text-01;
@@ -46,7 +45,7 @@
       padding: 1.5rem;
 
       p {
-        @include typescale('zeta');
+        @include type-style('productive-heading-01');
       }
     }
 

@@ -1,11 +1,11 @@
-@import '~carbon-components/scss/globals/scss/vars';
-@import '~carbon-components/scss/globals/scss/colors';
-@import '~carbon-components/scss/globals/scss/theme';
-@import '~carbon-components/scss/globals/scss/mixins';
-@import '~carbon-components/scss/globals/scss/typography';
-@import '~carbon-components/scss/globals/scss/spacing';
-@import '~carbon-components/scss/globals/scss/import-once';
-@import '~carbon-components/scss/globals/scss/css--typography';
+@import 'carbon-components/scss/globals/scss/vars';
+@import 'carbon-components/scss/globals/scss/colors';
+@import 'carbon-components/scss/globals/scss/theme';
+@import 'carbon-components/scss/globals/scss/mixins';
+@import 'carbon-components/scss/globals/scss/typography';
+@import 'carbon-components/scss/globals/scss/spacing';
+@import 'carbon-components/scss/globals/scss/import-once';
+@import 'carbon-components/scss/globals/scss/typography';
 @import '../tag/tag';
 
 @include exports('cloud-tag-list') {
@@ -94,7 +94,7 @@
     width: rem(6px);
     height: rem(6px);
     background-color: none;
-    fill: $color__navy-gray-11;
+    fill: $ibm-color__navy-gray-11;
     margin: 0 $spacing-3xs 0 0;
   }
 
