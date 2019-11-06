@@ -1,3 +1,6 @@
+@import '@carbon/themes/scss/themes';
+$carbon--theme: $carbon--theme--v9;
+@include carbon--theme();
 @import 'carbon-components/scss/globals/scss/vars';
 @import 'carbon-components/scss/globals/scss/helper-mixins';
 @import 'carbon-components/scss/globals/scss/typography';
