@@ -46,6 +46,7 @@
 
       p {
         @include type-style('productive-heading-01');
+        font-weight: 400;
       }
     }
 

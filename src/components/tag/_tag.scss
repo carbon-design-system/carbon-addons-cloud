@@ -11,6 +11,7 @@
   .#{$prefix}--tag {
     @include carbon--font-family(sans);
     @include type-style('productive-heading-01');
+    font-weight: 400;
     display: inline-flex;
     align-items: center;
     padding: 0 rem(7px);
