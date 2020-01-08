@@ -70,6 +70,12 @@
           padding: 0.75rem 1.5rem 0.75rem rem(59px);
         }
 
+        &:not(.left-nav-list__item--has-children):hover
+          > .left-nav-list__item-link {
+          background-color: #f0f3f6;
+          color: #3d70b2;
+        }
+
         &-icon {
           display: flex;
 
@@ -151,6 +157,7 @@
 
         &--active {
           color: #3d70b2;
+          background-color: #f0f3f6;
 
           & > .left-nav-list__item-link {
             font-weight: 600;
@@ -235,7 +242,7 @@
     }
 
     .left-nav-list--nested .left-nav-list__item-link {
-      @include type-style('productive-heading-01');
+      @include type-style('label-01');
       padding-left: rem(40px);
     }
 
