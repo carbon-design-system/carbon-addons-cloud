@@ -1,3 +1,6 @@
+@import '@carbon/themes/scss/themes';
+$carbon--theme: $carbon--theme--v9;
+@include carbon--theme();
 @import 'carbon-components/scss/globals/scss/colors';
 @import 'carbon-components/scss/globals/scss/theme';
 @import 'carbon-components/scss/globals/scss/vars';
@@ -18,14 +21,16 @@
     @include detail-page-header;
     max-height: rem(66px);
     height: rem(66px);
-    left: rem(200px);
+    left: 0;
     background-color: $ui-02;
-    width: calc(100% - 200px);
     padding: 0.875rem 3%;
+    width: 100%;
 
-    @include carbon--breakpoint(sm) {
+    @include carbon--breakpoint(md) {
       padding: 0.75rem 5%;
       height: rem(88px);
+      left: rem(200px);
+      width: calc(100% - 200px);
       max-height: rem(88px);
     }
   }
@@ -38,7 +43,7 @@
     left: 0;
     width: 100%;
 
-    @include carbon--breakpoint(sm) {
+    @include carbon--breakpoint(md) {
       padding: 0.75rem 5% 0;
       height: rem(124px);
     }
@@ -52,7 +57,7 @@
       transform $transition--base $carbon--standard-easing 0s;
     will-change: opacity, visibility, transform;
 
-    @include carbon--breakpoint(sm) {
+    @include carbon--breakpoint(md) {
       display: flex;
       flex-wrap: nowrap;
     }
@@ -70,7 +75,7 @@
     height: rem(36px);
     transition: transform $transition-time $carbon--standard-easing 0s;
 
-    @include carbon--breakpoint(sm) {
+    @include carbon--breakpoint(md) {
       padding-bottom: 0;
     }
   }
@@ -78,7 +83,7 @@
   .bx--detail-page-header--with-tabs .bx--detail-page-header-title-container {
     margin-top: rem(3px);
 
-    @include carbon--breakpoint(sm) {
+    @include carbon--breakpoint(md) {
       margin-top: 0.5rem;
     }
   }
@@ -92,7 +97,7 @@
     display: flex;
     flex-direction: column;
 
-    @include carbon--breakpoint(sm) {
+    @include carbon--breakpoint(md) {
       justify-content: space-between;
     }
   }
@@ -114,7 +119,7 @@
     font-weight: 300;
     color: $text-02;
 
-    @include carbon--breakpoint(sm) {
+    @include carbon--breakpoint(md) {
       @include type-style('productive-heading-04');
     }
   }
@@ -123,7 +128,7 @@
     display: none;
     margin-top: rem(8px);
 
-    @include carbon--breakpoint(sm) {
+    @include carbon--breakpoint(md) {
       display: inline-block;
     }
   }
@@ -146,7 +151,7 @@
       transform $transition--base $carbon--standard-easing 0s;
     will-change: transform, top;
 
-    @include carbon--breakpoint(sm) {
+    @include carbon--breakpoint(md) {
       align-items: center;
       top: 50%;
       transform: translate3d(0, -50%, 0);
@@ -164,7 +169,7 @@
     padding: 0.75rem 0;
     display: none;
 
-    @include carbon--breakpoint(sm) {
+    @include carbon--breakpoint(md) {
       display: block;
       padding: 0;
       min-height: rem(46px);
@@ -185,7 +190,7 @@
     .bx--tabs {
       transition-delay: 0s;
 
-      @include carbon--breakpoint(sm) {
+      @include carbon--breakpoint(md) {
         opacity: 0;
         visibility: hidden;
       }
@@ -197,7 +202,7 @@
     padding: 0.75rem 3% 0;
     transition-delay: $transition-time / 2;
 
-    @include carbon--breakpoint(sm) {
+    @include carbon--breakpoint(md) {
       padding: 0.75rem 5% 0;
       transform: translate3d(0, -50%, 0);
     }
@@ -209,14 +214,14 @@
     .bx--detail-page-header-menu {
       transition-delay: $transition-time / 2;
 
-      @include carbon--breakpoint(sm) {
+      @include carbon--breakpoint(md) {
         top: 75%;
       }
     }
 
     .bx--detail-page-header-title-container {
       transition-delay: $transition-time / 2;
-      @include carbon--breakpoint(sm) {
+      @include carbon--breakpoint(md) {
         transform: translate3d(0, 100%, 0);
       }
     }
@@ -224,7 +229,7 @@
 
   // Scroll -- No Tabs
   .bx--detail-page-header--scroll.bx--detail-page-header--no-tabs {
-    @include carbon--breakpoint(sm) {
+    @include carbon--breakpoint(md) {
       transform: translate3d(0, rem(-22px), 0);
     }
 
@@ -237,13 +242,13 @@
     .bx--detail-page-header-title-container {
       padding: 0;
 
-      @include carbon--breakpoint(sm) {
+      @include carbon--breakpoint(md) {
         margin-bottom: rem(3px);
       }
     }
 
     .bx--detail-page-header-menu {
-      @include carbon--breakpoint(sm) {
+      @include carbon--breakpoint(md) {
         transform: translate3d(0, rem(-8px), 0);
       }
     }

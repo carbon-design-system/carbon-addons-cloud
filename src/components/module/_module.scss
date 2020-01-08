@@ -1,3 +1,6 @@
+@import '@carbon/themes/scss/themes';
+$carbon--theme: $carbon--theme--v9;
+@include carbon--theme();
 @import 'carbon-components/scss/globals/scss/colors';
 @import 'carbon-components/scss/globals/scss/theme';
 @import 'carbon-components/scss/globals/scss/helper-mixins';
@@ -34,7 +37,7 @@
     .bx--module__title {
       @include type-style('productive-heading-01');
       letter-spacing: 0;
-      font-weight: 600;
+      font-weight: 400;
       color: $text-01;
     }
 
@@ -46,6 +49,7 @@
 
       p {
         @include type-style('productive-heading-01');
+        font-weight: 400;
       }
     }
 

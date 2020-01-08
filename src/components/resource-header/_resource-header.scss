@@ -1,3 +1,6 @@
+@import '@carbon/themes/scss/themes';
+$carbon--theme: $carbon--theme--v9;
+@include carbon--theme();
 @import 'carbon-components/scss/globals/scss/vars';
 @import 'carbon-components/scss/globals/scss/colors';
 @import 'carbon-components/scss/globals/scss/theme';
@@ -13,6 +16,21 @@
     background-color: $ui-01;
     height: rem(105px);
     padding: rem(10px) rem(40px);
+
+    .bx--breadcrumb {
+      display: none;
+      transition: opacity $transition--base $carbon--standard-easing
+          $transition-time / 2,
+        visibility $transition--base $carbon--standard-easing $transition-time /
+          2,
+        transform $transition--base $carbon--standard-easing 0s;
+      will-change: opacity, visibility, transform;
+
+      @include carbon--breakpoint(md) {
+        display: flex;
+        flex-wrap: nowrap;
+      }
+    }
   }
 
   .#{$prefix}--resource-header__container {
