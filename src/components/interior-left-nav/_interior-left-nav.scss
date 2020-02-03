@@ -8,6 +8,37 @@
 @import 'carbon-components/scss/globals/scss/css--reset';
 @import 'carbon-components/scss/globals/scss/typography';
 
+body.bx--v9-theme {
+  @include exports('cloud-interior-left-nav') {
+    .bx--interior-left-nav {
+      border-right: 1px solid rgba(#c2c0c0, 0.5);
+    }
+
+    .left-nav-line {
+      border: 1px solid #0f212e;
+    }
+
+    .bx--interior-left-nav-collapse {
+      background-color: rgba(#3d70b2, 0.1);
+
+      &:hover,
+      &:focus {
+        background-color: rgba(#3d70b2, 0.3);
+      }
+    }
+
+    .bx--interior-left-nav--collapsing,
+    .bx--interior-left-nav--collapsed {
+      background-color: rgba(#3d70b2, 0.1);
+
+      &:hover,
+      &:focus {
+        background-color: rgba(#3d70b2, 0.3);
+      }
+    }
+  }
+}
+
 @include exports('cloud-interior-left-nav') {
   .bx--interior-left-nav {
     @include reset;
@@ -17,7 +48,7 @@
     top: rem(90px);
     height: 100%;
     background-color: $ui-02;
-    border-right: 1px solid rgba($active-ui, 0.5);
+    border-right: 1px solid rgba(#c2c0c0, 0.5);
 
     &--v6 {
       top: rem(50px);
@@ -214,7 +245,7 @@
 
     .left-nav-line {
       margin: rem(24px) rem(20px);
-      border: 1px solid darken($active-primary, 10);
+      border: 1px solid #0f212e;
     }
 
     .left-nav-list__item--active > .left-nav-list__item-link {
@@ -248,7 +279,7 @@
 
     .bx--interior-left-nav-collapse {
       cursor: pointer;
-      background-color: rgba($link-01, 0.1);
+      background-color: rgba(#3d70b2, 0.1);
       display: flex;
       justify-content: flex-end;
       align-items: center;
@@ -262,7 +293,7 @@
 
       &:hover,
       &:focus {
-        background-color: rgba($link-01, 0.3);
+        background-color: rgba(#3d70b2, 0.3);
       }
     }
 
@@ -297,11 +328,11 @@
     transition: background-color 300ms $carbon--standard-easing,
       width 300ms $carbon--standard-easing;
     cursor: pointer;
-    background-color: rgba($icon-01, 0.1);
+    background-color: rgba(#3d70b2, 0.1);
 
     &:hover,
     &:focus {
-      background-color: rgba($icon-01, 0.3);
+      background-color: rgba(#3d70b2, 0.3);
     }
 
     ul,
