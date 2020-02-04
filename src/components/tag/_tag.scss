@@ -8,7 +8,7 @@
 @import 'mixins';
 
 @include exports('cloud-tag') {
-  .#{$prefix}--tag {
+  .#{$prefix}--tag.cac--tag {
     @include carbon--font-family(sans);
     @include type-style('productive-heading-01');
     display: inline-flex;
@@ -26,7 +26,7 @@
     }
   }
 
-  .#{$prefix}--tag--functional {
+  .#{$prefix}--tag--functional.cac--tag {
     @include tag-theme($ibm-color__navy-gray-10, $ibm-color__navy-gray-11);
     cursor: default;
     white-space: nowrap;
@@ -40,7 +40,7 @@
     }
   }
 
-  .#{$prefix}--tag-close {
+  .#{$prefix}--tag-close.cac--tag-close {
     fill: $ibm-color__navy-gray-12;
     margin-left: rem(8px);
     width: rem(8px);
