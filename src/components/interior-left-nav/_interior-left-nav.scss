@@ -47,7 +47,7 @@ body.bx--v9-theme {
     position: fixed;
     top: rem(90px);
     height: 100%;
-    background-color: $ui-02;
+    background-color: $ui-01;
     border-right: 1px solid rgba(#c2c0c0, 0.5);
 
     &--v6 {
@@ -58,7 +58,7 @@ body.bx--v9-theme {
       list-style: none;
       display: flex;
       flex-direction: column;
-      background-color: $ui-02;
+      background-color: $ui-01;
       padding-top: 1.5rem;
       overflow: auto;
 
