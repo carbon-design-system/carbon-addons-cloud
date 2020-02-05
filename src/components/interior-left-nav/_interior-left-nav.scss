@@ -89,13 +89,12 @@
 
         &--expanded {
           .left-nav-list--nested {
-            max-height: 20rem;
-            transition: $transition--expansion $carbon--ease-in;
-            overflow: inherit;
-            opacity: 1;
+            max-height: 100%;
 
             .left-nav-list__item {
               opacity: 1;
+              height: auto;
+              max-height: 3rem;
             }
           }
 
@@ -123,17 +122,15 @@
     }
 
     .left-nav-list--nested {
-      max-height: 0;
-      overflow: hidden;
-      transition: $transition--expansion $carbon--ease-out;
       padding: 0;
-      opacity: 0;
 
       .left-nav-list__item {
         width: 100%;
+        height: auto;
+        max-height: 0;
         position: relative;
         padding: 0;
-        transition: $transition--base;
+        transition: $transition--expansion $carbon--ease-out;
         opacity: 0;
 
         &-link {
