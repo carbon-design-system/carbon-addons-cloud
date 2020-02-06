@@ -9,6 +9,35 @@
 @import 'carbon-components/scss/globals/scss/typography';
 
 @include exports('cloud-interior-left-nav') {
+  body.bx--v9-theme {
+    .bx--interior-left-nav {
+      border-right: 1px solid rgba(#c2c0c0, 0.5);
+    }
+
+    .left-nav-line {
+      border: 1px solid #0f212e;
+    }
+
+    .bx--interior-left-nav-collapse {
+      background-color: rgba(#3d70b2, 0.1);
+
+      &:hover,
+      &:focus {
+        background-color: rgba(#3d70b2, 0.3);
+      }
+    }
+
+    .bx--interior-left-nav--collapsing,
+    .bx--interior-left-nav--collapsed {
+      background-color: rgba(#3d70b2, 0.1);
+
+      &:hover,
+      &:focus {
+        background-color: rgba(#3d70b2, 0.3);
+      }
+    }
+  }
+
   .bx--interior-left-nav {
     @include reset;
     @include carbon--font-family(sans);
@@ -16,7 +45,7 @@
     position: fixed;
     top: rem(90px);
     height: 100%;
-    background-color: #fff;
+    background-color: $ui-01;
     border-right: 1px solid rgba(#c2c0c0, 0.5);
 
     &--v6 {
@@ -27,7 +56,7 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      background-color: #fff;
+      background-color: $ui-01;
       padding-top: 1.5rem;
       overflow: auto;
 
@@ -40,26 +69,26 @@
           outline: 1px solid transparent;
 
           .left-nav-list__item-link {
-            color: #3d70b2;
+            color: $link-01;
             text-decoration: underline;
           }
 
           .left-nav-list--nested .left-nav-list__item-link {
-            color: #152935;
+            color: $text-01;
             text-decoration: none;
           }
         }
 
         &--active {
           & > .left-nav-list__item-link {
-            color: #3d70b2;
+            color: $link-01;
             font-weight: 600;
           }
         }
 
         &-link {
           @include type-style('productive-heading-01');
-          color: #152935;
+          color: $text-01;
           font-weight: 400;
           position: relative;
           display: flex;
@@ -72,15 +101,15 @@
 
         &:not(.left-nav-list__item--has-children):hover
           > .left-nav-list__item-link {
-          background-color: #f0f3f6;
-          color: #3d70b2;
+          background-color: $hover-ui;
+          color: $link-01;
         }
 
         &-icon {
           display: flex;
 
           .bx--interior-left-nav__icon {
-            fill: #3d70b2;
+            fill: $icon-01;
             width: rem(8px);
             height: rem(8px);
             transition: $transition--base;
@@ -99,7 +128,7 @@
           }
 
           & > .left-nav-list__item-link {
-            color: #3d70b2;
+            color: $link-01;
           }
 
           .left-nav-list__item-icon .bx--interior-left-nav__icon {
@@ -115,7 +144,7 @@
 
         &:hover {
           > .left-nav-list__item-link {
-            color: #3d70b2;
+            color: $link-01;
           }
         }
       }
@@ -135,7 +164,7 @@
 
         &-link {
           @include type-style('productive-heading-01');
-          color: #152935;
+          color: $text-01;
           padding: 0.75rem 1.35rem 0.75rem 4.5rem;
           font-weight: 400;
           display: flex;
@@ -153,12 +182,12 @@
         }
 
         &--active {
-          color: #3d70b2;
-          background-color: #f0f3f6;
+          color: $link-01;
+          background-color: $field-01;
 
           & > .left-nav-list__item-link {
             font-weight: 600;
-            color: #3d70b2;
+            color: $link-01;
           }
         }
       }
@@ -206,7 +235,7 @@
     }
 
     .left-nav-list__item--expanded > .left-nav-list__item-link {
-      color: #152935;
+      color: $text-01;
     }
 
     .left-nav-line {
@@ -221,7 +250,7 @@
       &:before {
         top: 0;
         position: absolute;
-        background-color: #3d70b2;
+        background-color: $link-01;
         height: 100%;
         left: 0;
         width: 4px;
@@ -282,7 +311,7 @@
 
     .bx--interior-left-nav-collapse__arrow {
       transform: rotate(0);
-      fill: #3d70b2;
+      fill: $icon-01;
       height: 12px;
       width: 12px;
     }
@@ -343,7 +372,7 @@
   .bx--interior-left-nav--expanding {
     width: rem(200px);
     transition: width 300ms $carbon--standard-easing;
-    background-color: #fff;
+    background-color: $ui-02;
 
     ul,
     li,
