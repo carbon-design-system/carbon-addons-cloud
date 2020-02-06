@@ -8,8 +8,8 @@
 @import 'carbon-components/scss/globals/scss/css--reset';
 @import 'carbon-components/scss/globals/scss/typography';
 
-body.bx--v9-theme {
-  @include exports('cloud-interior-left-nav') {
+@include exports('cloud-interior-left-nav') {
+  body.bx--v9-theme {
     .bx--interior-left-nav {
       border-right: 1px solid rgba(#c2c0c0, 0.5);
     }
@@ -37,9 +37,7 @@ body.bx--v9-theme {
       }
     }
   }
-}
 
-@include exports('cloud-interior-left-nav') {
   .bx--interior-left-nav {
     @include reset;
     @include carbon--font-family(sans);
