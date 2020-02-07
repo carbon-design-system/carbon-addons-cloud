@@ -1,4 +1,4 @@
-# carbon-addons-cloud
+# carbon-addons-cloud [DEPRECATED]
 
 [![Build Status](https://travis-ci.org/carbon-design-system/carbon-addons-cloud.svg?branch=master)](https://travis-ci.org/carbon-design-system/carbon-addons-cloud)
 [![Greenkeeper badge](https://badges.greenkeeper.io/carbon-design-system/carbon-addons-cloud.svg)](https://greenkeeper.io/)
