@@ -2,7 +2,6 @@
 @import 'carbon-components/scss/globals/scss/theme';
 @import 'carbon-components/scss/globals/scss/helper-mixins';
 @import 'carbon-components/scss/globals/scss/layout';
-@import 'carbon-components/scss/globals/scss/layer';
 @import 'carbon-components/scss/globals/scss/typography';
 @import 'carbon-components/scss/globals/scss/import-once';
 @import 'carbon-components/scss/globals/scss/css--reset';
@@ -19,7 +18,7 @@
     margin: 0;
 
     .bx--module__inner {
-      @include layer('raised');
+      @include box-shadow();
       background-color: $ui-01;
       border: 1px solid transparent;
     }
