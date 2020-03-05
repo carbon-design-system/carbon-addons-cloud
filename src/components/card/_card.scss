@@ -2,7 +2,6 @@
 @import 'carbon-components/scss/globals/scss/theme';
 @import 'carbon-components/scss/globals/scss/helper-mixins';
 @import 'carbon-components/scss/globals/scss/layout';
-@import 'carbon-components/scss/globals/scss/layer';
 @import 'carbon-components/scss/globals/scss/typography';
 @import 'carbon-components/scss/globals/scss/import-once';
 @import 'carbon-components/scss/globals/scss/css--reset';
@@ -15,7 +14,7 @@
 @include exports('cloud-card') {
   .bx--card {
     @include reset;
-    @include layer('raised');
+    @include box-shadow();
     display: flex;
     flex-direction: column;
     width: rem(200px);
